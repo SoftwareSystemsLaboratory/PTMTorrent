@@ -37,7 +37,7 @@ def getPageCount(content: bytes) -> int:
 
 
 def saveContent(content: bytes, filename: str) -> PurePath:
-    contentFolderPath: PurePath = PurePath("../html")
+    contentFolderPath: PurePath = PurePath("../html/organizations")
     contentFilePath: PurePath = PurePath(join(contentFolderPath, filename))
 
     with open(contentFilePath, "wb") as contentFile:
