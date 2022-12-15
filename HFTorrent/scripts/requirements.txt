@@ -1,0 +1,9 @@
+wheel
+black
+isort
+bs4
+lxml
+requests
+pylint
+jedi
+progress

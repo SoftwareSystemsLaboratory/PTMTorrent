@@ -8,5 +8,5 @@
 # Dependencies:
 # wget
 
-wget -O ../html/users.html https://huggingface.co/users
+wget -O ../html/proUsers_$(date +%s).html https://huggingface.co/users
 
