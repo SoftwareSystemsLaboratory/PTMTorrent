@@ -11,8 +11,11 @@ from time import time
 from pathlib import PurePath
 from os.path import join
 
-def downloadPage(url: str = "https://huggingface.co/organizations?p=0") ->  bytes:
+def downloadPage(url: str = "https://huggingface.co/organizations?p=0") ->  bytes | int:
     resp: Response = get(url)
+    
+    if resp.status_code != 200:
+        return resp.status_code
     
     return resp.content
 
@@ -43,7 +46,12 @@ def saveContent(content: bytes, filename: str) ->  PurePath:
 
 def main()  ->  None:
     unixTimeStamp: int = int(time())
-    contentPage0: bytes = downloadPage()
+
+    contentPage0: bytes | int = downloadPage()
+    if contentPage0 is int:
+        print(f"Error trying to download organization page 0. Code {contentPage0}")
+        quit(contentPage0)
+
     pageCount: int = getPageCount(contentPage0)
 
     with Bar("Downloading Hugging Face organization HTML pages...", max=pageCount) as bar:
@@ -55,6 +63,11 @@ def main()  ->  None:
             else:
                 hfURL: str = f"https://huggingface.co/organizations?p={page}"
                 contentPageN: bytes = downloadPage(url=hfURL)
+
+                if contentPageN is int:
+                    print(f"Error trying to download organization page {page}. Code {contentPageN}")
+                    continue
+
                 saveContent(content=contentPageN, filename=contentFilename)
             bar.next()
 
