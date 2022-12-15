@@ -7,3 +7,5 @@ requests
 pylint
 jedi
 progress
+pandas
+huggingface_hub
