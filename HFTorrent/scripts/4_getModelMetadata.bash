@@ -16,3 +16,4 @@ timestamp=$(date +%s)
 
 jq .[].author ../json/models_$timestamp.json | sed 's/"//g' | sort | uniq > ../txt/allAuthors_$timestamp.txt
 jq .[].author ../json/models_$timestamp.json | sed 's/"//g' | sort | uniq -c > ../txt/authorModelCountMapping_$timestamp.txt
+jq .[].id ../json/models_$timestamp.json | sed 's/"//g' | sort | uniq > ../txt/modelIDs_$timestamp.txt
