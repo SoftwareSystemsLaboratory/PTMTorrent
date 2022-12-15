@@ -1,3 +1,4 @@
+from argparse import ArgumentParser, Namespace
 from json import dumps
 from time import time
 
@@ -6,6 +7,20 @@ from huggingface_hub import list_models, login
 from huggingface_hub.hf_api import ModelInfo, RepoFile
 from pandas import DataFrame
 from progress.bar import Bar
+
+parser: ArgumentParser = ArgumentParser(prog="Hugging Face model metadata downloader")
+parser.add_argument(
+    "-t",
+    "--timestamp",
+    required=False,
+    help="Timestamp to append to the end of the output file",
+)
+args: Namespace = parser.parse_args()
+
+if args.timestamp is None:
+    timestamp = int(time())
+else:
+    timestamp = args.timestamp
 
 stor: DataFrame = DataFrame()
 
@@ -19,6 +34,7 @@ with Bar("Converting models into a JSON compatible format...", max=len(data)) as
         model["siblings"] = [file.__dict__ for file in model["siblings"]]
         bar.next()
 
-print("Exporting JSON to file...")
+filepath: str = f"../json/models_{timestamp}.json"
+print(f"Exporting JSON to {filepath} ...")
 df: DataFrame = pandas.read_json(dumps(data)).T
-df.to_json("test.json")
+df.to_json(filepath)

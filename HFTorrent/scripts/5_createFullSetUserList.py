@@ -10,6 +10,7 @@ from pathlib import PurePath
 import pandas
 from bs4 import BeautifulSoup, ResultSet, Tag
 from pandas import DataFrame
+from progress.bar import Bar
 from progress.spinner import Spinner
 
 
@@ -34,13 +35,20 @@ def getUsername(filepath: PurePath, className: str) -> list:
 def structureNames(
     stor: DataFrame, names: list, nameType: str, spinner: Spinner
 ) -> DataFrame:
-    names: set = set(names)
     name: str
     for name in names:
+        try:
+            if name in stor["Name"].values:
+                continue
+        except KeyError:
+            pass
+
+        name: str = name.replace("/", "")
+
         row: dict = {
-            "Name": [name.replace("/", "")],
+            "Name": [name],
             "Type": [nameType],
-            "URL": [f"https://huggingface.co{name}"],
+            "URL": [f"https://huggingface.co/{name}"],
             "Model Count": 0,
         }
         tempDF: DataFrame = DataFrame(row, index=[0])
@@ -74,6 +82,7 @@ def main() -> None:
         userModelCountMapping = [
             tuple(m.strip().split(" ")) for m in userModelCountMapping
         ]
+        allUsers: list = [pair[1] for pair in userModelCountMapping]
         txtFile.close()
 
     with Spinner(
@@ -97,12 +106,25 @@ def main() -> None:
         stor = structureNames(
             stor=stor, names=organizationNames, nameType="Organizaton", spinner=spinner
         )
+        stor = structureNames(
+            stor=stor, names=allUsers, nameType="User", spinner=spinner
+        )
 
-    pair: tuple
-    for pair in userModelCountMapping:
-        stor.loc[stor["Name"] == pair[1], "Model Count"] = pair[0]
+    with Bar(
+        "Adding model counts per user and organization to structure",
+        max=len(userModelCountMapping),
+    ) as bar:
+        idx: int
+        for idx in range(len(userModelCountMapping)):
+            stor.loc[
+                stor["Name"] == userModelCountMapping[idx][1], "Model Count"
+            ] = int(userModelCountMapping[idx][0])
+            bar.next()
 
-    stor.to_csv("test.csv")
+    filepath: str = "../csv/users.json"
+    print(f"Saving structure to {filepath} ...")
+    stor = stor.sort_values(by="Model Count", ascending=False)
+    stor.to_json(filepath)
 
 
 if __name__ == "__main__":

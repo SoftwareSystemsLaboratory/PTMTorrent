@@ -3,5 +3,5 @@
 # 1_setupHFTorrent.bash
 # Create the folder structure for the HFTorrent dataset
 
-mkdir ../{html,json,txt}
+mkdir ../{html,json,txt,csv}
 mkdir ../html/{users,organizations}

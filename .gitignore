@@ -3,3 +3,4 @@
 *.txt
 HFTorrent/scripts/env/*
 !HFTorrent/scripts/requirements.txt
+*.csv
