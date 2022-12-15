@@ -17,4 +17,4 @@ wget -O ../json/datasets_$timestamp.json https://huggingface.co/api/datasets
 wget -O ../json/spaces_$timestamp.json https://huggingface.co/api/spaces
 wget -O ../json/metrics_$timestamp.json https://huggingface.co/api/metrics
 
-jq .[].id ../json/{models,datasets,spaces,metrics}_$timestamp.json | grep '/' | grep -o ^[^/]* | sed 's/"//g' | sort -f | uniq > ../txt/allUsersOrganizations_$timestamp.txt
+jq .[].id ../json/{models,datasets,spaces,metrics}_$timestamp.json | grep '/' | grep -o ^[^/]* | sed 's/"//g' | sort -f | uniq -c > ../txt/allUsersOrganizations_$timestamp.txt
