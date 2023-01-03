@@ -4,9 +4,18 @@
 
 ## About
 
-The PTM Torrent project i
-
 ## Supported Model Hubs
+
+This repository currently supports the following model hubs:
+
+| Model Hub      | Project Path |
+| -------------- | ------------ |
+| Hugging Face   | ./HFTorrent  |
+| TensorFlow Hub | ./TFTorrent  |
+| Model Zoo      | ./MZTorrent  |
+| Pytorch Hub    | ./PHTorrent  |
+| ONNX Model Zoo | ./OMTorrent  |
+| Modelhub       | ./MHTorrent  |
 
 ## How To Run
 
