@@ -2,7 +2,14 @@
     "type": "object",
     "properties": {
         "id": {"type": "number"},
-        "ModelHub": {"type": "string"},
+        "ModelHub": {
+            "type": "object",
+            "properties": {
+                "ModelHubName": {"type": "string"},
+                "MetadataFilePath": {"type": "string"},
+                "MedtadataObjectID": {"type": "number"}
+            }
+        },
         "ModelName": {"type": "string"},
         "ModelOwner": {"type": "string"},
         "ModelURL": {"type": "string"},
@@ -30,7 +37,6 @@
         "ModelPaperDOI": {"type": "string"},
         "LatestGitCommitSHA": {"type": "string"},
         "ModelTask": {"type": "string"},
-        "ModelArchitecture": {"type": "string"},
-        "Popularity": {"type": "number"}
+        "ModelArchitecture": {"type": "string"}
     }
 }
