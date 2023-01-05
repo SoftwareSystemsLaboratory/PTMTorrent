@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {"type": "number"},
+        "ModelHub": {
+            "type": "object",
+            "properties": {
+                "ModelHubName": {"type": "string"},
+                "MetadataFilePath": {"type": "string"},
+                "MedtadataObjectID": {"type": "number"}
+            }
+        },
+        "ModelName": {"type": "string"},
+        "ModelOwner": {"type": "string"},
+        "ModelURL": {"type": "string"},
+        "ModelOwnerURL": {"type": "string"},
+        "Datasets": {
+            "type": "array",
+            "contains": {
+                "type": "object",
+                "properties": {
+                    "DatasetName": {"type": "string"},
+                    "DatasetOwner": {"type": "string"},
+                    "DatasetURL": {"type": "string"},
+                    "DatasetOwnerURL": {"type": "string"},
+                    "DatasetPaperDOI": {"type": "string"},
+                    "DatasetUsages": {
+                        "type": "array",
+                        "contains": {
+                            "type": "string",
+                            "uniqueItems": true
+                        }
+                    }
+                }
+            }
+        },
+        "ModelPaperDOI": {"type": "string"},
+        "LatestGitCommitSHA": {"type": "string"},
+        "ModelTask": {"type": "string"},
+        "ModelArchitecture": {"type": "string"}
+    }
+}

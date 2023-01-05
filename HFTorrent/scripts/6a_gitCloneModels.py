@@ -1,7 +1,7 @@
 import subprocess
-from pathlib import PurePath
-from os import mkdir, listdir
+from os import listdir, mkdir
 from os.path import join
+from pathlib import PurePath
 
 repoDirectory: PurePath = PurePath("../repos")
 txtDirectory: PurePath = PurePath("../txt")
@@ -23,11 +23,10 @@ print(data)
 repo: str
 for repo in data:
     origin: str = f"https://huggingface.co/{repo}"
-    
+
     repoSplit: list = repo.split("/")
     author: str = repoSplit[0]
     projectName: str = repoSplit[1]
-
 
     authorDirectory: PurePath = PurePath(join(repoDirectory, author))
     try:
@@ -36,6 +35,6 @@ for repo in data:
         pass
 
     projectDirectory: PurePath = PurePath(join(authorDirectory, projectName))
-    command: str = ["git", "lfs", "clone", origin, projectDirectory]
-    
+    command: list = ["git", "clone", "--bare", origin, projectDirectory]
+
     subprocess.run(command)
