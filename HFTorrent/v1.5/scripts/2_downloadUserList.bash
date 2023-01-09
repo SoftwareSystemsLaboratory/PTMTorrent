@@ -9,4 +9,3 @@
 # wget
 
 wget -O ../html/users/proUsers_$(date +%s).html https://huggingface.co/users
-
