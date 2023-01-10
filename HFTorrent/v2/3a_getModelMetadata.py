@@ -64,10 +64,12 @@ def matchInArray(regex: str, array: list) -> list:
     return data
 
 
-def returnTag(series: Series, tag: str) -> str | None:
+def testTag(test) -> str | None:
     try:
-        return series[tag]
-    except TypeError or KeyError:
+        return test
+    except TypeError:
+        return None
+    except KeyError:
         return None
 
 
@@ -95,8 +97,14 @@ def buildSchemaObject(series: Series, metadataFilePath: PurePath) -> Schema:
     obj.setModelOwnerURL(f'https://huggingface.co/{series["author"]}')
     obj.setDatasets([])
     obj.setLatestGitCommitSHA(series["sha"])
-    obj.setModelTasks(returnTag(series, "pipeline_tag"))
-    obj.setModelArchitecture(returnTag(series, "config")["ModelArchitecture"])
+    obj.setModelTasks(testTag(series["pipeline_tag"]))
+
+    try:
+        obj.setModelArchitecture(testTag(series["config"])["model_type"])
+    except TypeError:
+        obj.setModelArchitecture(None)
+    except KeyError:
+        obj.setModelArchitecture(None)
 
     try:
         obj.setModelName(modelID.split("/")[1])
@@ -117,11 +125,18 @@ def main() -> None:
     else:
         timestamp = args.timestamp
 
-    filepath: str = f"./data/json/models_{timestamp}.json"
+    filepath: PurePath = PurePath(f"./data/json/models_{timestamp}.json")
 
     modelList: list = getModelList()
 
     df: DataFrame = pandas.read_json(dumps(modelList))
+
+    with Bar("Creating data schema...", max=len(df)) as bar:
+        idx: int
+        for idx in range(len(df)):
+            series: Series = df.loc[idx]
+            buildSchemaObject(series, metadataFilePath=filepath)
+            bar.next()
 
 
 # df.to_json(filepath)
