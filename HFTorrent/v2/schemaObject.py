@@ -28,6 +28,9 @@ class Schema:
     def setModelOwner(self, string: str) -> None:
         self.ModelOwner = string
 
+    def setModelOwnerURL(self, string: str) -> None:
+        self.ModelOwnerURL = string
+
     def setModelURL(self, string: str) -> None:
         self.ModelURL = string
 

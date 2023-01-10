@@ -1,16 +1,25 @@
 import re
 from argparse import ArgumentParser, Namespace
 from json import dumps
-from pprint import pprint as print
+from pathlib import PurePath
 from re import Match, Pattern
 from time import time
 from typing import List
+from warnings import filterwarnings
 
 import pandas
 from huggingface_hub import list_models
 from huggingface_hub.hf_api import ModelInfo
-from pandas import DataFrame
+from mhObject import ModelHub
+from pandas import DataFrame, Series
 from progress.bar import Bar
+from schemaObject import Schema
+
+# Hides huggingface_hub list_model warning
+filterwarnings(action="ignore")
+
+doiRegex: str = "^.*(arxiv|doi).*$"
+datasetRegex: str = "^.*(dataset).*$"
 
 
 def getArgs() -> Namespace:
@@ -55,57 +64,48 @@ def matchInArray(regex: str, array: list) -> list:
     return data
 
 
-def iterDF(df: DataFrame) -> dict:
-    idx: int
-    for idx in range(len(df)):
-        dois: list = []
-        idKey: int = df.loc[idx, "_id"]
-        modelID: str = df.loc[idx, "modelId"]
-        author: str | None = df.loc[idx, "author"]
-        sha: str = df.loc[idx, "sha"]
+def returnTag(series: Series, tag: str) -> str | None:
+    try:
+        return series[tag]
+    except TypeError or KeyError:
+        return None
 
-        try:
-            modelName: str = modelID.split("/")[1]
-        except IndexError:
-            modelName: str = modelID
 
-        stor: dict = {
-            "id": idKey,
-            "ModelHub": {
-                "ModelHubName": "Hugging Face",
-                "MetadataFilePath": filepath,
-                "MetadataObjectID": idKey,
-            },
-            "ModelName": modelName,
-            "ModelOwner": author,
-            "ModelURL": f"https://huggingface.co/{modelID}",
-            "ModelOwnerURL": f"https://huggingface.co/{author}",
-            "Datasets": [{}],
-            "ModelPaperDOI": dois,
-            "LatestGitCommitSHA": sha,
-        }
+def buildModelHubObject(metadataFilePath: PurePath, id: int) -> ModelHub:
+    obj: ModelHub = ModelHub()
 
-        modelTags: list = df.loc[idx, "tags"]
+    obj.setModelHubName("Hugging Face")
+    obj.setMetadataFilePath(metadataFilePath)
+    obj.setMetadataObjectID(id)
 
-        tag: str
-        for tag in modelTags:
-            match: Match = doiPattern.match(tag)
-            if match:
-                stor["ModelPaperDOI"].append(match.string)
+    return obj
 
-        try:
-            stor["ModelTask"] = df.loc[idx, "pipeline_tag"]
-        except TypeError:
-            stor["ModelTask"] = None
-        except KeyError:
-            stor["ModelTask"] = None
 
-        try:
-            stor["ModelArchitecture"] = df.loc[idx, "config"]["model_type"]
-        except TypeError:
-            stor["ModelArchitecture"] = None
-        except KeyError:
-            stor["ModelArchitecture"] = None
+def buildSchemaObject(series: Series, metadataFilePath: PurePath) -> Schema:
+    obj: Schema = Schema()
+
+    id: int = series["_id"]
+    modelID: str = series["modelId"]
+    tags: list = series["tags"]
+
+    obj.setID(id)
+    obj.setModelHub(buildModelHubObject(metadataFilePath, id))
+    obj.setModelOwner(series["author"])
+    obj.setModelURL(f"https://huggingface.co/{modelID}")
+    obj.setModelOwnerURL(f'https://huggingface.co/{series["author"]}')
+    obj.setDatasets([])
+    obj.setLatestGitCommitSHA(series["sha"])
+    obj.setModelTasks(returnTag(series, "pipeline_tag"))
+    obj.setModelArchitecture(returnTag(series, "config")["ModelArchitecture"])
+
+    try:
+        obj.setModelName(modelID.split("/")[1])
+    except IndexError:
+        obj.setModelName(modelID)
+
+    obj.setModelPaperDOIs(matchInArray(regex=doiRegex, array=tags))
+
+    return obj
 
 
 def main() -> None:
@@ -117,18 +117,11 @@ def main() -> None:
     else:
         timestamp = args.timestamp
 
+    filepath: str = f"./data/json/models_{timestamp}.json"
+
     modelList: list = getModelList()
 
     df: DataFrame = pandas.read_json(dumps(modelList))
-
-
-doiRegex: str = "^.*(arxiv|doi).*$"
-datasetRegex: str = "^.*(dataset).*$"
-
-doiPattern: Pattern = re.compile(pattern=doiRegex)
-datasetPattern: Pattern = re.compile(pattern=datasetRegex)
-
-# filepath: str = f"./data/json/models_{timestamp}.json"
 
 
 # df.to_json(filepath)
