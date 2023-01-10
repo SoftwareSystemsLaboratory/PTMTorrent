@@ -163,7 +163,7 @@ cython_debug/
 *.json
 *.txt
 HFTorrent/scripts/env/*
-!HFTorrent/scripts/requirements.txt
+!*/requirements.txt
 *.csv
 HFTorrent/repos/*
 !schema.json
