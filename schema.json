@@ -7,7 +7,7 @@
             "properties": {
                 "ModelHubName": {"type": "string"},
                 "MetadataFilePath": {"type": "string"},
-                "MedtadataObjectID": {"type": "number"}
+                "MetadataObjectID": {"type": "number"}
             }
         },
         "ModelName": {"type": "string"},
