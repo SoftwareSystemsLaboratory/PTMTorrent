@@ -7,4 +7,3 @@
 ./4_getModelMetadata.bash
 ./5_createUserData.bash
 ./6_gitCloneModels.bash
-
