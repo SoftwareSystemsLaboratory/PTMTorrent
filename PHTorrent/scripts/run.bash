@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./0_setupScripts.bash
+./0_setup.bash
