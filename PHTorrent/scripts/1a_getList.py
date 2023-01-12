@@ -33,14 +33,20 @@ with open(model_urls_path, 'w') as file:
         file.write(x + '\n')
 
 # Grab the html pages for each model
-model_html_list = [requests.get(x).text for x in full_model_urls]
-
-# Save each of the pages in ../html/modelPages/
 model_html_path = '../html/modelPages/'
 print('Saving the html pages for each model in ' + model_html_path)
 
+model_html_list = [requests.get(x).text for x in full_model_urls]
+
+# Save each of the pages in ../html/modelPages/
 for ind, x in enumerate(model_html_list):
     with open(model_html_path + model_urls[ind][5:-1] + '.html', 'w') as file:
         file.write(x)
 
 # Create a manifest file in ../html/
+model_manifest_path = '../html/manifest.txt'
+print('Saving a manifest to ' + model_manifest_path)
+
+with open(model_manifest_path, 'w') as file:
+    for x in model_urls:
+        file.write(x[5:-1] + '.html\n')

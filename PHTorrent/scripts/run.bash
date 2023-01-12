@@ -6,3 +6,4 @@
 
 ./0_setup.bash
 ./1_getList.bash
+./2_parseList.bash
