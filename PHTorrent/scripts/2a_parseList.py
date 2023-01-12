@@ -5,6 +5,9 @@
 
 # Imports
 from bs4 import BeautifulSoup
+import git
+import os
+import re
 
 
 # Load manifest file
@@ -46,8 +49,24 @@ def getLinks(soup):
     return (getGitHub(soup), getColab(soup), getDemo(soup))
 
 # Download the specific repository to the ../repos/ folder
-def downloadRepo(link):
-    pass
+def downloadRepo(link, name):
+
+    # Check to see if it was already cloned or not
+    if (os.path.exists('../repos/'+name)):
+        print(name + ' was already cloned!')
+    
+    # Clone the file
+    else:
+        # Regex to find base directory of repo
+        print(link)
+        match = re.match('https://github.com/[a-zA-z_.-]+/[a-zA-z_.-]+$|/', link)
+        print(match)
+
+        if match:
+            git.Repo.clone_from(match.group(0), '../repos/' + name) # Clone the repos normally
+
+        else:
+            print('Faulty GitHub Link!!!')
 
 # Write to the general JSON to the ../json/general.json using provided soup
 def generalJSON(soup):
@@ -65,6 +84,7 @@ def specificJSON(soup):
 
 # Iterate through all html files
 for x in manifest:
+    print('========================================')
     print(x)
 
     with open('../html/modelPages/' + x, 'r') as file:
@@ -73,7 +93,7 @@ for x in manifest:
         soup = BeautifulSoup(file.read(), 'html.parser')
 
         # Download Repo
-        downloadRepo(getGitHub(soup))
+        downloadRepo(getGitHub(soup), x[:-5])
 
         # Create general JSON
         generalJSON(soup)
