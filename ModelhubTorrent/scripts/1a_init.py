@@ -13,6 +13,7 @@ from util import handle_errors
 
 curr: Path
 repos_dir: Path
+model_metadat_root: Path
 TModelResponse = Dict[
     Literal["id", "name", "task_extended", "github", "github_branch", "backend"],
     str,
@@ -43,20 +44,22 @@ def subprocess_run(arg_list):
     wrap subprocess.arg and show the command being executed
     """
     print("$", " ".join(arg_list))
-    return subprocess.run(arg_list, check=True)
+    return subprocess.run(arg_list, check=True, capture_output=True)
 
 
 def download_file(url: str, dest: Path):
     """
     wrap wget or maybe implement a requests based streaming downlaod
     """
-    strategy = "wget"  # or requests
+    # strategy = "wget"  # or requests
     # if strategy == "wget":
     args = ["wget", url, "-O", str(dest)]
 
-    print(subprocess_run(args).returncode)
-
-    # todo requests?
+    print(
+        f"download finished for {url}"
+        if subprocess_run(args).returncode == 0
+        else f"download failed for {url}"
+    )
 
 
 @handle_errors
@@ -92,14 +95,19 @@ def clone_repo(model_meta: TModelResponse):
                 print("skipping download")
             else:
                 print(f"downloading {src} to {realpath}")
-                download_file(src, realpath)
+                try:
+                    download_file(src, realpath)
+                except:
+                    print(f"Failed to download {src}. Sckipping {name}")
     config = loads((repos_dir / name / "contrib_src/model/config.json").read_text())
-    model_metadata_dir = json_dir / name
+    model_metadata_dir = model_metadata_root / name
     model_metadata_dir.mkdir(exist_ok=True)
     general_model_metadata_path = model_metadata_dir / "model.json"
     mh_metadata_path = model_metadata_dir / "modelhub.json"
-
-    model = Model(config, mh_metadata_path.relative_to(model_metadata_dir), github_repo)
+    sha = subprocess_run(["git", "-C", name, "rev-parse", "HEAD"]).stdout.decode()
+    model = Model(
+        config, mh_metadata_path.relative_to(model_metadata_dir), github_repo, sha
+    )
     general_model_metadata_path.write_text(dumps(model.as_json))
     mh_metadata_path.write_text(dumps(config))
     # bare_to_full(model_meta, bare_repo_path)
@@ -139,4 +147,5 @@ if __name__ == "__main__":
     curr = Path()
     repos_dir = safe_dir("../repos")
     json_dir = safe_dir("../json")
+    model_metadata_root = safe_dir(json_dir / "models")
     create_model_repos()

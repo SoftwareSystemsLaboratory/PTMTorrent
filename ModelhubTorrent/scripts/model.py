@@ -17,10 +17,11 @@ class Model:
 
         return hash(arg)
 
-    def __init__(self, config: TModelHubConfig, path: str, url: str) -> None:
+    def __init__(self, config: TModelHubConfig, path: str, url: str, sha: str) -> None:
         self.config = config
         self.path = path
         self.url = url
+        self.sha = sha
 
     @property
     def as_json(self) -> TModelSchema:
@@ -32,7 +33,7 @@ class Model:
             "Datasets": [
                 # modelhub does not provide dataset information
             ],
-            "LatestGitCommitSHA": "TODO",
+            "LatestGitCommitSHA": self.sha,
             "ModelArchitecture": self.config["model"]["architecture"],
             "ModelHub": {
                 "ModelHubName": "modelhub (modelhub.ai)",

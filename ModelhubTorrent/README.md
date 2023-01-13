@@ -17,6 +17,12 @@ We do not use the modelhub REST api as we can interface with git instead
 
 Run `./scripts/run.bash` to create the torrent.
 
+the script should take around 20-30 mins to download all the data
+
+## Output format
+
+Once the script is run, it will create directories in the form of json/{model-name} with 2 output files
+
 <!--
 TODO
 Run `./scripts/nuke.bash` to delete all collected information **including the torrent**. -->
