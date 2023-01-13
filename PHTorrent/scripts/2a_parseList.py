@@ -49,24 +49,37 @@ def getLinks(soup):
     return (getGitHub(soup), getColab(soup), getDemo(soup))
 
 # Download the specific repository to the ../repos/ folder
-def downloadRepo(link, name):
+def downloadRepo(link):
 
-    # Check to see if it was already cloned or not
-    if (os.path.exists('../repos/'+name)):
-        print(name + ' was already cloned!')
+    # Regex to find base directory of repo
+    match = re.match('(https://github.com/)([a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+)($|/)', link)
+
+    # Check to see if there was a valid github link
+    if match:
+
+        # Pull URL for GitHub repo
+        github_url = match.group(0)
+
+        # Create path to store the repo
+        repo_path = '../repos/' + match.group(2).replace('/','_')
+
+        # Check to see if it was already cloned or not
+        if (os.path.exists(repo_path)):
+            print(repo_path + ' was already cloned!')
     
-    # Clone the file
-    else:
-        # Regex to find base directory of repo
-        print(link)
-        match = re.match('https://github.com/[a-zA-z_.-]+/[a-zA-z_.-]+$|/', link)
-        print(match)
-
-        if match:
-            git.Repo.clone_from(match.group(0), '../repos/' + name) # Clone the repos normally
-
+        # If not, clone the repo
         else:
-            print('Faulty GitHub Link!!!')
+            print('Cloning ' + github_url)
+            # git.Repo.clone_from(github_url, repo_path) # Clone the repos normally
+            # git.Repo.clone_from(github_url, repo_path, multi_options=['--depth=1']) # Clone with --depth=1
+            git.Repo.clone_from(github_url, repo_path, multi_options=['--bare']) # Clone with --bare
+
+
+
+    
+    # Print a warnig if the link was strange
+    else:
+        print('***FAULTY GITHUB LINK***')
 
 # Write to the general JSON to the ../json/general.json using provided soup
 def generalJSON(soup):
@@ -93,7 +106,9 @@ for x in manifest:
         soup = BeautifulSoup(file.read(), 'html.parser')
 
         # Download Repo
-        downloadRepo(getGitHub(soup), x[:-5])
+        gitHub_link = getGitHub(soup)
+        print('Downloading repository at ' + gitHub_link)
+        downloadRepo(gitHub_link)
 
         # Create general JSON
         generalJSON(soup)
