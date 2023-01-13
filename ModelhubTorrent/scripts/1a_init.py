@@ -3,11 +3,13 @@ Initialize by downloading all repos from modelhub.ai
 """
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
-from os import chdir
+from os import chdir, environ
 from pathlib import Path
 from typing import Dict, List, Literal
-from json import loads
+from json import loads, dumps
 import requests
+from model import Model
+from util import handle_errors
 
 curr: Path
 repos_dir: Path
@@ -57,6 +59,7 @@ def download_file(url: str, dest: Path):
     # todo requests?
 
 
+@handle_errors
 def clone_repo(model_meta: TModelResponse):
     """Clone repo, make sure name matches the json response"""
     github_repo = model_meta["github"]
@@ -66,7 +69,9 @@ def clone_repo(model_meta: TModelResponse):
     # do a shallow clone instead of a bare clone
     # restoring and dealing with lfs is not a concern for our PTM
     args = ["git", "clone", "--depth=1", github_repo, f"{name}"]
-    # subprocess_run(args)
+    # skip cloning repos?
+    if not environ.get("MHTORRENT_SKIP_CLONE"):
+        subprocess_run(args)
     repo_root = repos_dir / name
     init_file = repo_root / "init/init.json"
     data = loads(init_file.read_text())
@@ -83,8 +88,20 @@ def clone_repo(model_meta: TModelResponse):
             if dest.startswith("/"):
                 dest = dest[1:]
             realpath = repo_root / dest
-            print(f"downloading {src} to {realpath}")
-            download_file(src, realpath)
+            if environ.get("MHTORRENT_SKIP_DOWNLOAD"):
+                print("skipping download")
+            else:
+                print(f"downloading {src} to {realpath}")
+                download_file(src, realpath)
+    config = loads((repos_dir / name / "contrib_src/model/config.json").read_text())
+    model_metadata_dir = json_dir / name
+    model_metadata_dir.mkdir(exist_ok=True)
+    general_model_metadata_path = model_metadata_dir / "model.json"
+    mh_metadata_path = model_metadata_dir / "modelhub.json"
+
+    model = Model(config, mh_metadata_path.relative_to(model_metadata_dir), github_repo)
+    general_model_metadata_path.write_text(dumps(model.as_json))
+    mh_metadata_path.write_text(dumps(config))
     # bare_to_full(model_meta, bare_repo_path)
 
     # todo: add if needed
@@ -102,7 +119,12 @@ def safe_dir(where: str):
 
 def create_model_repos():
     """go through each model and clone the repo"""
-    models = get_overview()
+    models_file = json_dir / "models.json"
+
+    if environ.get("MHTORRENT_USE_LOCAL_MODEL_INDEX"):
+        models = loads(models_file.read_text())
+    else:
+        models = get_overview()
     chdir(repos_dir)
     # clone the models in a threadpool
     # workers could be configurable but 5 seems to be able to finish the job quickly
