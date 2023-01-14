@@ -62,6 +62,12 @@ def download_file(url: str, dest: Path):
     )
 
 
+# def bare_to_full(model_metadat: TModelResponse, bare_repo_path: Path):
+#     """
+#     Convert a bare git repo to a full repo
+#     """
+
+
 @handle_errors
 def clone_repo(model_meta: TModelResponse):
     """Clone repo, make sure name matches the json response"""
@@ -72,12 +78,12 @@ def clone_repo(model_meta: TModelResponse):
     # do a shallow clone instead of a bare clone
     # restoring and dealing with lfs is not a concern for our PTM
     args = ["git", "clone", "--depth=1", github_repo, f"{name}"]
+    # bare_to_full(model_meta, repos_dir / f"{name}.git")
     # skip cloning repos?
     if not environ.get("MHTORRENT_SKIP_CLONE"):
         subprocess_run(args)
     repo_root = repos_dir / name
-    init_file = repo_root / "init/init.json"
-    data = loads(init_file.read_text())
+    data = loads((repo_root / "init/init.json").read_text())
     if data.get("external_contrib_files"):
         for external_files in data["external_contrib_files"]:
             src: str = external_files["src_url"]
@@ -97,20 +103,18 @@ def clone_repo(model_meta: TModelResponse):
                 print(f"downloading {src} to {realpath}")
                 try:
                     download_file(src, realpath)
-                except:
-                    print(f"Failed to download {src}. Sckipping {name}")
+                # pylint: disable=broad-except
+                except Exception as _:
+                    print(f"Failed to download {src}. Skipping {name}")
     config = loads((repos_dir / name / "contrib_src/model/config.json").read_text())
-    model_metadata_dir = model_metadata_root / name
-    model_metadata_dir.mkdir(exist_ok=True)
-    general_model_metadata_path = model_metadata_dir / "model.json"
+    model_metadata_dir = safe_dir(model_metadata_root / name)
     mh_metadata_path = model_metadata_dir / "modelhub.json"
     sha = subprocess_run(["git", "-C", name, "rev-parse", "HEAD"]).stdout.decode()
     model = Model(
         config, mh_metadata_path.relative_to(model_metadata_dir), github_repo, sha
     )
-    general_model_metadata_path.write_text(dumps(model.as_json))
+    (model_metadata_dir / "model.json").write_text(dumps(model.as_json))
     mh_metadata_path.write_text(dumps(config))
-    # bare_to_full(model_meta, bare_repo_path)
 
     # todo: add if needed
     # subprocess.run(["git", "checkout", github_branch])
