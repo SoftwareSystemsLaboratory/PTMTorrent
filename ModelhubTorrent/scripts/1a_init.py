@@ -11,15 +11,14 @@ import requests
 from model import Model
 from util import handle_errors
 
+from model_types import TModelResponse
+
 curr: Path
 repos_dir: Path
 model_metadat_root: Path
 full_repo_dir: Path
 bare_repo_dir: Path
-TModelResponse = Dict[
-    Literal["id", "name", "task_extended", "github", "github_branch", "backend"],
-    str,
-]
+
 
 MODEL_JSON_URL = (
     "https://raw.githubusercontent.com/modelhub-ai/modelhub/master/models.json"
@@ -32,7 +31,7 @@ def get_overview() -> List[TModelResponse]:
     """
     get the main models.json file from modelhub repo.
     this approach is okay to use as modelhub official repositories
-    seem to be suing this approach to get the model index
+    seem to be using this approach to get the model index
     https://github.com/modelhub-ai/unet-2d/blob/master/init/start.py#L203
 
     """

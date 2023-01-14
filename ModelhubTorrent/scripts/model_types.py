@@ -97,3 +97,16 @@ class TModelSchema(TypedDict):
     LatestGitCommitSHA: str
     ModelTask: str
     ModelArchitecture: str
+
+
+class TModelResponse(TypedDict):
+    """
+    Types for the model index items
+    """
+
+    id: str
+    name: str
+    task_extended: str
+    github: str
+    github_branch: str
+    backend: List[str]
