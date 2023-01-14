@@ -21,8 +21,17 @@ the script should take around 20-30 mins to download all the data
 
 ## Output format
 
-Once the script is run, it will create directories in the form of json/{model-name} with 2 output files
+After executing run.bash, the script will populate the `repo` and the `json` directories with the bare clones and the required metadata.
+![https://imgur.com/TWf5Dfl](https://i.imgur.com/TWf5Dfl.jpg)
 
-<!--
-TODO
-Run `./scripts/nuke.bash` to delete all collected information **including the torrent**. -->
+Each model will have an individual directory in these folders:
+
+![https://imgur.com/QXypaYL](https://i.imgur.com/QXypaYL.jpg)
+![https://imgur.com/BdeHzW2](https://i.imgur.com/BdeHzW2.jpg)
+![https://imgur.com/IZOPMzB](https://i.imgur.com/IZOPMzB.jpg)
+
+The full repos are generated from the bare repositories. The script also downloads any externally hosted model.
+
+In some cases if the model returns a 404 ( only 1 such known issue ), those models will be skipped.
+
+To clear the generated files and "reset" the script, run `nuke.bash`

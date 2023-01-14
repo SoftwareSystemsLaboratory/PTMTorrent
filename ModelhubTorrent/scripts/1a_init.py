@@ -3,7 +3,7 @@ Initialize by downloading all repos from modelhub.ai
 """
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
-from os import chdir, environ
+from os import environ
 from pathlib import Path
 from typing import Dict, List, Literal
 from json import loads, dumps
@@ -14,6 +14,8 @@ from util import handle_errors
 curr: Path
 repos_dir: Path
 model_metadat_root: Path
+full_repo_dir: Path
+bare_repo_dir: Path
 TModelResponse = Dict[
     Literal["id", "name", "task_extended", "github", "github_branch", "backend"],
     str,
@@ -43,8 +45,14 @@ def subprocess_run(arg_list):
     """
     wrap subprocess.arg and show the command being executed
     """
-    print("$", " ".join(arg_list))
-    return subprocess.run(arg_list, check=True, capture_output=True)
+    args = list(str(x) for x in arg_list)
+    print("$", " ".join(args))
+    # pylint: disable=subprocess-run-check
+    res = subprocess.run(args, capture_output=True)
+    if res.returncode != 0:
+        print(res.stderr.decode())
+    res.check_returncode()
+    return res
 
 
 def download_file(url: str, dest: Path):
@@ -62,27 +70,39 @@ def download_file(url: str, dest: Path):
     )
 
 
-# def bare_to_full(model_metadat: TModelResponse, bare_repo_path: Path):
-#     """
-#     Convert a bare git repo to a full repo
-#     """
+def bare_to_full(model_metadata: TModelResponse, bare_repo_path: Path):
+    """
+    Convert a bare git repo to a full repo
+    """
+    full_repo = full_repo_dir / model_metadata["name"]
+    remote = model_metadata["github"]
+
+    subprocess_run(["git", "clone", "-l", f"{bare_repo_path}", f"{full_repo}"])
+    subprocess_run(["git", "-C", f"{full_repo}", "remote", "set-url", "origin", remote])
+    subprocess_run(["git", "-C", f"{full_repo}", "restore", "--source=HEAD", ":/"])
 
 
 @handle_errors
 def clone_repo(model_meta: TModelResponse):
     """Clone repo, make sure name matches the json response"""
-    github_repo = model_meta["github"]
     name = model_meta["name"]
     # github_branch = model_meta["github_branch"]
     # bare_repo_path = repo_dir / name
     # do a shallow clone instead of a bare clone
     # restoring and dealing with lfs is not a concern for our PTM
-    args = ["git", "clone", "--depth=1", github_repo, f"{name}"]
-    # bare_to_full(model_meta, repos_dir / f"{name}.git")
+    args = [
+        "git",
+        "clone",
+        "--bare",
+        model_meta["github"],
+        bare_repo_dir / f"{name}.git",
+    ]
+
     # skip cloning repos?
     if not environ.get("MHTORRENT_SKIP_CLONE"):
         subprocess_run(args)
-    repo_root = repos_dir / name
+        bare_to_full(model_meta, bare_repo_dir / f"{name}.git")
+    repo_root = full_repo_dir / name
     data = loads((repo_root / "init/init.json").read_text())
     if data.get("external_contrib_files"):
         for external_files in data["external_contrib_files"]:
@@ -106,12 +126,15 @@ def clone_repo(model_meta: TModelResponse):
                 # pylint: disable=broad-except
                 except Exception as _:
                     print(f"Failed to download {src}. Skipping {name}")
-    config = loads((repos_dir / name / "contrib_src/model/config.json").read_text())
+    config = loads((repo_root / "contrib_src/model/config.json").read_text())
     model_metadata_dir = safe_dir(model_metadata_root / name)
     mh_metadata_path = model_metadata_dir / "modelhub.json"
-    sha = subprocess_run(["git", "-C", name, "rev-parse", "HEAD"]).stdout.decode()
+    sha = subprocess_run(["git", "-C", repo_root, "rev-parse", "HEAD"]).stdout.decode()
     model = Model(
-        config, mh_metadata_path.relative_to(model_metadata_dir), github_repo, sha
+        config,
+        mh_metadata_path.relative_to(model_metadata_dir),
+        model_meta["github"],
+        sha,
     )
     (model_metadata_dir / "model.json").write_text(dumps(model.as_json))
     mh_metadata_path.write_text(dumps(config))
@@ -137,19 +160,19 @@ def create_model_repos():
         models = loads(models_file.read_text())
     else:
         models = get_overview()
-    chdir(repos_dir)
+
     # clone the models in a threadpool
     # workers could be configurable but 5 seems to be able to finish the job quickly
     exc = ThreadPoolExecutor(max_workers=5)
     for model_meta in models:
         exc.submit(clone_repo, model_meta)
 
-    chdir(curr)
-
 
 if __name__ == "__main__":
     curr = Path()
     repos_dir = safe_dir("../repos")
     json_dir = safe_dir("../json")
+    full_repo_dir = safe_dir(repos_dir / "full")
+    bare_repo_dir = safe_dir(repos_dir / "bare")
     model_metadata_root = safe_dir(json_dir / "models")
     create_model_repos()

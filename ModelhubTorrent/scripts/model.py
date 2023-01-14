@@ -43,7 +43,7 @@ class Model:
             "ModelName": self.config["meta"]["name"],
             "ModelOwner": self.config["publication"]["authors"],
             "ModelOwnerURL": self.config["publication"]["google_scholar"],
-            "ModelPaperDOI": self.config["publication"]["url"],
+            "ModelPaperDOI": "",
             "ModelTask": self.config["meta"]["task"],
             "ModelURL": self.url,
         }
