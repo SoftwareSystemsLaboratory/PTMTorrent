@@ -86,10 +86,6 @@ def bare_to_full(model_metadata: TModelResponse, bare_repo_path: Path):
 def clone_repo(model_meta: TModelResponse):
     """Clone repo, make sure name matches the json response"""
     name = model_meta["name"]
-    # github_branch = model_meta["github_branch"]
-    # bare_repo_path = repo_dir / name
-    # do a shallow clone instead of a bare clone
-    # restoring and dealing with lfs is not a concern for our PTM
     args = [
         "git",
         "clone",
@@ -138,9 +134,6 @@ def clone_repo(model_meta: TModelResponse):
     )
     (model_metadata_dir / "model.json").write_text(dumps(model.as_json))
     mh_metadata_path.write_text(dumps(config))
-
-    # todo: add if needed
-    # subprocess.run(["git", "checkout", github_branch])
 
 
 def safe_dir(where: str):
