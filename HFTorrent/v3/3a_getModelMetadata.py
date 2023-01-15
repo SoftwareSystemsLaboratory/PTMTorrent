@@ -9,7 +9,7 @@ from warnings import filterwarnings
 
 import pandas
 from huggingface_hub.hf_api import ModelInfo, list_models
-from pandas import DataFrame
+from pandas import DataFrame, Series
 from progress.bar import Bar
 from ptmSchema import ModelHub, PTMTorrent
 
@@ -49,24 +49,52 @@ def getModelList() -> list:
     return modelList
 
 
+def matchInArray(regex: str, array: list) -> list:
+    data: list = []
+    pattern: Pattern = re.compile(regex)
+
+    item: str
+    for item in array:
+        match: Match = pattern.match(item)
+        if match:
+            data.append(match.string)
+
+    return data
+
+
 def extractToSchema(df: DataFrame, metadataFilepath: PurePath) -> List[dict]:
+    modelArchitecture: str
+    author: str
+    name: str
+
     data: List[dict] = []
 
     with Bar("Extracting data into JSON Schema compatible JSON...", max=len(df)) as bar:
         idx: int
         for idx in range(len(df)):
-            authorName: str = df.loc[idx, "modelId"].split("/")
+            dataSeries: Series = df.loc[idx]
+            authorName: str = dataSeries["modelId"].split("/")
+
             try:
-                author: str = authorName[0]
-                name: str = authorName[1]
+                author = authorName[0]
+                name = authorName[1]
             except IndexError:
-                author: str = "Hugging Face implementation"
-                name: str = authorName[0]
+                author = "Hugging Face implementation"
+                name = authorName[0]
+
+            try:
+                modelArchitecture = dataSeries["config"]["model_type"]
+            except TypeError:
+                modelArchitecture = ""
+            except KeyError:
+                modelArchitecture = ""
+
+            tags: list = dataSeries["tags"]
 
             id: int = idx
             mh: ModelHub = ModelHub(
                 metadata_file_path=metadataFilepath.__str__(),
-                metadata_object_id=df.loc[idx, "_id"],
+                metadata_object_id=dataSeries["_id"],
                 model_hub_name="Hugging Face",
                 model_hub_url="https://huggingface.co",
             )
@@ -75,10 +103,10 @@ def extractToSchema(df: DataFrame, metadataFilepath: PurePath) -> List[dict]:
             ModelURL: str = f"https://huggingface.co/{authorName}"
             ModelOwnerURL: str = f"https://huggingface.co/{author}"
             Datasets = None
-            ModelPaperDOIs: List[Any] = []
-            LatestGitCommitSHA: str = df.loc[idx, "sha"]
-            ModelTask: str = df.loc[idx, "pipeline_tag"]
-            ModelArchitecture: str = ""
+            ModelPaperDOIs: List[Any] = matchInArray(regex=doiRegex, array=tags)
+            LatestGitCommitSHA: str = dataSeries["sha"]
+            ModelTask: str = dataSeries["pipeline_tag"]
+            ModelArchitecture: str = modelArchitecture
 
             ptm: PTMTorrent = PTMTorrent(
                 datasets=Datasets,
@@ -125,7 +153,7 @@ def main() -> None:
         fp.close()
 
     print(f"Saving Hugging Face metadata data to {metadataFilepath}")
-    modelsDF.to_json(path_or_buf=metadataFilepath, indent=4)
+    modelsDF.T.to_json(path_or_buf=metadataFilepath, indent=4)
 
 
 if __name__ == "__main__":
