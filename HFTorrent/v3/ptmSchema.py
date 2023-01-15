@@ -78,7 +78,7 @@ class PTMTorrent:
     model_url: str
     datasets: Optional[List[Any]] = None
     model_architecture: Optional[str] = None
-    model_paper_do_is: Optional[List[Any]] = None
+    model_paper_dois: Optional[List[Any]] = None
     model_task: Optional[str] = None
 
     @staticmethod
@@ -97,7 +97,7 @@ class PTMTorrent:
         model_architecture = from_union(
             [from_str, from_none], obj.get("ModelArchitecture")
         )
-        model_paper_do_is = from_union(
+        model_paper_dois = from_union(
             [lambda x: from_list(lambda x: x, x), from_none], obj.get("ModelPaperDOIs")
         )
         model_task = from_union([from_str, from_none], obj.get("ModelTask"))
@@ -111,7 +111,7 @@ class PTMTorrent:
             model_url,
             datasets,
             model_architecture,
-            model_paper_do_is,
+            model_paper_dois,
             model_task,
         )
 
@@ -132,9 +132,9 @@ class PTMTorrent:
             result["ModelArchitecture"] = from_union(
                 [from_str, from_none], self.model_architecture
             )
-        if self.model_paper_do_is is not None:
+        if self.model_paper_dois is not None:
             result["ModelPaperDOIs"] = from_union(
-                [lambda x: from_list(lambda x: x, x), from_none], self.model_paper_do_is
+                [lambda x: from_list(lambda x: x, x), from_none], self.model_paper_dois
             )
         if self.model_task is not None:
             result["ModelTask"] = from_union([from_str, from_none], self.model_task)

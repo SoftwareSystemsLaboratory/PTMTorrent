@@ -1,7 +1,10 @@
+import re
 from argparse import ArgumentParser, Namespace
 from json import dump, dumps
+from pathlib import PurePath
+from re import Match, Pattern
 from time import time
-from typing import List
+from typing import Any, List
 from warnings import filterwarnings
 
 import pandas
@@ -12,6 +15,9 @@ from ptmSchema import ModelHub, PTMTorrent
 
 # Hides huggingface_hub list_model warning
 filterwarnings(action="ignore")
+
+doiRegex: str = "^.*(arxiv|doi).*$"
+datasetRegex: str = "^.*(dataset).*$"
 
 
 def getArgs() -> Namespace:
@@ -43,7 +49,7 @@ def getModelList() -> list:
     return modelList
 
 
-def extractToSchema(df: DataFrame, metadataFilepath: str) -> List[dict]:
+def extractToSchema(df: DataFrame, metadataFilepath: PurePath) -> List[dict]:
     data: List[dict] = []
 
     with Bar("Extracting data into JSON Schema compatible JSON...", max=len(df)) as bar:
@@ -59,7 +65,7 @@ def extractToSchema(df: DataFrame, metadataFilepath: str) -> List[dict]:
 
             id: int = idx
             mh: ModelHub = ModelHub(
-                metadata_file_path=metadataFilepath,
+                metadata_file_path=metadataFilepath.__str__(),
                 metadata_object_id=df.loc[idx, "_id"],
                 model_hub_name="Hugging Face",
                 model_hub_url="https://huggingface.co",
@@ -69,7 +75,7 @@ def extractToSchema(df: DataFrame, metadataFilepath: str) -> List[dict]:
             ModelURL: str = f"https://huggingface.co/{authorName}"
             ModelOwnerURL: str = f"https://huggingface.co/{author}"
             Datasets = None
-            ModelPaperDOI: str = ""
+            ModelPaperDOIs: List[Any] = []
             LatestGitCommitSHA: str = df.loc[idx, "sha"]
             ModelTask: str = df.loc[idx, "pipeline_tag"]
             ModelArchitecture: str = ""
@@ -83,7 +89,7 @@ def extractToSchema(df: DataFrame, metadataFilepath: str) -> List[dict]:
                 model_name=ModelName,
                 model_owner=ModelOwner,
                 model_owner_url=ModelOwnerURL,
-                model_paper_doi=ModelPaperDOI,
+                model_paper_dois=ModelPaperDOIs,
                 model_task=ModelTask,
                 model_url=ModelURL,
             )
@@ -103,16 +109,13 @@ def main() -> None:
     else:
         timestamp = args.timestamp
 
-    metadataFilepath: str = f"./huggingface_metadata_{timestamp}.json"
-    ptmTorrentFilepath: str = f"huggingface_ptmtorrent_{timestamp}.json"
+    metadataFilepath: PurePath = PurePath(f"./huggingface_metadata_{timestamp}.json")
+    ptmTorrentFilepath: PurePath = PurePath(f"huggingface_ptmtorrent_{timestamp}.json")
 
     modelsJSON: list = getModelList()
 
     print("Inserting JSON into DataFrame...")
     modelsDF: DataFrame = pandas.read_json(dumps(modelsJSON))
-
-    print(f"Saving Hugging Face metadata data to {metadataFilepath}")
-    modelsDF.to_json(path_or_buf=metadataFilepath, indent=4)
 
     ptms: List[dict] = extractToSchema(df=modelsDF, metadataFilepath=metadataFilepath)
 
@@ -120,6 +123,9 @@ def main() -> None:
     with open(ptmTorrentFilepath, "w") as fp:
         dump(ptms, fp)
         fp.close()
+
+    print(f"Saving Hugging Face metadata data to {metadataFilepath}")
+    modelsDF.to_json(path_or_buf=metadataFilepath, indent=4)
 
 
 if __name__ == "__main__":
