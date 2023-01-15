@@ -1,3 +1,5 @@
+# Code generated from https://app.quicktype.io/#l=schema
+
 from dataclasses import dataclass
 from typing import Any, Callable, List, Optional, Type, TypeVar, cast
 
