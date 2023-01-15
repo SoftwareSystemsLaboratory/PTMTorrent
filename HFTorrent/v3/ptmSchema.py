@@ -1,4 +1,3 @@
-# Code generated from https://app.quicktype.io/#l=schema
 from dataclasses import dataclass
 from typing import Any, Callable, List, Optional, Type, TypeVar, cast
 
@@ -77,7 +76,7 @@ class PTMTorrent:
     model_url: str
     datasets: Optional[List[Any]] = None
     model_architecture: Optional[str] = None
-    model_paper_doi: Optional[str] = None
+    model_paper_do_is: Optional[List[Any]] = None
     model_task: Optional[str] = None
 
     @staticmethod
@@ -96,7 +95,9 @@ class PTMTorrent:
         model_architecture = from_union(
             [from_str, from_none], obj.get("ModelArchitecture")
         )
-        model_paper_doi = from_union([from_str, from_none], obj.get("ModelPaperDOI"))
+        model_paper_do_is = from_union(
+            [lambda x: from_list(lambda x: x, x), from_none], obj.get("ModelPaperDOIs")
+        )
         model_task = from_union([from_str, from_none], obj.get("ModelTask"))
         return PTMTorrent(
             id,
@@ -108,7 +109,7 @@ class PTMTorrent:
             model_url,
             datasets,
             model_architecture,
-            model_paper_doi,
+            model_paper_do_is,
             model_task,
         )
 
@@ -129,9 +130,9 @@ class PTMTorrent:
             result["ModelArchitecture"] = from_union(
                 [from_str, from_none], self.model_architecture
             )
-        if self.model_paper_doi is not None:
-            result["ModelPaperDOI"] = from_union(
-                [from_str, from_none], self.model_paper_doi
+        if self.model_paper_do_is is not None:
+            result["ModelPaperDOIs"] = from_union(
+                [lambda x: from_list(lambda x: x, x), from_none], self.model_paper_do_is
             )
         if self.model_task is not None:
             result["ModelTask"] = from_union([from_str, from_none], self.model_task)

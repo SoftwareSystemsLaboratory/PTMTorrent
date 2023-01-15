@@ -70,8 +70,12 @@
         }
       }
     },
-    "ModelPaperDOI": {
-      "type": "string"
+    "ModelPaperDOIs": {
+        "type": "array",
+        "contains": {
+            "type": "string",
+            "uniqueItems": true
+        }
     },
     "LatestGitCommitSHA": {
       "type": "string"
