@@ -8,7 +8,7 @@ import pandas
 from huggingface_hub.hf_api import ModelInfo, list_models
 from pandas import DataFrame
 from progress.bar import Bar
-from ptmSchema import PTMTorrent
+from ptmSchema import ModelHub, PTMTorrent
 
 # Hides huggingface_hub list_model warning
 filterwarnings(action="ignore")
@@ -43,10 +43,10 @@ def getModelList() -> list:
     return modelList
 
 
-def extractToSchema(df: DataFrame) -> List[dict]:
+def extractToSchema(df: DataFrame, metadataFilepath: str) -> List[dict]:
     data: List[dict] = []
 
-    with Bar("iterating...", max=len(df)) as bar:
+    with Bar("Extracting data into JSON Schema compatible JSON...", max=len(df)) as bar:
         idx: int
         for idx in range(len(df)):
             authorName: str = df.loc[idx, "modelId"].split("/")
@@ -54,11 +54,16 @@ def extractToSchema(df: DataFrame) -> List[dict]:
                 author: str = authorName[0]
                 name: str = authorName[1]
             except IndexError:
-                author: str = None
+                author: str = "Hugging Face implementation"
                 name: str = authorName[0]
 
-            id: float = float(idx)
-            ModelHub = None
+            id: int = idx
+            mh: ModelHub = ModelHub(
+                metadata_file_path=metadataFilepath,
+                metadata_object_id=df.loc[idx, "_id"],
+                model_hub_name="Hugging Face",
+                model_hub_url="https://huggingface.co",
+            )
             ModelName: str = name
             ModelOwner: str = author
             ModelURL: str = f"https://huggingface.co/{authorName}"
@@ -74,7 +79,7 @@ def extractToSchema(df: DataFrame) -> List[dict]:
                 id=id,
                 latest_git_commit_sha=LatestGitCommitSHA,
                 model_architecture=ModelArchitecture,
-                model_hub=ModelHub,
+                model_hub=mh,
                 model_name=ModelName,
                 model_owner=ModelOwner,
                 model_owner_url=ModelOwnerURL,
@@ -98,14 +103,23 @@ def main() -> None:
     else:
         timestamp = args.timestamp
 
+    metadataFilepath: str = f"./huggingface_metadata_{timestamp}.json"
+    ptmTorrentFilepath: str = f"huggingface_ptmtorrent_{timestamp}.json"
+
     modelsJSON: list = getModelList()
 
+    print("Inserting JSON into DataFrame...")
     modelsDF: DataFrame = pandas.read_json(dumps(modelsJSON))
 
-    ptms: List[dict] = extractToSchema(df=modelsDF)
+    print(f"Saving Hugging Face metadata data to {metadataFilepath}")
+    modelsDF.to_json(path_or_buf=metadataFilepath, indent=4)
 
-    with open(f"temp_{timestamp}.json", "w") as fp:
+    ptms: List[dict] = extractToSchema(df=modelsDF, metadataFilepath=metadataFilepath)
+
+    print(f"Saving Hugging Face PTMTorrent data to {ptmTorrentFilepath}")
+    with open(ptmTorrentFilepath, "w") as fp:
         dump(ptms, fp)
+        fp.close()
 
 
 if __name__ == "__main__":
