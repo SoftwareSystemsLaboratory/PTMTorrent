@@ -1,42 +1,95 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {"type": "number"},
-        "ModelHub": {
-            "type": "object",
-            "properties": {
-                "ModelHubName": {"type": "string"},
-                "MetadataFilePath": {"type": "string"},
-                "MetadataObjectID": {"type": "number"}
-            }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "ModelHub": {
+      "type": "object",
+      "properties": {
+        "ModelHubName": {
+          "type": "string"
         },
-        "ModelName": {"type": "string"},
-        "ModelOwner": {"type": "string"},
-        "ModelURL": {"type": "string"},
-        "ModelOwnerURL": {"type": "string"},
-        "Datasets": {
+        "ModelHubURL": {
+          "type": "string"
+        },
+        "MetadataFilePath": {
+          "type": "string"
+        },
+        "MetadataObjectID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ModelHubName",
+        "ModelHubURL",
+        "MetadataFilePath",
+        "MetadataObjectID"
+      ]
+    },
+    "ModelName": {
+      "type": "string"
+    },
+    "ModelOwner": {
+      "type": "string"
+    },
+    "ModelURL": {
+      "type": "string"
+    },
+    "ModelOwnerURL": {
+      "type": "string"
+    },
+    "Datasets": {
+      "type": "array",
+      "contains": {
+        "type": "object",
+        "properties": {
+          "DatasetName": {
+            "type": "string"
+          },
+          "DatasetOwner": {
+            "type": "string"
+          },
+          "DatasetURL": {
+            "type": "string"
+          },
+          "DatasetOwnerURL": {
+            "type": "string"
+          },
+          "DatasetPaperDOI": {
+            "type": "string"
+          },
+          "DatasetUsages": {
             "type": "array",
             "contains": {
-                "type": "object",
-                "properties": {
-                    "DatasetName": {"type": "string"},
-                    "DatasetOwner": {"type": "string"},
-                    "DatasetURL": {"type": "string"},
-                    "DatasetOwnerURL": {"type": "string"},
-                    "DatasetPaperDOI": {"type": "string"},
-                    "DatasetUsages": {
-                        "type": "array",
-                        "contains": {
-                            "type": "string",
-                            "uniqueItems": true
-                        }
-                    }
-                }
+              "type": "string",
+              "uniqueItems": true
             }
-        },
-        "ModelPaperDOI": {"type": "string"},
-        "LatestGitCommitSHA": {"type": "string"},
-        "ModelTask": {"type": "string"},
-        "ModelArchitecture": {"type": "string"}
+          }
+        }
+      }
+    },
+    "ModelPaperDOI": {
+      "type": "string"
+    },
+    "LatestGitCommitSHA": {
+      "type": "string"
+    },
+    "ModelTask": {
+      "type": "string"
+    },
+    "ModelArchitecture": {
+      "type": "string"
     }
+  },
+  "required": [
+    "id",
+    "ModelHub",
+    "ModelName",
+    "ModelOwner",
+    "ModelURL",
+    "ModelOwnerURL",
+    "LatestGitCommitSHA"
+  ]
 }
