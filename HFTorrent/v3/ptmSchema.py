@@ -41,6 +41,54 @@ def to_class(c: Type[T], x: Any) -> dict:
 
 
 @dataclass
+class Dataset:
+    dataset_name: str
+    dataset_owner: str
+    dataset_owner_url: str
+    dataset_url: str
+    dataset_paper_doi: Optional[str] = None
+    dataset_usages: Optional[List[Any]] = None
+
+    @staticmethod
+    def from_dict(obj: Any) -> "Dataset":
+        assert isinstance(obj, dict)
+        dataset_name = from_str(obj.get("DatasetName"))
+        dataset_owner = from_str(obj.get("DatasetOwner"))
+        dataset_owner_url = from_str(obj.get("DatasetOwnerURL"))
+        dataset_url = from_str(obj.get("DatasetURL"))
+        dataset_paper_doi = from_union(
+            [from_str, from_none], obj.get("DatasetPaperDOI")
+        )
+        dataset_usages = from_union(
+            [lambda x: from_list(lambda x: x, x), from_none], obj.get("DatasetUsages")
+        )
+        return Dataset(
+            dataset_name,
+            dataset_owner,
+            dataset_owner_url,
+            dataset_url,
+            dataset_paper_doi,
+            dataset_usages,
+        )
+
+    def to_dict(self) -> dict:
+        result: dict = {}
+        result["DatasetName"] = from_str(self.dataset_name)
+        result["DatasetOwner"] = from_str(self.dataset_owner)
+        result["DatasetOwnerURL"] = from_str(self.dataset_owner_url)
+        result["DatasetURL"] = from_str(self.dataset_url)
+        if self.dataset_paper_doi is not None:
+            result["DatasetPaperDOI"] = from_union(
+                [from_str, from_none], self.dataset_paper_doi
+            )
+        if self.dataset_usages is not None:
+            result["DatasetUsages"] = from_union(
+                [lambda x: from_list(lambda x: x, x), from_none], self.dataset_usages
+            )
+        return result
+
+
+@dataclass
 class ModelHub:
     metadata_file_path: str
     metadata_object_id: str
@@ -76,7 +124,7 @@ class PTMTorrent:
     model_owner: str
     model_owner_url: str
     model_url: str
-    datasets: Optional[List[Any]] = None
+    datasets: Optional[List[Dataset]] = None
     model_architecture: Optional[str] = None
     model_paper_dois: Optional[List[Any]] = None
     model_task: Optional[str] = None
@@ -92,7 +140,7 @@ class PTMTorrent:
         model_owner_url = from_str(obj.get("ModelOwnerURL"))
         model_url = from_str(obj.get("ModelURL"))
         datasets = from_union(
-            [lambda x: from_list(lambda x: x, x), from_none], obj.get("Datasets")
+            [lambda x: from_list(lambda x: x, x), from_none], obj.get("Dataset")
         )
         model_architecture = from_union(
             [from_str, from_none], obj.get("ModelArchitecture")
@@ -125,7 +173,7 @@ class PTMTorrent:
         result["ModelOwnerURL"] = from_str(self.model_owner_url)
         result["ModelURL"] = from_str(self.model_url)
         if self.datasets is not None:
-            result["Datasets"] = from_union(
+            result["Dataset"] = from_union(
                 [lambda x: from_list(lambda x: x, x), from_none], self.datasets
             )
         if self.model_architecture is not None:

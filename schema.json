@@ -67,7 +67,8 @@
               "uniqueItems": true
             }
           }
-        }
+        },
+        "required": ["DatasetName", "DatasetOwner", "DatasetURL", "DatasetOwnerURL"]
       }
     },
     "ModelPaperDOIs": {
