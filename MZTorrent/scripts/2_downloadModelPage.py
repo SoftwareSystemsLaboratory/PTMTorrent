@@ -130,7 +130,7 @@ def getModelPages(resume: bool = False) -> None:
                 continue
         logger.info(f"page count: {pageCount}")
         saveList(model_names, "./model_names")
-        saveList(model_names, "./model_names_backup")
+        # saveList(model_names, "./model_names_backup")
     else:
         logger.info(f"Loading from existing model_names...")
         model_names = loadList("./model_names")

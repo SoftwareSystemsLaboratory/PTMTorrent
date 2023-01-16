@@ -100,7 +100,7 @@ def getMetadata(model_link: str, id: int, filepath: str) -> dict:
     data["ModelOwnerURL"] = modelOwnerURL
     data["Datasets"] = None
     data["ModelPaperDOI"] = None
-    data["LatestGitCommitSHA"] = None
+    data["LatestGitCommitSHA"] = LatestGitCommitSHA
     data["ModelTask"] = category
     data["ModelArchitecture"] = None
     # logger.debug(data)
