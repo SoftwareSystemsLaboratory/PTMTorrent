@@ -11,7 +11,7 @@ import pandas
 from huggingface_hub.hf_api import ModelInfo, list_models
 from pandas import DataFrame, Series
 from progress.bar import Bar
-from ptmSchema import ModelHub, PTMTorrent
+from ptmSchema import Dataset, ModelHub, PTMTorrent
 
 # Hides huggingface_hub list_model warning
 filterwarnings(action="ignore")
@@ -47,6 +47,21 @@ def getModelList() -> list:
             modelList.append(modelDict)
             bar.next()
     return modelList
+
+
+# def getDatasetList() -> list:
+#     datasetList: list = []
+
+#     print("Getting all datasets hosted on Hugging Face...")
+#     resp: List[DatasetInfo] = list_datasets(full=True, cardData=True)
+
+#     with Bar("Converting response to JSON...", max=len(resp)) as bar:
+#         dataset: DatasetInfo
+#         for dataset in list(iter(resp)):
+#             datasetDict: dict = dataset.__dict__
+#             datasetList.append(datasetDict)
+#             bar.next()
+#     return datasetList
 
 
 def matchInArray(regex: str, array: list) -> list:
