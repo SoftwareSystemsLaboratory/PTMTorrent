@@ -11,7 +11,7 @@ import pandas
 from huggingface_hub.hf_api import ModelInfo, list_models
 from pandas import DataFrame, Series
 from progress.bar import Bar
-from ptmSchema import Dataset, ModelHub, PTMTorrent
+from ptmSchema import ModelHub, PTMTorrent
 
 # Hides huggingface_hub list_model warning
 filterwarnings(action="ignore")
