@@ -1,0 +1,43 @@
+{
+    "title": "PHTorrent",
+    "description": "An array of PyTorch Hub PTMs",
+    "type": "array",
+    "items": {
+        "title": "PyTorch Hub PTM",
+        "description": "A single PTM from the PyTorch Hub",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier for the model",
+                "type": "integer"
+            },
+            "ModelName": {
+                "description": "Name of the model",
+                "type": "string"
+            },
+            "Author": {
+                "description": "Author of the model",
+                "type": "string"
+            },
+            "Summary": {
+                "description": "Short subtitle for the model",
+                "type": "string"
+            },
+            "GitHubLink":{
+                "description": "Raw link to the model's GitHub page",
+                "type": "string"
+            },
+            "GitHubRepository":{
+                "description": "Link to the GitHub repository. May be the same as gitHubLink in some cases",
+                "type": "string"
+            },
+            "LocalRepository":{
+                "description": "Location for the locally stored repository",
+                "type": "string"
+            }
+        },
+        "required": ["id", "ModelName", "Author", "Summary", "GitHubLink", "GitHubRepository", "LocalRepository"]
+    },
+    "minItems": 1,
+    "uniqueItems": true
+}
