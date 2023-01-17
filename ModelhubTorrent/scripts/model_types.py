@@ -1,7 +1,7 @@
 """
 types for modelhub config and schema as a python type
 """
-from typing import TypedDict, Dict, Literal, List
+from typing import Dict, List, Literal, TypedDict
 
 
 class TModelHubMeta(TypedDict):

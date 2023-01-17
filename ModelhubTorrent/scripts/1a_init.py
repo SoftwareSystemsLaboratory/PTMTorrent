@@ -3,15 +3,15 @@ Initialize by downloading all repos from modelhub.ai
 """
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
+from json import dumps, loads
 from os import environ
 from pathlib import Path
 from typing import Dict, List, Literal
-from json import loads, dumps
+
 import requests
 from model import Model
-from util import handle_errors
-
 from model_types import TModelResponse
+from util import handle_errors
 
 curr: Path
 repos_dir: Path

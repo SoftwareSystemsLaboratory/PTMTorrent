@@ -1,6 +1,7 @@
-import json
 import csv
 import glob
+import json
+
 import mistletoe
 from mistletoe.ast_renderer import ASTRenderer
 
@@ -161,7 +162,9 @@ def parse_metadata_manual():
         len(glob.glob("./onnx_metadata/*.json")),
     )
     with open("./manual_meta.csv", "r") as f:
-        reader = csv.DictReader(f,)
+        reader = csv.DictReader(
+            f,
+        )
         models = []
         for model in reader:
             models.append(model)

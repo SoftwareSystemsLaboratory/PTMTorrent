@@ -9,12 +9,12 @@ from pathlib import PurePath
 
 
 def cloneGitBare(linksFileName: str = "./git_links") -> None:
-    '''
+    """
     Clone the bare repo from the given Github link.
-    '''
+    """
     git_links = loadList(linksFileName)
     for git_link in git_links:
-        gitFolderName = '/'.join(git_links[0].split('/')[-2:])
+        gitFolderName = "/".join(git_links[0].split("/")[-2:])
         projectDirectory: PurePath = f"../repos/{gitFolderName}"
         command: list = ["git", "clone", "--bare", git_link, projectDirectory]
         subprocess.run(command)
@@ -23,9 +23,9 @@ def cloneGitBare(linksFileName: str = "./git_links") -> None:
 
 
 def saveList(List: list, filename: str) -> PurePath:
-    '''
+    """
     Save a list
-    '''
+    """
     ListFolderPath: PurePath = PurePath("./")
     ListFilePath: PurePath = PurePath(os.path.join(ListFolderPath, filename))
 
@@ -35,9 +35,9 @@ def saveList(List: list, filename: str) -> PurePath:
 
 
 def loadList(filename: str) -> list:
-    '''
+    """
     Load a saved list
-    '''
+    """
     ListFolderPath: PurePath = PurePath("./")
     ListFilePath: PurePath = PurePath(os.path.join(ListFolderPath, filename))
 

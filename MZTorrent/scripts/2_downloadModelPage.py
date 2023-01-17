@@ -3,25 +3,23 @@
 # Download all of the HTML files and get github links for each model
 
 import os
+import pickle
 import time
 from pathlib import PurePath
 
-from selenium import webdriver
 from bs4 import BeautifulSoup
-
-
-import pickle
 from loguru import logger
+from selenium import webdriver
 
 
 def getHTMLRoot(url: str = "https://modelzoo.co/") -> BeautifulSoup:
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_experimental_option("excludeSwitches", ["enable-logging"])
     driver = webdriver.Chrome(options=options)
     driver.get(url)
     time.sleep(20)  # wait 20 second for <div id="root"> to be fully loaded
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    soup = BeautifulSoup(driver.page_source, "html.parser")
     driver.quit()
     # root = soup.find(id='root')
     return soup
@@ -29,8 +27,7 @@ def getHTMLRoot(url: str = "https://modelzoo.co/") -> BeautifulSoup:
 
 def saveContent(content, filename: str) -> PurePath:
     contentFolderPath: PurePath = PurePath("./")
-    contentFilePath: PurePath = PurePath(
-        os.path.join(contentFolderPath, filename))
+    contentFilePath: PurePath = PurePath(os.path.join(contentFolderPath, filename))
 
     with open(contentFilePath, "w") as contentFile:
         contentFile.write(str(content))
@@ -58,11 +55,12 @@ def loadList(filename: str) -> list:
 
 
 def getGitLinks(soup: BeautifulSoup) -> str:
-    '''
+    """
     Get the Github link from a specific model page.
-    '''
+    """
     links = soup.find_all(
-        "a", {"target": "_blank", "class": "btn btn-primary btn-get-model"})
+        "a", {"target": "_blank", "class": "btn btn-primary btn-get-model"}
+    )
     for link in links:
         href = link.get("href")
         # print(href)
@@ -70,7 +68,7 @@ def getGitLinks(soup: BeautifulSoup) -> str:
             if "https://github.com/" in href:
                 if len(href.split("/")) > 5:
                     git_link = href.split("/")[:5]
-                    href = '/'.join(git_link)
+                    href = "/".join(git_link)
         except:
             continue
     return href
@@ -87,7 +85,8 @@ def getGitLinks(model_name: str, modelLinks: list, git_links: list) -> list:
         logger.debug(f"Warning: saveContent failed for {model_link}!")
     # model_cnt += 1
     links = soup.find_all(
-        "a", {"target": "_blank", "class": "btn btn-primary btn-get-model"})
+        "a", {"target": "_blank", "class": "btn btn-primary btn-get-model"}
+    )
     for link in links:
         href = link.get("href")
         # print(href)
@@ -95,7 +94,7 @@ def getGitLinks(model_name: str, modelLinks: list, git_links: list) -> list:
             if "https://github.com/" in href:
                 if len(href.split("/")) > 5:
                     git_link = href.split("/")[:5]
-                    href = '/'.join(git_link)
+                    href = "/".join(git_link)
                 if href not in git_links:
                     git_links.append(href)
                     logger.info(f"Get the git link: {href}")
