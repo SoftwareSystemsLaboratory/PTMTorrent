@@ -8,6 +8,7 @@ packages = [{include = "ptm_torrent"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.28.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.12.0"
