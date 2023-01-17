@@ -167,3 +167,5 @@ HFTorrent/scripts/env/*
 *.csv
 HFTorrent/repos/*
 !schema.json
+*/json
+*/repos
