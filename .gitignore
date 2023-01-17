@@ -169,3 +169,4 @@ HFTorrent/repos/*
 !schema.json
 */json
 */repos
+!.markdownlint.json
