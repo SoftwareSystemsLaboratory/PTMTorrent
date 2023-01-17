@@ -5,5 +5,3 @@
 ./2_downloadModelPage.bash
 ./3_getModelMetadata.bash
 ./4_gitCloneModels.bash
-
-

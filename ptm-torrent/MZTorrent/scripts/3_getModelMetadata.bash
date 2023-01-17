@@ -5,4 +5,3 @@
 
 
 ./env/bin/python 3_getModelMetadata.py
-

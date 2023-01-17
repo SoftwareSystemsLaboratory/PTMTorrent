@@ -15,4 +15,3 @@ python3 -m venv env
 echo "Creating directories..."
 mkdir ../{html,json,repos}
 mkdir ../html/modelPages
-
