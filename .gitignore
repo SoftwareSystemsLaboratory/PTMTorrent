@@ -171,3 +171,4 @@ HFTorrent/repos/*
 !.markdownlint.json
 *.txt
 !requirements.txt
+*/repos
