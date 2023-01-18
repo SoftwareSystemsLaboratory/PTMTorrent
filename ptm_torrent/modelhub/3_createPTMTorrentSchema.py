@@ -7,8 +7,8 @@ from pandas import DataFrame, Series
 from progress.bar import Bar
 
 from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
-                                   jsonMetadataPath, rootGitClonePath,
-                                   rootJSONPath)
+                                  jsonMetadataPath, rootGitClonePath,
+                                  rootJSONPath)
 from ptm_torrent.utils.fileSystem import saveJSON, testForFile, testForPath
 from ptm_torrent.utils.git import getLatestGitCommit
 from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
