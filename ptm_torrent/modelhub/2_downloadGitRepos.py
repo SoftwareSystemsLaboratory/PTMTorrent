@@ -4,7 +4,7 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
-from ptm_torrent.MHTorrent import (expectedMHMetadataJSONFilePath,
+from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
                                    rootGitClonePath)
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
