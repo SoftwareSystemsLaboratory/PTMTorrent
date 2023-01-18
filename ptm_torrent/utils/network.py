@@ -11,9 +11,3 @@ def downloadJSON(url: str, headers: dict = {"User-Agent": "PTMTorrent"}) -> dict
         return resp.status_code
 
     return resp.json()
-
-
-def saveJSON(json: dict, filepath: PurePath = "data.json") -> bool:
-    with open(filepath, "w") as jsonFile:
-        dump(json, jsonFile, indent=4)
-        jsonFile.close()

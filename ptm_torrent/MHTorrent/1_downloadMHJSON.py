@@ -1,6 +1,7 @@
 from pathlib import PurePath
 
-from ptm_torrent.utils.network import downloadJSON, saveJSON
+from ptm_torrent.utils.fileSystem import saveJSON
+from ptm_torrent.utils.network import downloadJSON
 
 
 def main() -> None:
