@@ -1,13 +1,21 @@
-from json import dump
-from pathlib import PurePath
-
 from requests import Response, get
 
+defaultHeaders: dict = {"User-Agent": "PTMTorrent"}
 
-def downloadJSON(url: str, headers: dict = {"User-Agent": "PTMTorrent"}) -> dict | int:
+
+def downloadJSON(url: str, headers: dict = defaultHeaders) -> dict | int:
     resp: Response = get(url, headers)
 
     if resp.status_code != 200:
         return resp.status_code
 
     return resp.json()
+
+
+def downloadHTML(url: str, headers: dict = defaultHeaders) -> str | int:
+    resp: Response = get(url, headers)
+
+    if resp.status_code != 200:
+        return resp.status_code
+
+    return resp.content.decode("UTF-8")

@@ -11,6 +11,7 @@ python = "^3.10"
 progress = "^1.6"
 requests = "^2.28.2"
 pandas = "^1.5.2"
+bs4 = "^0.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
