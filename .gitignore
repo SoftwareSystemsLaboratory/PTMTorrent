@@ -162,12 +162,12 @@ cython_debug/
 *.html
 *.json
 !*Schema.json
-*.txt
 HFTorrent/scripts/env/*
-!*/requirements.txt
 *.csv
 HFTorrent/repos/*
 !schema.json
 */json
 */repos
 !.markdownlint.json
+*.txt
+!requirements.txt

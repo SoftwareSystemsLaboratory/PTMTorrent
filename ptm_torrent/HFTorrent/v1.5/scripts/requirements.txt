@@ -1,0 +1,11 @@
+black
+bs4
+huggingface_hub
+isort
+jedi
+lxml
+pandas
+progress
+pylint
+requests
+wheel

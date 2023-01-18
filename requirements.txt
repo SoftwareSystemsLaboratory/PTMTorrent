@@ -1,0 +1,4 @@
+huggingface-hub
+pandas
+progress
+requests
