@@ -161,6 +161,7 @@ cython_debug/
 
 *.html
 *.json
+!*Schema.json
 *.txt
 HFTorrent/scripts/env/*
 !*/requirements.txt
