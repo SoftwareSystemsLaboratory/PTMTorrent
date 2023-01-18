@@ -1,19 +1,11 @@
-from os.path import isfile
 from pathlib import PurePath
 from typing import List
 
 from progress.bar import Bar
 from progress.spinner import Spinner
 
-from ptm_torrent.utils.fileSystem import readJSON
+from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
-
-
-def testForFile(path: PurePath) -> bool:
-    if isfile(path) == False:
-        print("ModelHub metadata not in the expected location")
-        return False
-    return True
 
 
 def readJSONData(json: dict) -> List[str]:

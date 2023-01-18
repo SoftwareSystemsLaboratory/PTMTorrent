@@ -1,6 +1,6 @@
 from json import dump, load
 from os import mkdir
-from os.path import isdir
+from os.path import isdir, isfile
 from pathlib import PurePath
 from typing import List
 
@@ -27,3 +27,7 @@ def readJSON(jsonFilePath: PurePath) -> dict:
         jsonFile.close()
 
     return jsonData
+
+
+def testForFile(path: PurePath) -> bool:
+    return isfile(path)
