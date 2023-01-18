@@ -5,7 +5,7 @@ from typing import List
 from urllib.parse import ParseResult, urlparse
 
 
-def cloneRepo(url: str, rootPath: PurePath) -> CompletedProcess:
+def cloneRepo(url: str, rootGitClonePath: PurePath) -> CompletedProcess:
     author: str
     repo: str
 
@@ -21,10 +21,7 @@ def cloneRepo(url: str, rootPath: PurePath) -> CompletedProcess:
         author = pathSplit[0]
         repo = pathSplit[1]
 
-    gitPath: PurePath = PurePath(f"{rootPath}/{author}/{repo}")
+    gitPath: PurePath = PurePath(f"{rootGitClonePath}/{author}/{repo}")
     gitCommand.extend([url, gitPath])
 
     return subprocess.run(args=gitCommand)
-
-
-cloneRepo("https://github.com/NicholasSynovic/setup", "repos")
