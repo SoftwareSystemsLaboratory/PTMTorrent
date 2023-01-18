@@ -4,6 +4,8 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
+from ptm_torrent.MHTorrent import (expectedMHMetadataJSONFilePath,
+                                   rootGitClonePath)
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
 
@@ -29,11 +31,6 @@ def cloneGitRepos(urls: List[str], rootGitClonePath: PurePath) -> None:
 
 
 def main() -> None | bool:
-    rootGitClonePath: PurePath = PurePath("repos")
-    expectedMHMetadataJSONFilePath: PurePath = PurePath(
-        "json/metadata/mh_metadata.json"
-    )
-
     if testForFile(path=expectedMHMetadataJSONFilePath) == False:
         return False
 
