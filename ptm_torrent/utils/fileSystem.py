@@ -9,13 +9,13 @@ from progress.spinner import Spinner
 
 def createPath(path: PurePath) -> bool:
     try:
-        mkdir(path=path)
+        mkdir(path)
     except FileExistsError:
         pass
-    return isdir(s=path)
+    return isdir(path)
 
 
-def saveJSON(json: dict, filepath: PurePath = "data.json") -> bool:
+def saveJSON(json: List[dict], filepath: PurePath = "data.json") -> bool:
     with open(filepath, "w") as jsonFile:
         dump(json, jsonFile, indent=4)
         jsonFile.close()
@@ -31,3 +31,7 @@ def readJSON(jsonFilePath: PurePath) -> dict:
 
 def testForFile(path: PurePath) -> bool:
     return isfile(path)
+
+
+def testForPath(path: PurePath) -> bool:
+    return isdir(path)

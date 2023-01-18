@@ -172,3 +172,4 @@ HFTorrent/repos/*
 *.txt
 !requirements.txt
 */repos
+ptm_torrent/MHTorrent/repos
