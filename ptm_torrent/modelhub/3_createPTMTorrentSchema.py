@@ -6,7 +6,7 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.MHTorrent import (expectedMHMetadataJSONFilePath,
+from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
                                    jsonMetadataPath, rootGitClonePath,
                                    rootJSONPath)
 from ptm_torrent.utils.fileSystem import saveJSON, testForFile, testForPath
