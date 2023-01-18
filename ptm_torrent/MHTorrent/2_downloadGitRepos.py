@@ -1,5 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor
-from json import load
 from os.path import isfile
 from pathlib import PurePath
 from typing import List
@@ -7,6 +5,7 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
+from ptm_torrent.utils.fileSystem import readJSON
 from ptm_torrent.utils.git import cloneRepo
 
 
@@ -20,7 +19,7 @@ def testForFile(path: PurePath) -> bool:
 def readJSONData(json: dict) -> List[str]:
     data: List[str] = []
 
-    with Spinner("Reading JSON data for GitHub URLs...") as spinner:
+    with Spinner("Reading JSON data...") as spinner:
         obj: dict
         for obj in json:
             data.append(obj["github"])
@@ -46,9 +45,7 @@ def main() -> None | bool:
     if testForFile(path=expectedMHMetadataJSONFilePath) == False:
         return False
 
-    with open(expectedMHMetadataJSONFilePath, "r") as jsonFile:
-        jsonData: dict = load(jsonFile)
-        jsonFile.close()
+    jsonData: dict = readJSON(jsonFilePath=expectedMHMetadataJSONFilePath)
 
     urls: List[str] = readJSONData(json=jsonData)
 
