@@ -172,5 +172,5 @@ HFTorrent/repos/*
 *.txt
 !requirements.txt
 */repos
-ptm_torrent/MHTorrent/repos
+ptm_torrent/modelhub/repos
 ptm_torrent/modelzoo/repos
