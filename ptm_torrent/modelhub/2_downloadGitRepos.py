@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import PurePath
 from typing import List
 
@@ -5,7 +6,7 @@ from progress.bar import Bar
 from progress.spinner import Spinner
 
 from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
-                                   rootGitClonePath)
+                                  rootGitClonePath)
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
 
@@ -23,11 +24,14 @@ def readJSONData(json: dict) -> List[str]:
 
 
 def cloneGitRepos(urls: List[str], rootGitClonePath: PurePath) -> None:
-    url: str
-    with Bar(f"Cloning git repos to {rootGitClonePath}...", max=len(urls)) as bar:
-        for url in urls:
-            cloneRepo(url, rootGitClonePath)
-            bar.next()
+    with ThreadPoolExecutor() as executor:
+        with Bar(f"Cloning git repos to {rootGitClonePath}...", max=len(urls)) as bar:
+
+            def _concurrurenHelper(url: str) -> None:
+                cloneRepo(url, rootGitClonePath)
+                bar.next()
+
+            results = executor.map(_concurrurenHelper, urls)
 
 
 def main() -> None | bool:
