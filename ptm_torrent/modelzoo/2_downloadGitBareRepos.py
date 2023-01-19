@@ -9,8 +9,6 @@ from ptm_torrent.modelzoo import (expectedMZMetadataJSONFilePath,
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneBareRepo
 
-from concurrent.futures import ThreadPoolExecutor
-
 
 def readJSONData(json: List[dict]) -> List[str]:
     data: List[str] = []
@@ -25,14 +23,11 @@ def readJSONData(json: List[dict]) -> List[str]:
 
 
 def cloneGitBareRepos(urls: List[str], gitCloneBarePath: PurePath) -> None:
-    with ThreadPoolExecutor() as executor:
-        with Bar(f"Cloning git repos to {gitCloneBarePath}...", max=len(urls)) as bar:
-
-            def _concurrurenHelper(url: str)    ->  None:
-                cloneBareRepo(url, gitCloneBarePath)
-                bar.next()
-
-            results = executor.map(_concurrurenHelper, urls)
+    url: str
+    with Bar(f"Cloning git repos to {gitCloneBarePath}...", max=len(urls)) as bar:
+        for url in urls:
+            cloneBareRepo(url, gitCloneBarePath)
+            bar.next()
 
 
 def main() -> None | bool:
