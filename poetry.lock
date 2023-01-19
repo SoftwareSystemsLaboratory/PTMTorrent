@@ -236,6 +236,18 @@ plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
+name = "mistletoe"
+version = "1.0.0"
+description = "A fast, extensible Markdown parser in pure Python."
+category = "main"
+optional = false
+python-versions = "~=3.5"
+files = [
+    {file = "mistletoe-1.0.0-py3-none-any.whl", hash = "sha256:727cbd74006b3cea6685587c6d926256b9558a6d2b28b6f2ed1d1a9afd3add82"},
+    {file = "mistletoe-1.0.0.tar.gz", hash = "sha256:fa0e9c57e2050cfd68ae304e4f9c5e1e693574cc5fd8323db33452949d682661"},
+]
+
+[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -477,4 +489,4 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "015914853db361c5f227e2fd68742d31bea51927053ae1a0ac7f296413f0f5d3"
+content-hash = "c339a85e43736620e18c0931f36eedeb668973298d44c610e3b6af8a11eceb05"

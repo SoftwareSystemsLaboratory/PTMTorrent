@@ -1,3 +1,4 @@
+from glob import glob
 from json import dump, load
 from os import mkdir
 from os.path import isdir, isfile
@@ -44,3 +45,13 @@ def testForFile(path: PurePath) -> bool:
 
 def testForPath(path: PurePath) -> bool:
     return isdir(path)
+
+
+def findFiles(globStr: str) -> List[PurePath]:
+    """
+    For specific file, use an exact filename.
+
+    For all files that share a name, `filename` = '**/{NAME}'
+    """
+    filepaths: list[str] = glob(globStr, recursive=True)
+    return [PurePath(path) for path in filepaths]
