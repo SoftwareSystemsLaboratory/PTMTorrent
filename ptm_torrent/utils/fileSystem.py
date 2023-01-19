@@ -6,6 +6,7 @@ from pathlib import PurePath
 from typing import List
 
 from bs4 import BeautifulSoup
+from markdown import markdown
 
 
 def createPath(path: PurePath) -> bool:
@@ -55,3 +56,24 @@ def findFiles(globStr: str) -> List[PurePath]:
     """
     filepaths: list[str] = glob(globStr, recursive=True)
     return [PurePath(path) for path in filepaths]
+
+
+def markdownToHTML(outputDirectory: str, markdownFilepath: PurePath) -> PurePath:
+    htmlFilepath: PurePath = PurePath(
+        f"{outputDirectory}/{markdownFilepath.stem}_{markdownFilepath.parent.stem}.html"
+    )
+
+    with open(markdownFilepath, "r") as markdownFile:
+        html: str = markdown(
+            markdownFile.read(),
+            extensions=["tables"],
+            output_format="html",
+            tab_length=4,
+        )
+        markdownFile.close()
+
+    with open(htmlFilepath, "w") as htmlFile:
+        htmlFile.write(html)
+        htmlFile.close
+
+    return htmlFilepath
