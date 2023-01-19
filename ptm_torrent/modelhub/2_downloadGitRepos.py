@@ -27,11 +27,11 @@ def cloneGitRepos(urls: List[str], rootGitClonePath: PurePath) -> None:
     with ThreadPoolExecutor() as executor:
         with Bar(f"Cloning git repos to {rootGitClonePath}...", max=len(urls)) as bar:
 
-            def _concurrurenHelper(url: str) -> None:
+            def _concurrurentHelper(url: str) -> None:
                 cloneRepo(url, rootGitClonePath)
                 bar.next()
 
-            results = executor.map(_concurrurenHelper, urls)
+            results = executor.map(_concurrurentHelper, urls)
 
 
 def main() -> None | bool:
