@@ -6,7 +6,7 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
+from ptm_torrent.modelzoo import (expectedMZModelMetadataJSONFilePath,
                                   jsonMetadataPath, rootGitClonePath,
                                   rootJSONPath)
 from ptm_torrent.utils.fileSystem import saveJSON, testForFile, testForPath
@@ -16,10 +16,10 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 
 def createModelHub(row: Series) -> ModelHub:
     mh: ModelHub = ModelHub(
-        metadata_file_path=expectedMHMetadataJSONFilePath.__str__(),
+        metadata_file_path=expectedMZModelMetadataJSONFilePath.__str__(),
         metadata_object_id=row["id"],
-        model_hub_name="Modelhub.ai",
-        model_hub_url="https://modelhub.ai",
+        model_hub_name="ModelZoo",
+        model_hub_url="https://modelzoo.co",
     )
     return mh
 
@@ -33,13 +33,13 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
             row: Series = df.loc[idx]
 
-            url: str = row["github"]
+            url: str = row["link"]
             parsedURL: ParseResult = urlparse(url)
-            urlPath: str = parsedURL.path.strip("/")
+            urlPath: str = str(parsedURL.path).strip("/")
 
             repoPath: PurePath = PurePath(f"{rootGitClonePath}/{urlPath}")
             if testForPath(repoPath) == False:
-                print(f"Path not found: {rootGitClonePath}")
+                print(f"Path not found: {repoPath}")
                 bar.next()
                 continue
 
@@ -49,14 +49,14 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
                 id=idx,
                 latest_git_commit_sha=getLatestGitCommit(gitProjectPath=repoPath),
                 model_hub=createModelHub(row),
-                model_name=row["name"],
+                model_name=row["title"],
                 model_owner=splitPath[0],
                 model_owner_url="/".join(url.split("/")[0:-1]),
                 datasets=None,
                 model_url=url,
                 model_architecture=None,
                 model_paper_dois=[],
-                model_task=row["task_extended"],
+                model_task=[task["title"] for task in row["categories"]],
             )
 
             data.append(ptm.to_dict())
@@ -67,12 +67,12 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
 
 def main() -> None | bool:
-    if testForFile(path=expectedMHMetadataJSONFilePath) == False:
+    if testForFile(path=expectedMZModelMetadataJSONFilePath) == False:
         return False
 
-    jsonFilePath: PurePath = PurePath(f"{rootJSONPath}/modelhub.ai.json")
+    jsonFilePath: PurePath = PurePath(f"{rootJSONPath}/modelzoo.json")
 
-    df: DataFrame = pandas.read_json(path_or_buf=expectedMHMetadataJSONFilePath)
+    df: DataFrame = pandas.read_json(path_or_buf=expectedMZModelMetadataJSONFilePath)
 
     json: List[dict] = createPTMSchema(df)
 
