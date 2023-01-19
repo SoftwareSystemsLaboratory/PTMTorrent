@@ -176,3 +176,5 @@ ptm_torrent/modelhub/repos
 ptm_torrent/modelzoo/repos
 ptm_torrent/modelzoo/json
 ptm_torrent/modelhub/json
+ptm_torrent/onnx/repos
+ptm_torrent/onnx/json
