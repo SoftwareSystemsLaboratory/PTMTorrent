@@ -174,3 +174,4 @@ HFTorrent/repos/*
 */repos
 ptm_torrent/modelhub/repos
 ptm_torrent/modelzoo/repos
+ptm_torrent/modelzoo/json
