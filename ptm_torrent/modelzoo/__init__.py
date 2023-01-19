@@ -1,6 +1,8 @@
 from pathlib import PurePath
 
 rootGitClonePath: PurePath = PurePath("repos")
+gitCloneBarePath: PurePath = PurePath(f"{rootGitClonePath}/bare")
+
 rootJSONPath: PurePath = PurePath("json")
 jsonMetadataPath: PurePath = PurePath(f"{rootJSONPath}/metadata")
 
