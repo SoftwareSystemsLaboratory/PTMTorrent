@@ -7,7 +7,7 @@ from progress.spinner import Spinner
 from ptm_torrent.modelzoo import (expectedMZMetadataJSONFilePath,
                                   gitCloneBarePath)
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
-from ptm_torrent.utils.git import cloneBareRepo
+from ptm_torrent.utils.git import cloneRepo
 
 
 def readJSONData(json: List[dict]) -> List[str]:
@@ -22,11 +22,11 @@ def readJSONData(json: List[dict]) -> List[str]:
     return data
 
 
-def cloneGitBareRepos(urls: List[str], gitCloneBarePath: PurePath) -> None:
+def cloneGitRepos(urls: List[str], gitCloneBarePath: PurePath) -> None:
     url: str
     with Bar(f"Cloning git repos to {gitCloneBarePath}...", max=len(urls)) as bar:
         for url in urls:
-            cloneBareRepo(url, gitCloneBarePath)
+            cloneRepo(url, gitCloneBarePath)
             bar.next()
 
 
@@ -40,7 +40,7 @@ def main() -> None | bool:
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    cloneGitBareRepos(urls, gitCloneBarePath)
+    cloneGitRepos(urls, gitCloneBarePath)
 
 
 if __name__ == "__main__":
