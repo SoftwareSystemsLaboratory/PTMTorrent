@@ -24,7 +24,7 @@ def saveJSON(json: List[dict], filepath: PurePath = "data.json") -> None:
 
 
 def saveHTML(html: str, filepath: PurePath = "data.html") -> None:
-    soup: BeautifulSoup = BeautifulSoup(markup=html)
+    soup: BeautifulSoup = BeautifulSoup(markup=html, features="lxml")
     prettyHTML: str = soup.prettify()
 
     with open(filepath, "w") as htmlFile:
@@ -68,12 +68,13 @@ def markdownToHTML(outputDirectory: str, markdownFilepath: PurePath) -> PurePath
             markdownFile.read(),
             extensions=["tables"],
             output_format="html",
-            tab_length=4,
         )
         markdownFile.close()
 
+    soup: BeautifulSoup = BeautifulSoup(markup=html, features="lxml")
+
     with open(htmlFilepath, "w") as htmlFile:
-        htmlFile.write(html)
+        htmlFile.write(soup.prettify())
         htmlFile.close
 
     return htmlFilepath
