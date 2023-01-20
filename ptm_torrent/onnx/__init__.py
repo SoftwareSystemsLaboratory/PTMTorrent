@@ -9,3 +9,6 @@ rootHTMLPath: PurePath = PurePath("html")
 jsonMetadataPath: PurePath = PurePath(f"{rootJSONPath}/metadata")
 
 expectedOnnxHTMLPath: PurePath = PurePath(f"{rootHTMLPath}/README_models.html")
+expectedOnnxMetadataJSONPath: PurePath = PurePath(
+    f"{jsonMetadataPath}/onnx_metadata.json"
+)
