@@ -1,15 +1,11 @@
 from pathlib import PurePath
 
 rootGitClonePath: PurePath = PurePath("repos")
+onnxPath: PurePath = PurePath(f"{rootGitClonePath}/onnx/models")
 
 rootJSONPath: PurePath = PurePath("json")
-onnxPath: PurePath = PurePath(f"{rootGitClonePath}/onnx/models")
+rootHTMLPath: PurePath = PurePath("html")
 
 jsonMetadataPath: PurePath = PurePath(f"{rootJSONPath}/metadata")
 
-expectedMZMetadataJSONFilePath: PurePath = PurePath(
-    f"{jsonMetadataPath}/mz_metadata.json"
-)
-expectedMZModelMetadataJSONFilePath: PurePath = PurePath(
-    f"{jsonMetadataPath}/mz_models_metadata.json"
-)
+expectedOnnxHTMLPath: PurePath = PurePath(f"{rootHTMLPath}/README_models.html")
