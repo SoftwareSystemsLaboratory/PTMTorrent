@@ -1,11 +1,25 @@
+from collections import namedtuple
 from pathlib import PurePath
-from typing import List, Tuple
+from typing import List, Tuple, Type
 
 from bs4 import BeautifulSoup, ResultSet, Tag
 
 from ptm_torrent.onnx import (expectedOnnxHTMLPath, jsonMetadataPath,
                               rootHTMLPath)
 from ptm_torrent.utils.fileSystem import saveJSON
+
+TableCell = namedtuple(
+    typename="TableCell",
+    field_names=[
+        "Model",
+        "ModelREADMEURI",
+        "PaperURL",
+        "Description",
+        "HuggingFaceURL",
+        "Category",
+    ],
+    defaults=[None, None, None, None, None, None],
+)
 
 
 def createSoup() -> BeautifulSoup:
@@ -32,6 +46,42 @@ def getCategories(soup: BeautifulSoup) -> List[str]:
     return validCategories
 
 
+def convertFourColumn(
+    group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag], category: str
+) -> Type[tuple]:
+    modelName: str = group[0].text.strip()
+    paperURL: str = group[1].find(name="a").get(key="href")
+    description: str = group[2].text.strip()
+
+    modelREADMEPath: str | None
+    try:
+        uri: PurePath = PurePath(group[0].find(name="a").get(key="href"))
+        modelREADMEPath: str = PurePath(
+            f"{rootHTMLPath}/README_{uri.stem}.html"
+        ).__str__()
+    except AttributeError:
+        modelREADMEPath = None
+
+    hfURL: str | None
+    if len(group) == 4:
+        try:
+            hfURL = group[3].find(name="a").get(key="href")
+        except AttributeError:
+            hfURL = None
+
+    else:
+        hfURL = None
+
+    return TableCell(
+        Model=modelName,
+        ModelREADMEURI=modelREADMEPath,
+        PaperURL=paperURL,
+        Description=description,
+        HuggingFaceURL=hfURL,
+        Category=category,
+    )
+
+
 def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict]:
     data: List[dict] = []
     id: int = 0
@@ -43,9 +93,9 @@ def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict
 
     categories = categories[0 : tableAmount - categoryAmount]
 
-    rawData: list[tuple[str, Tag]] = list(zip(categories, tables))
+    rawData: List[Tuple[str, Tag]] = list(zip(categories, tables))
 
-    pair: tuple[str, Tag]
+    pair: Tuple[str, Tag]
     for pair in rawData:
         table: Tag = pair[1]
 
@@ -53,32 +103,17 @@ def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict
         cells: ResultSet = table.find_all(name="td")
 
         if thCount == 4:
-            cellGroupings: List[tuple[Tag, Tag]] = list(zip(*(iter(cells),) * 2))[::2]
+            cellGroupings: List[Tuple[Tag, Tag, Tag, Tag]] = list(
+                zip(*(iter(cells),) * 4)
+            )
 
         if thCount == 3:
-            bigGroups: List[tuple[Tag, Tag]] = list(zip(*(iter(cells),) * 3))
-            cellGroupings = [grouping[0:2] for grouping in bigGroups]
+            cellGroupings: List[Tuple[Tag, Tag, Tag]] = list(zip(*(iter(cells),) * 3))
 
-        grouping: Tuple[Tag, Tag]
-        for grouping in cellGroupings:
-            try:
-                uri: PurePath = PurePath(grouping[0].find(name="a").get(key="href"))
-                paper: str = grouping[1].find(name="a").get(key="href")
-            except AttributeError:
-                continue
-
-            readmePath: str = PurePath(
-                f"{rootHTMLPath}/README_{uri.stem}.html"
-            ).__str__()
-
-            json: dict = {
-                "id": id,
-                "category": pair[0],
-                "readmePath": readmePath,
-                "paper": paper,
-            }
-            id += 1
-
+        group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag]
+        for group in cellGroupings:
+            dataTuple: Type[tuple] = convertFourColumn(group=group, category=pair[0])
+            json: dict = dataTuple._asdict()
             data.append(json)
 
     return data
