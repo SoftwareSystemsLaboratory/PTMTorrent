@@ -19,7 +19,7 @@ def createPath(path: PurePath) -> bool:
 
 def saveJSON(json: List[dict], filepath: PurePath = "data.json") -> None:
     with open(filepath, "w") as jsonFile:
-        dump(json, jsonFile, indent=4)
+        dump(obj=json, fp=jsonFile, indent=4)
         jsonFile.close()
 
 

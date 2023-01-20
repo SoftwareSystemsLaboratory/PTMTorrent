@@ -3,7 +3,9 @@ from typing import List, Tuple
 
 from bs4 import BeautifulSoup, ResultSet, Tag
 
-from ptm_torrent.onnx import expectedOnnxHTMLPath, rootHTMLPath
+from ptm_torrent.onnx import (expectedOnnxHTMLPath, jsonMetadataPath,
+                              rootHTMLPath)
+from ptm_torrent.utils.fileSystem import saveJSON
 
 
 def createSoup() -> BeautifulSoup:
@@ -32,7 +34,7 @@ def getCategories(soup: BeautifulSoup) -> List[str]:
 
 def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict]:
     data: List[dict] = []
-    paths: list = []
+    id: int = 0
 
     tables: ResultSet = soup.find_all(name="table")
 
@@ -61,19 +63,29 @@ def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict
         for grouping in cellGroupings:
             try:
                 uri: PurePath = PurePath(grouping[0].find(name="a").get(key="href"))
-                doi: str = grouping[1].find(name="a").get(key="href")
+                paper: str = grouping[1].find(name="a").get(key="href")
             except AttributeError:
                 continue
 
-            readmePath: PurePath = PurePath(f"{rootHTMLPath}/README_{uri.stem}.html")
+            readmePath: str = PurePath(
+                f"{rootHTMLPath}/README_{uri.stem}.html"
+            ).__str__()
 
-            json: dict = {"category": pair[0], "readmePath": readmePath, "doi": doi}
+            json: dict = {
+                "id": id,
+                "category": pair[0],
+                "readmePath": readmePath,
+                "paper": paper,
+            }
+            id += 1
+
             data.append(json)
 
     return data
 
 
 def main() -> None:
+    jsonFilepath: PurePath = PurePath(f"{jsonMetadataPath}/onnx_metadata.json")
     soup: BeautifulSoup = createSoup()
 
     unorderedLists: ResultSet = soup.find_all(name="ul")
@@ -82,6 +94,7 @@ def main() -> None:
     categories: List[str] = getCategories(soup)
 
     json: List[dict] = getModelInformation(soup, categories)
+    saveJSON(json=json, filepath=jsonFilepath)
 
 
 if __name__ == "__main__":
