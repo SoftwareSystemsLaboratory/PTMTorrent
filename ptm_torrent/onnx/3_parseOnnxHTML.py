@@ -3,6 +3,7 @@ from pathlib import PurePath
 from typing import List, Tuple, Type
 
 from bs4 import BeautifulSoup, ResultSet, Tag
+from progress.bar import Bar
 
 from ptm_torrent.onnx import (expectedOnnxHTMLPath, jsonMetadataPath,
                               rootHTMLPath)
@@ -11,6 +12,7 @@ from ptm_torrent.utils.fileSystem import saveJSON
 TableCell = namedtuple(
     typename="TableCell",
     field_names=[
+        "id",
         "Model",
         "ModelREADMEURI",
         "PaperURL",
@@ -18,7 +20,7 @@ TableCell = namedtuple(
         "HuggingFaceURL",
         "Category",
     ],
-    defaults=[None, None, None, None, None, None],
+    defaults=[None, None, None, None, None, None, None],
 )
 
 
@@ -47,7 +49,7 @@ def getCategories(soup: BeautifulSoup) -> List[str]:
 
 
 def convertFourColumn(
-    group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag], category: str
+    group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag], category: str, id: int
 ) -> Type[tuple]:
     modelName: str = group[0].text.strip()
     paperURL: str = group[1].find(name="a").get(key="href")
@@ -73,6 +75,7 @@ def convertFourColumn(
         hfURL = None
 
     return TableCell(
+        id=id,
         Model=modelName,
         ModelREADMEURI=modelREADMEPath,
         PaperURL=paperURL,
@@ -95,26 +98,37 @@ def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict
 
     rawData: List[Tuple[str, Tag]] = list(zip(categories, tables))
 
-    pair: Tuple[str, Tag]
-    for pair in rawData:
-        table: Tag = pair[1]
+    with Bar(
+        f"Creating JSON from {expectedOnnxHTMLPath} tables...", max=len(tables)
+    ) as bar:
+        pair: Tuple[str, Tag]
+        for pair in rawData:
+            table: Tag = pair[1]
 
-        thCount: int = len(table.find_all(name="th"))
-        cells: ResultSet = table.find_all(name="td")
+            thCount: int = len(table.find_all(name="th"))
+            cells: ResultSet = table.find_all(name="td")
 
-        if thCount == 4:
-            cellGroupings: List[Tuple[Tag, Tag, Tag, Tag]] = list(
-                zip(*(iter(cells),) * 4)
-            )
+            if thCount == 4:
+                cellGroupings: List[Tuple[Tag, Tag, Tag, Tag]] = list(
+                    zip(*(iter(cells),) * 4)
+                )
 
-        if thCount == 3:
-            cellGroupings: List[Tuple[Tag, Tag, Tag]] = list(zip(*(iter(cells),) * 3))
+            if thCount == 3:
+                cellGroupings: List[Tuple[Tag, Tag, Tag]] = list(
+                    zip(*(iter(cells),) * 3)
+                )
 
-        group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag]
-        for group in cellGroupings:
-            dataTuple: Type[tuple] = convertFourColumn(group=group, category=pair[0])
-            json: dict = dataTuple._asdict()
-            data.append(json)
+            group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag]
+            for group in cellGroupings:
+                dataTuple: Type[tuple] = convertFourColumn(
+                    group=group, category=pair[0], id=id
+                )
+                id += 1
+
+                json: dict = dataTuple._asdict()
+                data.append(json)
+
+            bar.next()
 
     return data
 
