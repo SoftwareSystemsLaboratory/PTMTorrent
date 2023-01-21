@@ -78,3 +78,10 @@ def markdownToHTML(outputDirectory: str, markdownFilepath: PurePath) -> PurePath
         htmlFile.close
 
     return htmlFilepath
+
+
+def readHTML(htmlFilePath: PurePath) -> BeautifulSoup:
+    with open(htmlFilePath, "r") as htmlFile:
+        soup: BeautifulSoup = BeautifulSoup(markup=htmlFile, features="lxml")
+        htmlFile.close()
+    return soup
