@@ -1,149 +1,79 @@
-from collections import namedtuple
 from pathlib import PurePath
-from typing import List, Tuple, Type
+from typing import List
 
-from bs4 import BeautifulSoup, ResultSet, Tag
+import pandas
+from pandas import DataFrame, Series
 from progress.bar import Bar
 
 from ptm_torrent.onnx import (expectedOnnxHTMLPath, jsonMetadataPath,
                               rootHTMLPath)
 from ptm_torrent.utils.fileSystem import saveJSON
 
-TableCell = namedtuple(
-    typename="TableCell",
-    field_names=[
-        "id",
-        "Model",
-        "ModelREADMEURI",
-        "PaperURL",
-        "Description",
-        "HuggingFaceURL",
-        "Category",
-    ],
-    defaults=[None, None, None, None, None, None, None],
-)
+
+def prepareData(dfs: List[DataFrame]) -> DataFrame:
+    df: DataFrame
+    for df in dfs:
+        df.columns = [pair[0] for pair in df.columns]
+
+    data: DataFrame = pandas.concat(objs=dfs, ignore_index=True)
+
+    data["hfURLs"] = data[data.columns[-2:]].apply(
+        lambda x: "".join(x.dropna().astype(str)), axis=1
+    )
+
+    return data
 
 
-def createSoup() -> BeautifulSoup:
-    with open(expectedOnnxHTMLPath, "r") as htmlFile:
-        soup: BeautifulSoup = BeautifulSoup(markup=htmlFile, features="lxml")
-        htmlFile.close()
-    return soup
-
-
-def getCategories(soup: BeautifulSoup) -> List[str]:
-    validCategories: List[str] = []
-
-    categories: ResultSet = soup.find_all(name="a")
-
-    category: Tag
-    for category in categories:
-        name: str | None = category.get(key="name")
-
-        if name == None:
-            continue
-
-        validCategories.append(name)
-
-    return validCategories
-
-
-def convertFourColumn(
-    group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag], category: str, id: int
-) -> Type[tuple]:
-    modelName: str = group[0].text.strip()
-    paperURL: str = group[1].find(name="a").get(key="href")
-    description: str = group[2].text.strip()
+def extractData(row: Series) -> dict:
+    modelClass: str = row["Model Class"][0]
 
     modelREADMEPath: str | None
     try:
-        uri: PurePath = PurePath(group[0].find(name="a").get(key="href"))
+        uri: PurePath = PurePath(row["Model Class"][1])
         modelREADMEPath: str = PurePath(
             f"{rootHTMLPath}/README_{uri.stem}.html"
         ).__str__()
-    except AttributeError:
+    except TypeError:
         modelREADMEPath = None
 
-    hfURL: str | None
-    if len(group) == 4:
-        try:
-            hfURL = group[3].find(name="a").get(key="href")
-        except AttributeError:
-            hfURL = None
+    paper: str = row["Reference"][1]
+    description: str = row["Description"][0]
 
-    else:
-        hfURL = None
+    huggingFaceSpaceURL: str | None
+    try:
+        huggingFaceSpaceURL = row["hfURLs"][1]
+    except IndexError:
+        huggingFaceSpaceURL = None
 
-    return TableCell(
-        id=id,
-        Model=modelName,
-        ModelREADMEURI=modelREADMEPath,
-        PaperURL=paperURL,
-        Description=description,
-        HuggingFaceURL=hfURL,
-        Category=category,
-    )
-
-
-def getModelInformation(soup: BeautifulSoup, categories: List[str]) -> List[dict]:
-    data: List[dict] = []
-    id: int = 0
-
-    tables: ResultSet = soup.find_all(name="table")
-
-    categoryAmount: int = len(categories)
-    tableAmount: int = len(tables)
-
-    categories = categories[0 : tableAmount - categoryAmount]
-
-    rawData: List[Tuple[str, Tag]] = list(zip(categories, tables))
-
-    with Bar(
-        f"Creating JSON from {expectedOnnxHTMLPath} tables...", max=len(tables)
-    ) as bar:
-        pair: Tuple[str, Tag]
-        for pair in rawData:
-            table: Tag = pair[1]
-
-            thCount: int = len(table.find_all(name="th"))
-            cells: ResultSet = table.find_all(name="td")
-
-            if thCount == 4:
-                cellGroupings: List[Tuple[Tag, Tag, Tag, Tag]] = list(
-                    zip(*(iter(cells),) * 4)
-                )
-
-            if thCount == 3:
-                cellGroupings: List[Tuple[Tag, Tag, Tag]] = list(
-                    zip(*(iter(cells),) * 3)
-                )
-
-            group: Tuple[Tag, Tag, Tag, Tag] | Tuple[Tag, Tag, Tag]
-            for group in cellGroupings:
-                dataTuple: Type[tuple] = convertFourColumn(
-                    group=group, category=pair[0], id=id
-                )
-                id += 1
-
-                json: dict = dataTuple._asdict()
-                data.append(json)
-
-            bar.next()
+    data: dict = {
+        "ModelClass": modelClass,
+        "ModelREADMEPath": modelREADMEPath,
+        "Paper": paper,
+        "Description": description,
+        "HFSpaceURL": huggingFaceSpaceURL,
+    }
 
     return data
 
 
 def main() -> None:
-    jsonFilepath: PurePath = PurePath(f"{jsonMetadataPath}/onnx_metadata.json")
-    soup: BeautifulSoup = createSoup()
+    json: List[dict] = []
 
-    unorderedLists: ResultSet = soup.find_all(name="ul")
-    unorderedLists = unorderedLists[0:3]
+    tables: List[DataFrame] = pandas.read_html(
+        io=expectedOnnxHTMLPath, extract_links="all"
+    )
 
-    categories: List[str] = getCategories(soup)
+    data: DataFrame = prepareData(dfs=tables)
+    dataSize: int = len(data)
 
-    json: List[dict] = getModelInformation(soup, categories)
-    saveJSON(json=json, filepath=jsonFilepath)
+    with Bar("Extracting data from HTML tables...", max=dataSize) as bar:
+        idx: int
+        for idx in range(dataSize):
+            row: Series = data.iloc[idx]
+            json.append(extractData(row))
+            bar.next()
+
+    saveJSON(json, filepath=PurePath(f"{jsonMetadataPath}/onnx_metadata.json"))
 
 
 if __name__ == "__main__":
