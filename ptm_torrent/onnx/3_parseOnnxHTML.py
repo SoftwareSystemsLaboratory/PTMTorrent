@@ -45,12 +45,15 @@ def extractData(row: Series, id: int) -> dict:
     modelClass: str = row["Model Class"][0]
 
     modelREADMEPath: str | None
+    uri: str | None
     try:
-        uri: PurePath = PurePath(row["Model Class"][1])
+        uri = PurePath(row["Model Class"][1])
         modelREADMEPath: str = PurePath(
             f"{rootHTMLPath}/README_{uri.stem}.html"
         ).__str__()
+        uri = uri.__str__()
     except TypeError:
+        uri = None
         modelREADMEPath = None
 
     paper: str = row["Reference"][1]
@@ -68,6 +71,7 @@ def extractData(row: Series, id: int) -> dict:
         "id": id,
         "ModelClass": modelClass,
         "ModelREADMEPath": modelREADMEPath,
+        "RepoREADMEPath": uri,
         "Paper": paper,
         "Description": description,
         "HFSpaceURL": huggingFaceSpaceURL,
