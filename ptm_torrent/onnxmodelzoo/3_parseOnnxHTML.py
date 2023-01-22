@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup, ResultSet, Tag
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.onnx import (expectedOnnxHTMLPath, jsonMetadataPath,
-                              rootHTMLPath)
+from ptm_torrent.onnxmodelzoo import (expectedOnnxHTMLPath, jsonMetadataPath,
+                                      rootHTMLPath)
 from ptm_torrent.utils.fileSystem import readHTML, saveJSON
 
 

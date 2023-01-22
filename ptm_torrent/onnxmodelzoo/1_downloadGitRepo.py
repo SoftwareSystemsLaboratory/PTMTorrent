@@ -3,7 +3,7 @@ from typing import List
 
 from progress.bar import Bar
 
-from ptm_torrent.onnx import rootGitClonePath
+from ptm_torrent.onnxmodelzoo import rootGitClonePath
 from ptm_torrent.utils.git import cloneRepo
 
 

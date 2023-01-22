@@ -3,7 +3,7 @@ from typing import List
 
 from progress.bar import Bar
 
-from ptm_torrent.onnx import onnxPath
+from ptm_torrent.onnxmodelzoo import onnxPath
 from ptm_torrent.utils.fileSystem import findFiles, markdownToHTML
 
 
