@@ -5,7 +5,7 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.onnx import expectedOnnxMetadataJSONPath
+from ptm_torrent.onnxmodelzoo import expectedOnnxMetadataJSONPath
 from ptm_torrent.utils.fileSystem import readJSON, saveJSON
 
 
