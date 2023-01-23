@@ -39,7 +39,7 @@ def main() -> None | bool:
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    cloneGitRepos(urls=urls, gitCloneBarePath=mz.reposFolderPath)
+    cloneGitRepos(urls=urls, gitCloneBarePath=mz.modelzoo_ReposPath)
 
 
 if __name__ == "__main__":
