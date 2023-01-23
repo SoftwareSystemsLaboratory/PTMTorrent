@@ -28,3 +28,11 @@ subFolders: List[PurePath] = [
 modelzoo_HubMetadataPath: PurePath = PurePath(
     f"{rootFolderPath}/{jsonMetadataFolderPath}/mz_metadata.json"
 )
+
+modelzoo_ModelMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonModelMetadataFolderPath}"
+)
+
+modelzoo_ConcatinatedModelMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonMetadataFolderPath}/mz_models_metadata.json"
+)
