@@ -11,7 +11,7 @@ from markdown import markdown
 
 def createPath(path: PurePath) -> bool:
     try:
-        makedirs(path, exist_ok=True)
+        makedirs(path, exist_ok=False)
     except FileExistsError:
         print(f"Skipping {path.__str__()} as it already exists.")
     return isdir(path)
@@ -117,3 +117,4 @@ def checkFileSystem(
             continue
         else:
             return False
+    return True
