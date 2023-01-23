@@ -37,7 +37,7 @@ def main() -> None:
     url: ParseResult
     for url in modelURLs:
         splitPath: List[str] = url.path.strip("/").split("/")
-        htmlFilepath: str = PurePath(f"html/{splitPath[-1]}.html")
+        htmlFilepath: str = PurePath(f"html/models/{splitPath[-1]}.html")
         getHTML(url=url.geturl(), filepath=htmlFilepath)
 
 
