@@ -5,8 +5,7 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
-from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
-                                  rootGitClonePath)
+import ptm_torrent.modelhub as mh
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
 
@@ -35,14 +34,14 @@ def cloneGitRepos(urls: List[str], rootGitClonePath: PurePath) -> None:
 
 
 def main() -> None | bool:
-    if testForFile(path=expectedMHMetadataJSONFilePath) == False:
+    if testForFile(path=mh.modelhub_HubMetadataPath) == False:
         return False
 
-    jsonData: dict = readJSON(jsonFilePath=expectedMHMetadataJSONFilePath)
+    jsonData: dict = readJSON(jsonFilePath=mh.modelhub_HubMetadataPath)
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    cloneGitRepos(urls, rootGitClonePath)
+    cloneGitRepos(urls=urls, rootGitClonePath=mh.reposFolderPath)
 
 
 if __name__ == "__main__":
