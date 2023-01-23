@@ -3,7 +3,7 @@ from typing import List
 
 import ptm_torrent as pt
 
-rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/modelhub")
+rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/onnxmodelzoo")
 
 reposFolderPath: PurePath = PurePath(f"{pt.reposFolderPath}")
 
@@ -24,3 +24,16 @@ subFolders: List[PurePath] = [
     htmlMetadataFolderPath,
     htmlModelMetadataFolderPath,
 ]
+
+onnxmodelzoo_ReposPath: PurePath = PurePath(f"{rootFolderPath}/{reposFolderPath}")
+
+onnxmodelzoo_GitRepoPath: PurePath = PurePath(f"{onnxmodelzoo_ReposPath}/onnx/models")
+
+onnxmodelzoo_HubHTMLPath: PurePath = PurePath(
+    f"{rootFolderPath}/{htmlMetadataFolderPath}"
+)
+
+
+onnxmodelzoo_ModelHTMLPath: PurePath = PurePath(
+    f"{rootFolderPath}/{htmlModelMetadataFolderPath}"
+)

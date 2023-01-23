@@ -3,7 +3,7 @@ from typing import List
 
 from progress.bar import Bar
 
-from ptm_torrent.onnxmodelzoo import rootGitClonePath
+import ptm_torrent.onnxmodelzoo as omz
 from ptm_torrent.utils.git import cloneRepo
 
 
@@ -17,7 +17,7 @@ def cloneGitRepos(urls: List[str], gitCloneBarePath: PurePath) -> None:
 
 def main() -> None | bool:
     urls: List[str] = ["https://github.com/onnx/models"]
-    cloneGitRepos(urls, rootGitClonePath)
+    cloneGitRepos(urls, omz.onnxmodelzoo_ReposPath)
 
 
 if __name__ == "__main__":
