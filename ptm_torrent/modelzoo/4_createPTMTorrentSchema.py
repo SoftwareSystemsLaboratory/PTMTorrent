@@ -17,7 +17,7 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 
 def createModelHub(row: Series) -> ModelHub:
     mh: ModelHub = ModelHub(
-        metadata_file_path=expectedMZModelMetadataJSONFilePath.__str__(),
+        metadata_file_path=mz.modelzoo_HubMetadataPath.__str__(),
         metadata_object_id=row["id"],
         model_hub_name="ModelZoo",
         model_hub_url="https://modelzoo.co",
@@ -38,7 +38,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
             parsedURL: ParseResult = urlparse(url)
             urlPath: str = str(parsedURL.path).strip("/")
 
-            repoPath: PurePath = PurePath(f"{rootGitClonePath}/{urlPath}")
+            repoPath: PurePath = PurePath(f"{mz.modelzoo_ReposPath}/{urlPath}")
             if testForPath(repoPath) == False:
                 print(f"Path not found: {repoPath}")
                 bar.next()
@@ -68,16 +68,18 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
 
 def main() -> None | bool:
-    if testForFile(path=expectedMZModelMetadataJSONFilePath) == False:
+    if testForFile(path=mz.modelzoo_ConcatinatedModelMetadataPath) == False:
         return False
 
-    jsonFilePath: PurePath = PurePath(f"{rootJSONPath}/modelzoo.json")
+    jsonFilePath: PurePath = PurePath(f"{mz.jsonFolderPath}/modelzoo.json")
 
-    df: DataFrame = pandas.read_json(path_or_buf=expectedMZModelMetadataJSONFilePath)
+    df: DataFrame = pandas.read_json(
+        path_or_buf=mz.modelzoo_ConcatinatedModelMetadataPath
+    )
 
     json: List[dict] = createPTMSchema(df)
 
-    if testForPath(path=rootJSONPath) == False:
+    if testForPath(path=mz.jsonFolderPath) == False:
         return False
 
     saveJSON(json, filepath=jsonFilePath)
