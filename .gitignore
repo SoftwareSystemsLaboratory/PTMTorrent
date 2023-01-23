@@ -163,3 +163,7 @@ ptm_torrent/modelhub/data
 ptm_torrent/HFTorrent/v1.5/data
 ptm_torrent/modelzoo/data
 ptm_torrent/onnxmodelzoo/data
+ptm_torrent/huggingface/data
+ptm_torrent/huggingface/v1.5/data
+ptm_torrent/huggingface/v2/data
+ptm_torrent/huggingface/v3/data
