@@ -47,7 +47,9 @@ def extractData(row: Series, id: int) -> dict:
     uri: str | None
     try:
         uri = PurePath(row["Model Class"][1])
-        modelREADMEPath: str = omz.onnxmodelzoo_HubHTMLMetadataPath.__str__()
+        modelREADMEPath: str = (
+            f"{omz.onnxmodelzoo_ModelHTMLPath}/README_{uri.stem}.html".__str__()
+        )
         uri = uri.__str__()
     except TypeError:
         uri = None

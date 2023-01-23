@@ -5,7 +5,7 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.onnxmodelzoo import expectedOnnxMetadataJSONPath
+import ptm_torrent.onnxmodelzoo as omz
 from ptm_torrent.utils.fileSystem import readJSON, saveJSON
 
 
@@ -62,6 +62,7 @@ def mergeColumns(
 
 def createJSON(df: DataFrame, category: str) -> List[dict]:
     json: List[dict] = []
+    df = df.fillna(value="N/A")
     rowCount: int = len(df)
 
     idx: int
@@ -132,7 +133,9 @@ def main() -> None:
         "Dataset",
     ]
 
-    modelHubMetadata: List[dict] = readJSON(jsonFilePath=expectedOnnxMetadataJSONPath)
+    modelHubMetadata: List[dict] = readJSON(
+        jsonFilePath=omz.onnxmodelzoo_HubJSONMetadataPath
+    )
 
     modelREADMEPaths: List[PurePath] = [
         PurePath(metadata["ModelREADMEPath"])
@@ -145,11 +148,14 @@ def main() -> None:
         if metadata["RepoREADMEPath"] != None
     ]
 
+    pathMerge: List[tuple[PurePath, PurePath]] = list(
+        zip(modelREADMEPaths, repoREADMEPaths)
+    )
+
     with Bar(
         "Converting model HTML data into DataFrames...", max=len(modelREADMEPaths)
     ) as bar:
 
-        path: PurePath
         for pathPair in list(zip(modelREADMEPaths, repoREADMEPaths)):
             modelTables: List[DataFrame] = pandas.read_html(
                 io=pathPair[0], extract_links="all"
@@ -159,6 +165,8 @@ def main() -> None:
             bar.next()
 
     data: DataFrame = pandas.concat(objs=tables, ignore_index=True)
+    # print(data.columns)
+    # quit()
     data = extractTextFromPair(df=data, labels=["Model"], drop=True)
     data.reset_index(drop=True, inplace=True)
     data = extractTextFromPair(df=data, labels=tableLabels)
@@ -179,7 +187,7 @@ def main() -> None:
 
     json: List[dict] = createJSON(df=data, category="test")
 
-    saveJSON(json, filepath="test.json")
+    saveJSON(json, filepath=omz.onnxmodelzoo_ModelJSONMetadataPath)
 
 
 if __name__ == "__main__":
