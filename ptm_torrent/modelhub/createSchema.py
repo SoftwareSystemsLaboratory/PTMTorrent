@@ -6,8 +6,7 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.modelhub import (expectedMHMetadataJSONFilePath,
-                                  rootGitClonePath, rootJSONPath)
+import ptm_torrent.modelhub as mh
 from ptm_torrent.utils.fileSystem import saveJSON, testForFile, testForPath
 from ptm_torrent.utils.git import getLatestGitCommit
 from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
@@ -15,7 +14,7 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 
 def createModelHub(row: Series) -> ModelHub:
     mh: ModelHub = ModelHub(
-        metadata_file_path=expectedMHMetadataJSONFilePath.__str__(),
+        metadata_file_path=mh.modelhub_HubMetadataPath,
         metadata_object_id=row["id"],
         model_hub_name="Modelhub.ai",
         model_hub_url="https://modelhub.ai",
@@ -36,7 +35,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
             parsedURL: ParseResult = urlparse(url)
             urlPath: str = parsedURL.path.strip("/")
 
-            repoPath: PurePath = PurePath(f"{rootGitClonePath}/{urlPath}")
+            repoPath: PurePath = PurePath(f"{mh.reposFolderPath}/{urlPath}")
             if testForPath(repoPath) == False:
                 print(f"Path not found: {repoPath}")
                 bar.next()
@@ -66,16 +65,16 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
 
 def main() -> None | bool:
-    if testForFile(path=expectedMHMetadataJSONFilePath) == False:
+    if testForFile(path=mh.modelhub_HubMetadataPath) == False:
         return False
 
-    jsonFilePath: PurePath = PurePath(f"{rootJSONPath}/modelhub.ai.json")
+    jsonFilePath: PurePath = PurePath(f"{mh.jsonFolderPath}/modelhub.ai.json")
 
-    df: DataFrame = pandas.read_json(path_or_buf=expectedMHMetadataJSONFilePath)
+    df: DataFrame = pandas.read_json(path_or_buf=mh.modelhub_HubMetadataPath)
 
     json: List[dict] = createPTMSchema(df)
 
-    if testForPath(path=rootJSONPath) == False:
+    if testForPath(path=mh.jsonFolderPath) == False:
         return False
 
     saveJSON(json, filepath=jsonFilePath)
