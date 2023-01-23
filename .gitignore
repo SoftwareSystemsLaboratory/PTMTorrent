@@ -159,24 +159,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-*.html
-*.json
-!*Schema.json
-HFTorrent/scripts/env/*
-*.csv
-HFTorrent/repos/*
-!schema.json
-*/json
-*/repos
-!.markdownlint.json
-*.txt
-!requirements.txt
-*/repos
-ptm_torrent/modelhub/repos
-ptm_torrent/modelzoo/repos
-ptm_torrent/modelzoo/json
-ptm_torrent/modelhub/json
-ptm_torrent/onnxmodelzoo/repos
-ptm_torrent/onnxmodelzoo/json
-
-*/data/*
+ptm_torrent/modelhub/data
+ptm_torrent/HFTorrent/v1.5/data
