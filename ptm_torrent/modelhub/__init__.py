@@ -23,3 +23,7 @@ subFolders: List[PurePath] = [
     htmlMetadataFolderPath,
     htmlModelMetadataFolderPath,
 ]
+
+modelhub_HubMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonMetadataFolderPath}/mh_metadata.json"
+)
