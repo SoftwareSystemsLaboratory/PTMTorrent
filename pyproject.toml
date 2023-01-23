@@ -14,6 +14,7 @@ pandas = "^1.5.2"
 bs4 = "^0.0.1"
 markdown = "^3.4.1"
 lxml = "^4.9.2"
+huggingface-hub = "^0.11.1"
 
 
 [tool.poetry.group.dev.dependencies]

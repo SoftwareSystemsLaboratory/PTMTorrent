@@ -3,7 +3,7 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
-import ptm_torrent.modelhub as mh
+import ptm_torrent.huggingface as hf
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
 
@@ -14,24 +14,27 @@ def readJSONData(json: dict) -> List[str]:
     with Spinner("Reading JSON data...") as spinner:
         obj: dict
         for obj in json:
-            data.append(obj["github"])
+            data.append(f"https://huggingface.co/{obj['id']}")
             spinner.next()
 
     return data
 
 
 def main() -> None | bool:
-    if testForFile(path=mh.modelhub_HubMetadataPath) == False:
+    if testForFile(path=hf.huggingface_HubMetadataPath) == False:
         return False
 
-    jsonData: dict = readJSON(jsonFilePath=mh.modelhub_HubMetadataPath)
+    jsonData: dict = readJSON(jsonFilePath=hf.huggingface_HubMetadataPath)
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    with Bar(f"Cloning git repos to {mh.modelhub_ReposPath}...", max=len(urls)) as bar:
+    with Bar(
+        f"Cloning git repos to {hf.huggingface_ReposPath}...", max=len(urls)
+    ) as bar:
         url: str
         for url in urls:
-            cloneRepo(url=url, rootGitClonePath=mh.modelhub_ReposPath)
+            cloneRepo(url=url, rootGitClonePath=hf.huggingface_ReposPath)
+            quit()
             bar.next()
 
 
