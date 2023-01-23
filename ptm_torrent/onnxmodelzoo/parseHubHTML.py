@@ -6,8 +6,7 @@ from bs4 import BeautifulSoup, ResultSet, Tag
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.onnxmodelzoo import (expectedOnnxHTMLPath, jsonMetadataPath,
-                                      rootHTMLPath)
+import ptm_torrent.onnxmodelzoo as omz
 from ptm_torrent.utils.fileSystem import readHTML, saveJSON
 
 
@@ -48,9 +47,7 @@ def extractData(row: Series, id: int) -> dict:
     uri: str | None
     try:
         uri = PurePath(row["Model Class"][1])
-        modelREADMEPath: str = PurePath(
-            f"{rootHTMLPath}/README_{uri.stem}.html"
-        ).__str__()
+        modelREADMEPath: str = omz.onnxmodelzoo_HubHTMLMetadataPath.__str__()
         uri = uri.__str__()
     except TypeError:
         uri = None
@@ -84,11 +81,11 @@ def extractData(row: Series, id: int) -> dict:
 def main() -> None:
     json: List[dict] = []
 
-    soup: BeautifulSoup = readHTML(htmlFilePath=expectedOnnxHTMLPath)
+    soup: BeautifulSoup = readHTML(htmlFilePath=omz.onnxmodelzoo_HubHTMLMetadataPath)
     categories: List[str] = getCategories(soup)
 
     tables: List[DataFrame] = pandas.read_html(
-        io=expectedOnnxHTMLPath, extract_links="all"
+        io=omz.onnxmodelzoo_HubHTMLMetadataPath, extract_links="all"
     )
 
     categories = categories[0 : len(tables) - len(categories)]
@@ -103,7 +100,7 @@ def main() -> None:
             json.append(extractData(row, id=idx))
             bar.next()
 
-    saveJSON(json, filepath=PurePath(f"{jsonMetadataPath}/onnx_metadata.json"))
+    saveJSON(json, filepath=omz.onnxmodelzoo_HubJSONMetadataPath)
 
 
 if __name__ == "__main__":
