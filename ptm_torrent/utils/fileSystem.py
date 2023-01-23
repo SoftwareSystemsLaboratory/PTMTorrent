@@ -13,7 +13,7 @@ def createPath(path: PurePath) -> bool:
     try:
         mkdir(path)
     except FileExistsError:
-        pass
+        print(f"Skipping {path.__str__()} as it already exists.")
     return isdir(path)
 
 
@@ -85,3 +85,34 @@ def readHTML(htmlFilePath: PurePath) -> BeautifulSoup:
         soup: BeautifulSoup = BeautifulSoup(markup=htmlFile, features="lxml")
         htmlFile.close()
     return soup
+
+
+def setupFileSystem(rootFolderName: str, subfolderNames: List[str]) -> None:
+
+    paths: List[PurePath] = [PurePath(rootFolderName)]
+    rootPath: PurePath = paths[0]
+
+    paths.append(PurePath(f"{rootPath}/{subfolder}" for subfolder in subfolderNames))
+
+    path: PurePath
+    for path in paths:
+        print(f"Creating {path.__str__()}...")
+        createPath(path)
+
+
+def checkFileSystem(rootFolderName: str | PurePath, subfolderNames: List[str]) -> bool:
+    """Returns True if all subfolders exist within the root folder"""
+    paths: List[PurePath] = [
+        PurePath(rootFolderName) if rootFolderName is str else rootFolderName
+    ]
+
+    rootPath: PurePath = paths[0]
+
+    paths.append(PurePath(f"{rootPath}/{subfolder}" for subfolder in subfolderNames))
+
+    path: PurePath
+    for path in paths:
+        if testForPath(path):
+            continue
+        else:
+            return False

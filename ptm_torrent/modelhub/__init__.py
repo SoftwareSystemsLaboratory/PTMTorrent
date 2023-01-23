@@ -1,9 +1,23 @@
 from pathlib import PurePath
 
-rootGitClonePath: PurePath = PurePath("repos")
-rootJSONPath: PurePath = PurePath("json")
-jsonMetadataPath: PurePath = PurePath(f"{rootJSONPath}/metadata")
+import ptm_torrent as pt
 
-expectedMHMetadataJSONFilePath: PurePath = PurePath(
-    f"{jsonMetadataPath}/mh_metadata.json"
+rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/modelhub")
+
+reposFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.reposFolderPath}")
+
+jsonFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.jsonFolderPath}")
+jsonMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.jsonMetadataFolderPath}"
+)
+jsonModelMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.jsonModelMetadataFolderPath}"
+)
+
+htmlFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.htmlFolderPath}")
+htmlMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.htmlMetadataFolderPath}"
+)
+htmlModelMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.htmlModelMetadataFolderPath}"
 )

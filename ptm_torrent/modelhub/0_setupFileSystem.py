@@ -3,10 +3,13 @@ from typing import List
 
 from progress.spinner import Spinner
 
-from ptm_torrent.utils.fileSystem import createPath
+from ptm_torrent.modelhub import rootFolderPath
+from ptm_torrent.utils.fileSystem import checkFileSystem, setupFileSystem
 
 
 def main() -> None:
+    checkFileSystem(rootFolderName=rootFolderPath)
+
     pathNames: List[str] = ["repos", "json", "json/metadata"]
     paths: List[PurePath] = [PurePath(pn) for pn in pathNames]
 
