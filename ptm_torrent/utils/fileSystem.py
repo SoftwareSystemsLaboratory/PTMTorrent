@@ -1,6 +1,6 @@
 from glob import glob
 from json import dump, load
-from os import mkdir
+from os import makedirs
 from os.path import isdir, isfile
 from pathlib import PurePath
 from typing import List
@@ -11,7 +11,7 @@ from markdown import markdown
 
 def createPath(path: PurePath) -> bool:
     try:
-        mkdir(path)
+        makedirs(path, exist_ok=True)
     except FileExistsError:
         print(f"Skipping {path.__str__()} as it already exists.")
     return isdir(path)
@@ -87,12 +87,14 @@ def readHTML(htmlFilePath: PurePath) -> BeautifulSoup:
     return soup
 
 
-def setupFileSystem(rootFolderName: str, subfolderNames: List[str]) -> None:
+def setupFileSystem(
+    rootFolderPath: PurePath, subfolderPaths: List[PurePath] = []
+) -> None:
 
-    paths: List[PurePath] = [PurePath(rootFolderName)]
+    paths: List[PurePath] = [rootFolderPath]
     rootPath: PurePath = paths[0]
 
-    paths.append(PurePath(f"{rootPath}/{subfolder}" for subfolder in subfolderNames))
+    paths.extend([PurePath(f"{rootPath}/{subfolder}") for subfolder in subfolderPaths])
 
     path: PurePath
     for path in paths:
@@ -100,15 +102,14 @@ def setupFileSystem(rootFolderName: str, subfolderNames: List[str]) -> None:
         createPath(path)
 
 
-def checkFileSystem(rootFolderName: str | PurePath, subfolderNames: List[str]) -> bool:
+def checkFileSystem(
+    rootFolderPath: PurePath, subfolderPaths: List[PurePath] = []
+) -> bool:
     """Returns True if all subfolders exist within the root folder"""
-    paths: List[PurePath] = [
-        PurePath(rootFolderName) if rootFolderName is str else rootFolderName
-    ]
-
+    paths: List[PurePath] = [rootFolderPath]
     rootPath: PurePath = paths[0]
 
-    paths.append(PurePath(f"{rootPath}/{subfolder}" for subfolder in subfolderNames))
+    paths.extend([PurePath(f"{rootPath}/{subfolder}") for subfolder in subfolderPaths])
 
     path: PurePath
     for path in paths:

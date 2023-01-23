@@ -1,5 +1,7 @@
 from pathlib import PurePath
 
+from ptm_torrent.utils.fileSystem import checkFileSystem, setupFileSystem
+
 dataFolderPath: PurePath = PurePath("data")
 
 reposFolderPath: PurePath = PurePath("repos")

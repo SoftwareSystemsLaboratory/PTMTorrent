@@ -1,17 +1,12 @@
-from ptm_torrent.modelhub import *
+import ptm_torrent.modelhub as mh
 from ptm_torrent.utils.fileSystem import checkFileSystem, setupFileSystem
 
 
 def main() -> None:
-    checkFileSystem(rootFolderName=rootFolderPath)
-
-    pathNames: List[str] = ["repos", "json", "json/metadata"]
-    paths: List[PurePath] = [PurePath(pn) for pn in pathNames]
-
-    with Spinner("Creating file directories...") as spinner:
-        path: PurePath
-        for path in paths:
-            createPath(path)
+    if checkFileSystem(rootFolderPath=mh.rootFolderPath, subfolderPaths=mh.subFolders):
+        return None
+    else:
+        setupFileSystem(rootFolderPath=mh.rootFolderPath, subfolderPaths=mh.subFolders)
 
 
 if __name__ == "__main__":
