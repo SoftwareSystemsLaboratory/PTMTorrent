@@ -1,14 +1,23 @@
 from pathlib import PurePath
 
-rootGitClonePath: PurePath = PurePath("repos")
-onnxPath: PurePath = PurePath(f"{rootGitClonePath}/onnx/models")
+import ptm_torrent as pt
 
-rootJSONPath: PurePath = PurePath("json")
-rootHTMLPath: PurePath = PurePath("html")
+rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/modelhub")
 
-jsonMetadataPath: PurePath = PurePath(f"{rootJSONPath}/metadata")
+reposFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.reposFolderPath}")
 
-expectedOnnxHTMLPath: PurePath = PurePath(f"{rootHTMLPath}/README_models.html")
-expectedOnnxMetadataJSONPath: PurePath = PurePath(
-    f"{jsonMetadataPath}/onnx_metadata.json"
+jsonFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.jsonFolderPath}")
+jsonMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.jsonMetadataFolderPath}"
+)
+jsonModelMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.jsonModelMetadataFolderPath}"
+)
+
+htmlFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.htmlFolderPath}")
+htmlMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.htmlMetadataFolderPath}"
+)
+htmlModelMetadataFolderPath: PurePath = PurePath(
+    f"{rootFolderPath}/{pt.htmlModelMetadataFolderPath}"
 )
