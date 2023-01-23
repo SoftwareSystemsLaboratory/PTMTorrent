@@ -32,7 +32,7 @@ def shrinkDataFrame(df: DataFrame, shrinkage: float = 0.1) -> DataFrame:
     return df.iloc[0:lastRow, :]
 
 
-def main(shrinkage: float = 0.1) -> None | bool:
+def main(shrinkage: float = 0.1) -> None:
     if testForFile(path=hf.huggingface_HubMetadataPath) == False:
         return False
 
