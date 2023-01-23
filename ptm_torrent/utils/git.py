@@ -49,7 +49,7 @@ def cloneRepo(url: str, rootGitClonePath: PurePath) -> CompletedProcess:
     gitPath: PurePath = PurePath(f"{rootGitClonePath}/{author}/{repo}")
     gitCommand.extend([url, gitPath])
 
-    return subprocess.run(args=gitCommand)
+    return subprocess.run(args=gitCommand, shell=False, stderr=subprocess.DEVNULL)
 
 
 def getLatestGitCommit(gitProjectPath: PurePath) -> str:

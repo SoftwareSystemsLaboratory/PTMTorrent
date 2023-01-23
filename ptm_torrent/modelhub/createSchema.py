@@ -13,13 +13,13 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 
 
 def createModelHub(row: Series) -> ModelHub:
-    mh: ModelHub = ModelHub(
-        metadata_file_path=mh.modelhub_HubMetadataPath,
+    modelHub: ModelHub = ModelHub(
+        metadata_file_path=mh.modelhub_HubMetadataPath.__str__(),
         metadata_object_id=row["id"],
         model_hub_name="Modelhub.ai",
         model_hub_url="https://modelhub.ai",
     )
-    return mh
+    return modelHub
 
 
 def createPTMSchema(df: DataFrame) -> List[dict]:

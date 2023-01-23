@@ -1,5 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor
-from pathlib import PurePath
 from typing import List
 
 from progress.bar import Bar
@@ -22,17 +20,6 @@ def readJSONData(json: dict) -> List[str]:
     return data
 
 
-def cloneGitRepos(urls: List[str], rootGitClonePath: PurePath) -> None:
-    with ThreadPoolExecutor() as executor:
-        with Bar(f"Cloning git repos to {rootGitClonePath}...", max=len(urls)) as bar:
-
-            def _concurrurentHelper(url: str) -> None:
-                cloneRepo(url, rootGitClonePath)
-                bar.next()
-
-            results = executor.map(_concurrurentHelper, urls)
-
-
 def main() -> None | bool:
     if testForFile(path=mh.modelhub_HubMetadataPath) == False:
         return False
@@ -41,7 +28,11 @@ def main() -> None | bool:
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    cloneGitRepos(urls=urls, rootGitClonePath=mh.reposFolderPath)
+    with Bar(f"Cloning git repos to {mh.reposFolderPath}...", max=len(urls)) as bar:
+        url: str
+        for url in urls:
+            cloneRepo(url=url, rootGitClonePath=mh.reposFolderPath)
+            bar.next()
 
 
 if __name__ == "__main__":
