@@ -1,3 +1,4 @@
+from collections import namedtuple
 from pathlib import PurePath
 from typing import List
 
@@ -8,9 +9,18 @@ from progress.bar import Bar
 import ptm_torrent.onnxmodelzoo as omz
 from ptm_torrent.utils.fileSystem import readJSON, saveJSON
 
+MetadataGroup = namedtuple(
+    typename="MetadataGroup",
+    field_names=["HTMLReadmePath", "RepoReadmePath", "Category"],
+    defaults=[None, None, None],
+)
+
 
 def prepareData(
-    dfs: List[DataFrame], readmePath: PurePath, firstColumn: str = "Model"
+    dfs: List[DataFrame],
+    readmePath: PurePath,
+    category: str,
+    firstColumn: str = "Model",
 ) -> DataFrame:
     validDFs: List[DataFrame] = []
 
@@ -18,6 +28,7 @@ def prepareData(
     for df in dfs:
         df.columns = [pair[0] for pair in df.columns]
         df["readmePath"] = readmePath
+        df["category"] = category
 
         if df.columns.__contains__(firstColumn):
             rowCount: int = len(df)
@@ -90,6 +101,7 @@ def createJSON(df: DataFrame, category: str) -> List[dict]:
         data["Dataset"] = row["Dataset"]
         data["OpsetVersion"] = row["OpsetVersion"]
         data["Top-1 Error (%)"] = row["Top-1 Error (%)"]
+        data["Category"] = row["category"]
 
         try:
             data["ModelSampleSize"] = row["Download (with sample test data)"][0]
@@ -137,36 +149,37 @@ def main() -> None:
         jsonFilePath=omz.onnxmodelzoo_HubJSONMetadataPath
     )
 
-    modelREADMEPaths: List[PurePath] = [
-        PurePath(metadata["ModelREADMEPath"])
-        for metadata in modelHubMetadata
-        if metadata["ModelREADMEPath"] != None
-    ]
-    repoREADMEPaths: List[PurePath] = [
-        PurePath(metadata["RepoREADMEPath"])
-        for metadata in modelHubMetadata
-        if metadata["RepoREADMEPath"] != None
-    ]
+    mgList = []
 
-    pathMerge: List[tuple[PurePath, PurePath]] = list(
-        zip(modelREADMEPaths, repoREADMEPaths)
-    )
+    metadata: dict
+    for metadata in modelHubMetadata:
+        if metadata["ModelREADMEPath"] and metadata["RepoREADMEPath"] != None:
+            modelReadmePath: PurePath = PurePath(metadata["ModelREADMEPath"])
+            repoReadmePath: PurePath = PurePath(metadata["RepoREADMEPath"])
+            category: str = metadata["Category"]
+            mg = MetadataGroup(
+                HTMLReadmePath=modelReadmePath,
+                RepoReadmePath=repoReadmePath,
+                Category=category,
+            )
+            mgList.append(mg)
 
-    with Bar(
-        "Converting model HTML data into DataFrames...", max=len(modelREADMEPaths)
-    ) as bar:
+    with Bar("Converting model HTML data into DataFrames...", max=len(mgList)) as bar:
 
-        for pathPair in list(zip(modelREADMEPaths, repoREADMEPaths)):
+        mg: MetadataGroup
+        for mg in mgList:
             modelTables: List[DataFrame] = pandas.read_html(
-                io=pathPair[0], extract_links="all"
+                io=mg.HTMLReadmePath, extract_links="all"
             )
 
-            tables.append(prepareData(dfs=modelTables, readmePath=pathPair[1]))
+            tables.append(
+                prepareData(
+                    dfs=modelTables, readmePath=mg.RepoReadmePath, category=mg.Category
+                )
+            )
             bar.next()
 
     data: DataFrame = pandas.concat(objs=tables, ignore_index=True)
-    # print(data.columns)
-    # quit()
     data = extractTextFromPair(df=data, labels=["Model"], drop=True)
     data.reset_index(drop=True, inplace=True)
     data = extractTextFromPair(df=data, labels=tableLabels)
