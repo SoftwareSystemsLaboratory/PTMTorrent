@@ -16,6 +16,7 @@ htmlMetadataFolderPath: PurePath = PurePath(f"{pt.htmlMetadataFolderPath}")
 htmlModelMetadataFolderPath: PurePath = PurePath(f"{pt.htmlModelMetadataFolderPath}")
 
 subFolders: List[PurePath] = [
+    reposFolderPath,
     jsonFolderPath,
     jsonMetadataFolderPath,
     jsonModelMetadataFolderPath,
@@ -23,3 +24,7 @@ subFolders: List[PurePath] = [
     htmlMetadataFolderPath,
     htmlModelMetadataFolderPath,
 ]
+
+modelzoo_HubMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonMetadataFolderPath}/mz_metadata.json"
+)
