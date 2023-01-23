@@ -6,9 +6,10 @@ import pandas
 from pandas import DataFrame, Series
 from progress.bar import Bar
 
-from ptm_torrent.modelzoo import (expectedMZModelMetadataJSONFilePath,
-                                  jsonMetadataPath, rootGitClonePath,
-                                  rootJSONPath)
+import ptm_torrent.modelzoo as mz
+# (expectedMZModelMetadataJSONFilePath,
+#                                   jsonMetadataPath, rootGitClonePath,
+#                                   rootJSONPath)
 from ptm_torrent.utils.fileSystem import saveJSON, testForFile, testForPath
 from ptm_torrent.utils.git import getLatestGitCommit
 from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent

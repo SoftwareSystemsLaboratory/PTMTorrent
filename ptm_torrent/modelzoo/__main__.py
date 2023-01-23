@@ -4,7 +4,7 @@ import ptm_torrent.modelzoo.downloadRepos as downloadRepos
 import ptm_torrent.modelzoo.setupFileSystem as setupFS
 
 if __name__ == "__main__":
-    # setupFS.main()
-    # downloadHubJSON.main()
-    # downloadModelJSON.main()
+    setupFS.main()
+    downloadHubJSON.main()
+    downloadModelJSON.main()
     downloadRepos.main()

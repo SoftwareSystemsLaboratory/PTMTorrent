@@ -68,7 +68,7 @@ def main() -> None | bool:
     if testForFile(path=mh.modelhub_HubMetadataPath) == False:
         return False
 
-    jsonFilePath: PurePath = PurePath(f"{mh.jsonFolderPath}/modelhub.ai.json")
+    jsonFilePath: PurePath = PurePath(f"{mh.jsonFolderPath}/modelhub.json")
 
     df: DataFrame = pandas.read_json(path_or_buf=mh.modelhub_HubMetadataPath)
 
