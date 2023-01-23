@@ -2,7 +2,7 @@ from pathlib import PurePath
 
 import ptm_torrent as pt
 
-rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/modelhub")
+rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/pytorchhub")
 
 reposFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.reposFolderPath}")
 
