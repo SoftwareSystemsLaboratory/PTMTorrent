@@ -4,8 +4,7 @@ from typing import List
 from progress.bar import Bar
 from progress.spinner import Spinner
 
-from ptm_torrent.modelzoo import (expectedMZMetadataJSONFilePath,
-                                  rootGitClonePath)
+import ptm_torrent.modelzoo as mz
 from ptm_torrent.utils.fileSystem import readJSON, testForFile
 from ptm_torrent.utils.git import cloneRepo
 
@@ -31,16 +30,16 @@ def cloneGitRepos(urls: List[str], gitCloneBarePath: PurePath) -> None:
 
 
 def main() -> None | bool:
-    if testForFile(path=expectedMZMetadataJSONFilePath) == False:
+    if testForFile(path=mz.modelzoo_ConcatinatedModelMetadataPath) == False:
         return False
 
-    jsonData: List[dict] = readJSON(jsonFilePath=expectedMZMetadataJSONFilePath)[
-        "models"
-    ]
+    jsonData: List[dict] = readJSON(
+        jsonFilePath=mz.modelzoo_ConcatinatedModelMetadataPath
+    )
 
     urls: List[str] = readJSONData(json=jsonData)
 
-    cloneGitRepos(urls, rootGitClonePath)
+    cloneGitRepos(urls=urls, gitCloneBarePath=mz.reposFolderPath)
 
 
 if __name__ == "__main__":

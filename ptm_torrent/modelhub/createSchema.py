@@ -35,7 +35,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
             parsedURL: ParseResult = urlparse(url)
             urlPath: str = parsedURL.path.strip("/")
 
-            repoPath: PurePath = PurePath(f"{mh.reposFolderPath}/{urlPath}")
+            repoPath: PurePath = PurePath(f"{mh.modelhub_ReposPath}/{urlPath}")
             if testForPath(repoPath) == False:
                 print(f"Path not found: {repoPath}")
                 bar.next()

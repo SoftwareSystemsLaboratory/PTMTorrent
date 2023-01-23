@@ -5,7 +5,7 @@ import ptm_torrent as pt
 
 rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/modelhub")
 
-reposFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.reposFolderPath}")
+reposFolderPath: PurePath = PurePath(f"{pt.reposFolderPath}")
 
 jsonFolderPath: PurePath = PurePath(f"{pt.jsonFolderPath}")
 jsonMetadataFolderPath: PurePath = PurePath(f"{pt.jsonMetadataFolderPath}")
@@ -28,3 +28,5 @@ subFolders: List[PurePath] = [
 modelhub_HubMetadataPath: PurePath = PurePath(
     f"{rootFolderPath}/{jsonMetadataFolderPath}/mh_metadata.json"
 )
+
+modelhub_ReposPath: PurePath = PurePath(f"{rootFolderPath}/{reposFolderPath}")

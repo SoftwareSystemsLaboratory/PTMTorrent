@@ -31,7 +31,7 @@ def main() -> None | bool:
     with Bar(f"Cloning git repos to {mh.reposFolderPath}...", max=len(urls)) as bar:
         url: str
         for url in urls:
-            cloneRepo(url=url, rootGitClonePath=mh.reposFolderPath)
+            cloneRepo(url=url, rootGitClonePath=mh.modelhub_ReposPath)
             bar.next()
 
 
