@@ -16,6 +16,7 @@ htmlMetadataFolderPath: PurePath = PurePath(f"{pt.htmlMetadataFolderPath}")
 htmlModelMetadataFolderPath: PurePath = PurePath(f"{pt.htmlModelMetadataFolderPath}")
 
 subFolders: List[PurePath] = [
+    reposFolderPath,
     jsonFolderPath,
     jsonMetadataFolderPath,
     jsonModelMetadataFolderPath,
