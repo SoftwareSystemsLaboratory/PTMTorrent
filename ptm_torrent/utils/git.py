@@ -52,6 +52,26 @@ def cloneRepo(url: str, rootGitClonePath: PurePath) -> CompletedProcess:
     return subprocess.run(args=gitCommand, shell=False, stderr=subprocess.DEVNULL)
 
 
+def getLatestGitCommitOfFile(gitProjectPath: PurePath, filepath: PurePath) -> str:
+    gitCommand: List[str] = [
+        "git",
+        "--no-pager",
+        "-C",
+        gitProjectPath,
+        "log",
+        "-n 1",
+        '--format="%H"',
+        "--",
+        filepath,
+    ]
+
+    process: CompletedProcess = subprocess.run(
+        args=gitCommand, shell=False, stdout=subprocess.PIPE
+    )
+
+    return process.stdout.decode(encoding="UTF-8").strip().replace('"', "")
+
+
 def getLatestGitCommit(gitProjectPath: PurePath) -> str:
     gitCommand: List[str] = [
         "git",

@@ -68,14 +68,13 @@ def main() -> None | bool:
     if testForFile(path=mh.modelhub_HubMetadataPath) == False:
         return False
 
-    jsonFilePath: PurePath = PurePath(f"{mh.jsonFolderPath}/modelhub.json")
+    jsonFilePath: PurePath = PurePath(
+        f"{mh.rootFolderPath}/{mh.jsonFolderPath}/modelhub.json"
+    )
 
     df: DataFrame = pandas.read_json(path_or_buf=mh.modelhub_HubMetadataPath)
 
     json: List[dict] = createPTMSchema(df)
-
-    if testForPath(path=mh.jsonFolderPath) == False:
-        return False
 
     saveJSON(json, filepath=jsonFilePath)
 

@@ -48,3 +48,7 @@ onnxmodelzoo_HubJSONMetadataPath: PurePath = PurePath(
 onnxmodelzoo_ModelJSONMetadataPath: PurePath = PurePath(
     f"{rootFolderPath}/{jsonMetadataFolderPath}/omz_models_metadata.json"
 )
+
+onnxmodelzoo_ConcatinatedModelMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonMetadataFolderPath}/omz_models_metadata.json"
+)

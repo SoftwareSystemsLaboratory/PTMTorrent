@@ -29,6 +29,9 @@ def prepareData(
         df.columns = [pair[0] for pair in df.columns]
         df["readmePath"] = readmePath
         df["category"] = category
+        df[
+            "GitHub URL"
+        ] = f"https://github.com/onnx/models/tree/main/{readmePath.__str__()}"
 
         if df.columns.__contains__(firstColumn):
             rowCount: int = len(df)
@@ -102,6 +105,7 @@ def createJSON(df: DataFrame, category: str) -> List[dict]:
         data["OpsetVersion"] = row["OpsetVersion"]
         data["Top-1 Error (%)"] = row["Top-1 Error (%)"]
         data["Category"] = row["category"]
+        data["GitHub URL"] = row["GitHub URL"]
 
         try:
             data["ModelSampleSize"] = row["Download (with sample test data)"][0]
