@@ -1,47 +1,56 @@
-# PTM Torrent (working title)
+# PTM Torrent
 
-> Scripts and utilities to recreate the PTM Torrent dataset
+> Code to generate the PTM Torrent dataset
+
+[![Python Version](https://img.shields.io/badge/Python-3.10.9-blue)](https://img.shields.io/badge/Python-3.10.9-blue)
+[![Release Project](https://github.com/SoftwareSystemsLaboratory/PTM-Torrent/actions/workflows/release.yml/badge.svg)](https://github.com/SoftwareSystemsLaboratory/PTM-Torrent/actions/workflows/release.yml)
+
+## Table of Contents
+
+- [PTM Torrent](#ptm-torrent)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+    - [Supported Model Hubs](#supported-model-hubs)
+  - [Dependencies](#dependencies)
+  - [How To Install](#how-to-install)
+    - [Python Package](#python-package)
+    - [From Source](#from-source)
+    - [As Scripts](#as-scripts)
+  - [How to Run](#how-to-run)
+    - [As a Python Package](#as-a-python-package)
+    - [As Individual Scripts](#as-individual-scripts)
+  - [Data Storage](#data-storage)
+    - [From Python Package](#from-python-package)
+    - [From Individual Scripts](#from-individual-scripts)
+  - [How to Cite](#how-to-cite)
+  - [References](#references)
 
 ## About
 
-## Supported Model Hubs
+### Supported Model Hubs
 
-This repository currently supports the following model hubs:
+## Dependencies
 
-| Model Hub      | Project Path |
-| -------------- | ------------ |
-| Hugging Face   | ./HFTorrent  |
-| TensorFlow Hub | ./TFTorrent  |
-| Model Zoo      | ./MZTorrent  |
-| Pytorch Hub    | ./PHTorrent  |
-| ONNX Model Zoo | ./OMTorrent  |
-| Modelhub       | ./MHTorrent  |
+## How To Install
 
-## How To Run
+### Python Package
 
-Torrents are not dependent upon each other at this time.
-For information on how to run any of the torrents, please refer to the `README.md` file in the root of each torrent directory.
+### From Source
 
-## How To Contribute
+### As Scripts
 
-We gladly accept contributions from the community.
-For more information about the different types of contributions that one could make, please see the following sub-sections
+## How to Run
 
-### Reporting Bugs
+### As a Python Package
 
-Please use our GitHub issue tracker to report any bugs that you find.
+### As Individual Scripts
 
-### Contributing/ Maintaining Code
+## Data Storage
 
-Please submit a pull request through GitHub with any code changes that you made.
-Additionally, we ask that you please use the `pre-commit` configuration that we have to ensure consistency and coherence with the project.
+### From Python Package
 
-### Contributing A New Modle Hub
+### From Individual Scripts
 
-To contribute a new model hub, please see INSERT CONTRIBUTON DOC.
+## How to Cite
 
-## How To Cite
-
-Please use our [CITATION.cff](CITATION.cff) file to cite our work.
-
-## Citations
+## References
