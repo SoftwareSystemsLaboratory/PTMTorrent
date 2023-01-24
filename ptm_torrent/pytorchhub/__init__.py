@@ -37,6 +37,8 @@ pytorchhub_HubHTMLMetadataPath: PurePath = PurePath(
     f"{rootFolderPath}/{htmlMetadataFolderPath}/pyth_metadata.html"
 )
 
-pytorch_ConcatinatedModelMetadataPath: PurePath = PurePath(
+pytorchhub_ConcatinatedModelMetadataPath: PurePath = PurePath(
     f"{rootFolderPath}/{jsonMetadataFolderPath}/pyth_models_metadata.json"
 )
+
+pytorchhub_ReposPath: PurePath = PurePath(f"{rootFolderPath}/{reposFolderPath}")
