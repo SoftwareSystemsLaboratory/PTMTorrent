@@ -5,7 +5,7 @@ import ptm_torrent as pt
 
 rootFolderPath: PurePath = PurePath(f"{pt.dataFolderPath}/pytorchhub")
 
-reposFolderPath: PurePath = PurePath(f"{rootFolderPath}/{pt.reposFolderPath}")
+reposFolderPath: PurePath = PurePath(f"{pt.reposFolderPath}")
 
 jsonFolderPath: PurePath = PurePath(f"{pt.jsonFolderPath}")
 jsonMetadataFolderPath: PurePath = PurePath(f"{pt.jsonMetadataFolderPath}")
@@ -24,3 +24,19 @@ subFolders: List[PurePath] = [
     htmlMetadataFolderPath,
     htmlModelMetadataFolderPath,
 ]
+
+pytorchhub_HubHTMLPath: PurePath = PurePath(
+    f"{rootFolderPath}/{htmlMetadataFolderPath}"
+)
+
+pytorchhub_ModelHTMLPath: PurePath = PurePath(
+    f"{rootFolderPath}/{htmlModelMetadataFolderPath}"
+)
+
+pytorchhub_HubHTMLMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{htmlMetadataFolderPath}/pyth_metadata.html"
+)
+
+pytorch_ConcatinatedModelMetadataPath: PurePath = PurePath(
+    f"{rootFolderPath}/{jsonMetadataFolderPath}/pyth_models_metadata.json"
+)

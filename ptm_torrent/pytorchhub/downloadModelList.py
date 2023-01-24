@@ -3,8 +3,10 @@ from typing import List
 from urllib.parse import ParseResult, urlparse
 
 from bs4 import BeautifulSoup, ResultSet
+from progress.bar import Bar
 from requests import Response, get
 
+import ptm_torrent.pytorchhub as pyth
 from ptm_torrent.utils.fileSystem import readHTML, saveHTML
 
 
@@ -26,19 +28,27 @@ def extractModelURLs(soup: BeautifulSoup) -> List[ParseResult]:
 
 def main() -> None:
     pytorchHubModelListURL: str = "https://pytorch.org/hub/research-models/compact"
-    pytorchHubHTMLPath: PurePath = PurePath("html/pytorchhub_metadata.html")
 
-    getHTML(url=pytorchHubModelListURL, filepath=pytorchHubHTMLPath)
+    print("Downloading the PyTorch Hub model list...")
+    getHTML(url=pytorchHubModelListURL, filepath=pyth.pytorchhub_HubHTMLMetadataPath)
 
-    modelHubSoup: BeautifulSoup = readHTML(htmlFilePath=pytorchHubHTMLPath)
+    modelHubSoup: BeautifulSoup = readHTML(
+        htmlFilePath=pyth.pytorchhub_HubHTMLMetadataPath
+    )
 
     modelURLs: List[ParseResult] = extractModelURLs(soup=modelHubSoup)
 
-    url: ParseResult
-    for url in modelURLs:
-        splitPath: List[str] = url.path.strip("/").split("/")
-        htmlFilepath: str = PurePath(f"html/models/{splitPath[-1]}.html")
-        getHTML(url=url.geturl(), filepath=htmlFilepath)
+    with Bar(
+        "Downloading PyTorch Hub model card HTML files...", max=len(modelURLs)
+    ) as bar:
+        url: ParseResult
+        for url in modelURLs:
+            splitPath: List[str] = url.path.strip("/").split("/")
+            htmlFilepath: str = PurePath(
+                f"{pyth.pytorchhub_ModelHTMLPath}/{splitPath[-1]}.html"
+            )
+            getHTML(url=url.geturl(), filepath=htmlFilepath)
+            bar.next()
 
 
 if __name__ == "__main__":

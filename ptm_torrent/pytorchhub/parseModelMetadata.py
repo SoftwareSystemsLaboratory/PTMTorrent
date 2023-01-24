@@ -4,6 +4,7 @@ from typing import List
 
 from bs4 import BeautifulSoup, Tag
 
+import ptm_torrent.pytorchhub as pyth
 from ptm_torrent.utils.fileSystem import readHTML, saveJSON
 
 
@@ -53,7 +54,8 @@ def main() -> None:
     json: List[dict] = []
 
     htmlFiles: List[PurePath] = [
-        PurePath(f"html/models/{path}") for path in listdir(path="html/models")
+        PurePath(f"{pyth.pytorchhub_ModelHTMLPath}/{path}")
+        for path in listdir(path=pyth.pytorchhub_ModelHTMLPath)
     ]
 
     idx: int
@@ -62,7 +64,8 @@ def main() -> None:
         data: dict = buildJSON(id=idx, soup=soup)
         json.append(data)
 
-    saveJSON(json=json, filepath="test.json")
+    print(f"Saving data to {pyth.pytorch_ConcatinatedModelMetadataPath}")
+    saveJSON(json=json, filepath=pyth.pytorch_ConcatinatedModelMetadataPath)
 
 
 if __name__ == "__main__":
