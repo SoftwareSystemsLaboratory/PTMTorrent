@@ -15,7 +15,7 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 def createModelHub(row: Series) -> ModelHub:
     mh: ModelHub = ModelHub(
         metadata_file_path=mz.modelzoo_HubMetadataPath.__str__(),
-        metadata_object_id=row["id"],
+        metadata_object_id=str(row["id"]),
         model_hub_name="ModelZoo",
         model_hub_url="https://modelzoo.co",
     )
