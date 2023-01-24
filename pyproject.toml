@@ -5,6 +5,7 @@ description = ""
 authors = ["Nicholas M. Synovic <nicholas.synovic@gmail.com>"]
 readme = "README.md"
 packages = [{include = "ptm_torrent"}]
+exclude = ["ptm_torrent/modelhub/data", "ptm_torrent/HFTorrent/v1.5/data", "ptm_torrent/modelzoo/data", "ptm_torrent/onnxmodelzoo/data", "ptm_torrent/huggingface/data", "ptm_torrent/huggingface/v1.5/data", "ptm_torrent/huggingface/v2/data", "ptm_torrent/huggingface/v3/data", "ptm_torrent/pytorchhub/data"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
