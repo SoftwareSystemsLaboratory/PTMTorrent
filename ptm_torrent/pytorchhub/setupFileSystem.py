@@ -1,4 +1,4 @@
-import ptm_torrent.pythorchhub as pyth
+import ptm_torrent.pytorchhub as pyth
 from ptm_torrent.utils.fileSystem import checkFileSystem, setupFileSystem
 
 
