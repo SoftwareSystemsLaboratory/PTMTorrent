@@ -52,7 +52,7 @@ The following model hubs are supported by our software:
 
 ## Dependencies
 
-This software is dependent upon the following software:
+This project is dependent upon the following software:
 
 - [`Python 3.10.9+`](https://www.python.org/downloads/release/python-3109/)
 
@@ -60,8 +60,8 @@ This software is dependent upon the following software:
 > [`pip`](https://pip.pypa.io/en/stable/) and
 > [`poetry`](https://python-poetry.org/)
 
-- [`git`](https://git-scm.com)
-- [`git lfs`](https://git-lfs.com/)
+- [`Git`](https://git-scm.com)
+- [`Git LFS`](https://git-lfs.com/)
 
 ## How To Install
 
