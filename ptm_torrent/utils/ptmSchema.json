@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "ModelHub": {
+      "type": "object",
+      "properties": {
+        "ModelHubName": {
+          "type": "string"
+        },
+        "ModelHubURL": {
+          "type": "string"
+        },
+        "MetadataFilePath": {
+          "type": "string"
+        },
+        "MetadataObjectID": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ModelHubName",
+        "ModelHubURL",
+        "MetadataFilePath",
+        "MetadataObjectID"
+      ]
+    },
+    "ModelName": {
+      "type": "string"
+    },
+    "ModelOwner": {
+      "type": "string"
+    },
+    "ModelURL": {
+      "type": "string"
+    },
+    "ModelOwnerURL": {
+      "type": "string"
+    },
+    "Datasets": {
+      "type": "array",
+      "contains": {
+        "type": "object",
+        "properties": {
+          "DatasetName": {
+            "type": "string"
+          },
+          "DatasetOwner": {
+            "type": "string"
+          },
+          "DatasetURL": {
+            "type": "string"
+          },
+          "DatasetOwnerURL": {
+            "type": "string"
+          },
+          "DatasetPaperDOI": {
+            "type": "string"
+          },
+          "DatasetUsages": {
+            "type": "array",
+            "contains": {
+              "type": "string",
+              "uniqueItems": true
+            }
+          }
+        },
+        "required": ["DatasetName", "DatasetOwner", "DatasetURL", "DatasetOwnerURL"]
+      }
+    },
+    "ModelPaperDOIs": {
+        "type": "array",
+        "contains": {
+            "type": "string",
+            "uniqueItems": true
+        }
+    },
+    "LatestGitCommitSHA": {
+      "type": "string"
+    },
+    "ModelTask": {
+      "type": "string"
+    },
+    "ModelArchitecture": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "ModelHub",
+    "ModelName",
+    "ModelOwner",
+    "ModelURL",
+    "ModelOwnerURL",
+    "LatestGitCommitSHA"
+  ]
+}

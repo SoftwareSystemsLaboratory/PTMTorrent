@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "ptm-torrent"
+version = "0.1.0"
+description = ""
+authors = ["Nicholas M. Synovic <nicholas.synovic@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ptm_torrent"}]
+exclude = ["ptm_torrent/modelhub/data", "ptm_torrent/HFTorrent/v1.5/data", "ptm_torrent/modelzoo/data", "ptm_torrent/onnxmodelzoo/data", "ptm_torrent/huggingface/data", "ptm_torrent/huggingface/v1.5/data", "ptm_torrent/huggingface/v2/data", "ptm_torrent/huggingface/v3/data", "ptm_torrent/pytorchhub/data"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+progress = "^1.6"
+requests = "^2.28.2"
+pandas = "^1.5.2"
+bs4 = "^0.0.1"
+markdown = "^3.4.1"
+lxml = "^4.9.2"
+huggingface-hub = "^0.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+isort = "^5.11.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
