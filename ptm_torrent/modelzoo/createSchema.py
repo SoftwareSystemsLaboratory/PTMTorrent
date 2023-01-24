@@ -37,7 +37,6 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
             repoPath: PurePath = PurePath(f"{mz.modelzoo_ReposPath}/{urlPath}")
             if testForPath(repoPath) == False:
-                print(f"Path not found: {repoPath}")
                 bar.next()
                 continue
 
