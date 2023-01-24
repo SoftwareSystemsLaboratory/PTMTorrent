@@ -8,14 +8,17 @@ from urllib.parse import ParseResult, urlparse
 # exception of the gitCommand variable and a renamed argument
 
 
-def cloneBareRepo(url: str, gitCloneBarePath: PurePath) -> CompletedProcess:
+def cloneBareRepo(url: str, gitCloneBarePath: PurePath) -> CompletedProcess | bool:
     author: str
     repo: str
 
     gitCommand: List[str] = ["git", "clone", "--bare", "-q"]
 
-    parsedURL: ParseResult = urlparse(url)
-    pathSplit: List[str] = parsedURL.path.strip("/").split("/")
+    try:
+        parsedURL: ParseResult = urlparse(url)
+        pathSplit: List[str] = parsedURL.path.strip("/").split("/")
+    except TypeError:
+        return False
 
     if len(pathSplit) == 1:
         author = parsedURL.netloc.strip()
@@ -36,8 +39,11 @@ def cloneRepo(url: str, rootGitClonePath: PurePath) -> CompletedProcess:
 
     gitCommand: List[str] = ["git", "clone", "-q"]
 
-    parsedURL: ParseResult = urlparse(url)
-    pathSplit: List[str] = parsedURL.path.strip("/").split("/")
+    try:
+        parsedURL: ParseResult = urlparse(url)
+        pathSplit: List[str] = parsedURL.path.strip("/").split("/")
+    except TypeError:
+        return False
 
     if len(pathSplit) == 1:
         author = parsedURL.netloc.strip()
