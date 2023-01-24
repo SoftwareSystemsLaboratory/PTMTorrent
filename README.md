@@ -158,6 +158,10 @@ Where:
 - data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
   cloned.
 
+Model hub scripts do not overwrite the folder. In other words, it is a safe
+operation to run multiple model hub scripts from the same directory sequentially
+or concurrently.
+
 Specifics about the types of metadata files and content that is produced by the
 scripts can be found in each model hub's script folder's `README.md` file.
 
