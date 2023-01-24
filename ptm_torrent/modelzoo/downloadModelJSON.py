@@ -33,6 +33,7 @@ def downloadModelMetadata(modelList: List[dict]) -> List[PurePath]:
 
             executor.map(_concurrurentHelper, slugs)
 
+    print("\n")
     return paths
 
 

@@ -1,0 +1,57 @@
+{
+    "upload_type": "software",
+    "title": "SoftwareSystemsLaboratory/PTMTorrent",
+    "creators": [
+        {
+        "name": "Davis, James C.",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0003-2495-686X"
+        },
+        {
+        "name": "Jiang, Wenxin",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0003-2608-8576"
+        },
+        {
+        "name": "Schorlemmer, Taylor R.",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0003-2181-5527"
+        },
+        {
+        "name": "Sethi, Rohan",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0002-9587-3722"
+        },
+        {
+        "name": "Stoneman, Ethan",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0001-7702-8261"
+        },
+        {
+        "name": "Synovic, Nicholas",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0003-0413-4594"
+        },
+        {
+        "name": "Thota, Sohini",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0002-3496-8867"
+        },
+        {
+        "name": "Thiruvathukal, George K.",
+        "affiliation": "Loyola University Chicago and Argonne National Laboratory",
+        "orcid": "0000-0002-0452-5571"
+        }
+    ],
+    "description": "Complete installer for CLIME",
+    "access_right": "open",
+    "license": "BSD-3-Clause",
+    "prereserve_doi": true,
+    "keywords": [
+      "msr",
+      "mining software repositories",
+      "msr 2023",
+      "ptms",
+      "pre-trained machine learning models",
+    ]
+}
