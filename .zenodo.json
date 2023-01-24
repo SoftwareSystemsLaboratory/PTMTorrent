@@ -18,9 +18,9 @@
         "orcid": "0000-0003-2181-5527"
         },
         {
-        "name": "Sethi, Rohan",
-        "affiliation": "Loyola University Chicago",
-        "orcid": "0000-0002-9587-3722"
+        "name": "Tewari, Arav",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0002-1512-858X"
         },
         {
         "name": "Stoneman, Ethan",
@@ -52,6 +52,6 @@
       "mining software repositories",
       "msr 2023",
       "ptms",
-      "pre-trained machine learning models",
+      "pre-trained machine learning models"
     ]
 }
