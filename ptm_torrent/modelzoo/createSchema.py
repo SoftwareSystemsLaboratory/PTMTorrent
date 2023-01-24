@@ -43,6 +43,12 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
             splitPath: list = urlPath.split("/")
 
+            modelTask: str | None
+            try:
+                modelTask = row["categories"][0]["title"]
+            except IndexError:
+                modelTask = None
+
             ptm: PTMTorrent = PTMTorrent(
                 id=idx,
                 latest_git_commit_sha=getLatestGitCommit(gitProjectPath=repoPath),
@@ -54,7 +60,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
                 model_url=url,
                 model_architecture=None,
                 model_paper_dois=[],
-                model_task=row["categories"][0]["title"],
+                model_task=modelTask,
             )
 
             data.append(ptm.to_dict())
