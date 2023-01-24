@@ -54,7 +54,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
                 model_url=url,
                 model_architecture=None,
                 model_paper_dois=[],
-                model_task=[task["title"] for task in row["categories"]],
+                model_task=row["categories"][0][["title"]],
             )
 
             data.append(ptm.to_dict())
