@@ -18,8 +18,6 @@
   - [How to Run](#how-to-run)
     - [As Individual Scripts](#as-individual-scripts)
   - [Data Storage](#data-storage)
-    - [From Python Package](#from-python-package)
-    - [From Individual Scripts](#from-individual-scripts)
   - [How to Cite](#how-to-cite)
   - [References](#references)
 
@@ -130,9 +128,38 @@ For example, to run Hugging Face's scripts:
 
 ## Data Storage
 
-### From Python Package
+Each model hub script generates the following directory structure **per model
+hub**:
 
-### From Individual Scripts
+```shell
+📂data
+ ┗ 📂MODELHUB
+ ┃ ┣ 📂html
+ ┃ ┃ ┗ 📂metadata
+ ┃ ┃ ┃ ┃ ┗ 📂models
+ ┃ ┃ ┣ 📂json
+ ┃ ┃ ┃ ┗ 📂metadata
+ ┃ ┃ ┃ ┃ ┗ 📂models
+ ┃ ┃ ┗ 📂repos
+ ┃ ┃ ┃ ┗ 📂AUTHOR
+ ┃ ┃ ┃ ┃ ┗ 📂MODEL
+```
+
+> This folder structure is generated relative to where the script is ran from.
+> Example: if the script was ran from the home directory (`~`), then the `data`
+> folder would be stored at `~/data`.
+
+Where:
+
+- data/`MODELHUB` is the same name as the `Python` module folder that contained
+  the script.
+- data/MODELHUB/repos/`AUTHOR` is the author name of the repository that was
+  cloned.
+- data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
+  cloned.
+
+Specifics about the types of metadata files and content that is produced by the
+scripts can be found in each model hub's script folder's `README.md` file.
 
 ## How to Cite
 
