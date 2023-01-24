@@ -64,8 +64,8 @@ def main() -> None:
         data: dict = buildJSON(id=idx, soup=soup)
         json.append(data)
 
-    print(f"Saving data to {pyth.pytorch_ConcatinatedModelMetadataPath}")
-    saveJSON(json=json, filepath=pyth.pytorch_ConcatinatedModelMetadataPath)
+    print(f"Saving data to {pyth.pytorchhub_ConcatinatedModelMetadataPath}")
+    saveJSON(json=json, filepath=pyth.pytorchhub_ConcatinatedModelMetadataPath)
 
 
 if __name__ == "__main__":
