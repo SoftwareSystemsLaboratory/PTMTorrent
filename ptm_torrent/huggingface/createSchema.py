@@ -29,32 +29,35 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
         idx: int
         for idx in range(len(df)):
 
+            # Pull current entry from table
             row: Series = df.loc[idx]
 
-            # url: str = row["GitHub URL"]
-            # parsedURL: ParseResult = urlparse(url)
-            # urlPath: str = str(parsedURL.path).strip("/")
+            # Find model owner information
+            model_owner:str
+            model_owner_url: str
 
-            # repoPath: PurePath = PurePath(f"{hf.huggingface_GitRepoPath}")
-            # if testForPath(repoPath) == False:
-            #     print(f"Path not found: {repoPath}")
-            #     bar.next()
-            #     continue
+            # Check if owner info is populated
+            if row["author"] == None:
+                model_owner = ""
+                model_owner_url = ""
+            else:
+                model_owner = str(row["author"])
+                model_owner_url = f'https://huggingface.co/{model_owner}'
 
-            # splitPath: list = urlPath.split("/")
+
 
             ptm: PTMTorrent = PTMTorrent(
                 id=idx,
                 latest_git_commit_sha=row["sha"],
                 model_hub=createModelHub(row),
-                model_name=str(row["modelId"]),
-                model_owner=str(row["author"]),
-                model_owner_url="", # TODO
-                datasets=None,# TODO
-                model_url="", # TODO
-                model_architecture="", # TODO
-                model_paper_dois=None,# TODO
-                model_task=None,# TODO
+                model_name=str(row["id"]),
+                model_owner=model_owner,
+                model_owner_url=model_owner_url,
+                model_url=f'https://huggingface.co/{row["id"]}',
+                datasets= None,# TODO
+                model_architecture= None, # TODO
+                model_paper_dois= None,# TODO
+                model_task= None,# TODO
             )
 
             data.append(ptm.to_dict())
