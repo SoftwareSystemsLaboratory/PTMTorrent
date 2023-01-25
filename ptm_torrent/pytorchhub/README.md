@@ -50,4 +50,4 @@ dependencies must first be installed. See this project's root
 > References are sorted by alphabetical order and not how they appear in this
 > document.
 
-\[1\] “PyTorch Hub.” https://www.pytorch.org/hub (accessed Jan. 25, 2023).
+\[1\] “PyTorch Hub.” <https://www.pytorch.org/hub> (accessed Jan. 25, 2023).
