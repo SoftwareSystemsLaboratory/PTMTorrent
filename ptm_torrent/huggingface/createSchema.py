@@ -14,7 +14,7 @@ from ptm_torrent.utils.ptmSchema import ModelHub, PTMTorrent
 
 def createModelHub(row: Series) -> ModelHub:
     mh: ModelHub = ModelHub(
-        metadata_file_path=hf.huggingface_HubJSONMetadataPath.__str__(),
+        metadata_file_path=hf.huggingface_HubMetadataPath.__str__(),
         metadata_object_id=str(row["id"]),
         model_hub_name="Hugging Face",
         model_hub_url="https://huggingface.co/",
@@ -31,32 +31,30 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
             row: Series = df.loc[idx]
 
-            url: str = row["GitHub URL"]
-            parsedURL: ParseResult = urlparse(url)
-            urlPath: str = str(parsedURL.path).strip("/")
+            # url: str = row["GitHub URL"]
+            # parsedURL: ParseResult = urlparse(url)
+            # urlPath: str = str(parsedURL.path).strip("/")
 
-            repoPath: PurePath = PurePath(f"{hf.huggingface_GitRepoPath}")
-            if testForPath(repoPath) == False:
-                print(f"Path not found: {repoPath}")
-                bar.next()
-                continue
+            # repoPath: PurePath = PurePath(f"{hf.huggingface_GitRepoPath}")
+            # if testForPath(repoPath) == False:
+            #     print(f"Path not found: {repoPath}")
+            #     bar.next()
+            #     continue
 
-            splitPath: list = urlPath.split("/")
+            # splitPath: list = urlPath.split("/")
 
             ptm: PTMTorrent = PTMTorrent(
                 id=idx,
-                latest_git_commit_sha=getLatestGitCommitOfFile(
-                    gitProjectPath=repoPath, filepath=row["ModelPath"]
-                ),
+                latest_git_commit_sha=row["sha"],
                 model_hub=createModelHub(row),
-                model_name=row["Model"],
-                model_owner="HF",
-                model_owner_url="https://github.com/onnx",
-                datasets=None,
-                model_url=url,
-                model_architecture=None,
-                model_paper_dois=[],
-                model_task=row["Category"],
+                model_name=str(row["modelId"]),
+                model_owner=str(row["author"]),
+                model_owner_url="", # TODO
+                datasets=None,# TODO
+                model_url="", # TODO
+                model_architecture="", # TODO
+                model_paper_dois=None,# TODO
+                model_task=None,# TODO
             )
 
             data.append(ptm.to_dict())
@@ -67,7 +65,7 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
 
 def main() -> None | bool:
-    if testForFile(path=hf.huggingface_ConcatinatedModelMetadataPath) == False:
+    if testForFile(path=hf.huggingface_HubMetadataPath) == False:
         return False
 
     jsonFilePath: PurePath = PurePath(
@@ -75,7 +73,7 @@ def main() -> None | bool:
     )
 
     df: DataFrame = pandas.read_json(
-        path_or_buf=hf.huggingface_ConcatinatedModelMetadataPath
+        path_or_buf=hf.huggingface_HubMetadataPath
     )
 
     json: List[dict] = createPTMSchema(df)
