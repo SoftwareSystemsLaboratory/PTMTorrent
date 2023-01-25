@@ -1,0 +1,135 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/HuggingFaceMetadatum"
+    },
+    "definitions": {
+        "HuggingFaceMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "modelId": {
+                    "type": "string"
+                },
+                "sha": {
+                    "type": "string"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "pipeline_tag": {
+                    "type": "string"
+                },
+                "siblings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Sibling"
+                    }
+                },
+                "private": {
+                    "type": "boolean"
+                },
+                "author": {
+                    "type": "null"
+                },
+                "config": {
+                    "$ref": "#/definitions/Config"
+                },
+                "securityStatus": {
+                    "type": "null"
+                },
+                "_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "cardData": {
+                    "$ref": "#/definitions/CardData"
+                },
+                "likes": {
+                    "type": "integer"
+                },
+                "downloads": {
+                    "type": "integer"
+                },
+                "library_name": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "HuggingFaceMetadatum"
+        },
+        "CardData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "language": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "datasets": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [],
+            "title": "CardData"
+        },
+        "Config": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "architectures": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "model_type": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Config"
+        },
+        "Sibling": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rfilename": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "null"
+                },
+                "blob_id": {
+                    "type": "null"
+                },
+                "lfs": {
+                    "type": "null"
+                }
+            },
+            "required": [],
+            "title": "Sibling"
+        }
+    }
+}
