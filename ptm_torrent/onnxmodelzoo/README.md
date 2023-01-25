@@ -52,3 +52,6 @@ dependencies must first be installed. See this project's root
 
 > References are sorted by alphabetical order and not how they appear in this
 > document.
+
+\[1\] “ONNX Model Zoo.” Open Neural Network Exchange, Jan. 25, 2023. Accessed:
+Jan. 25, 2023. \[Online\]. Available: <https://github.com/onnx/models>
