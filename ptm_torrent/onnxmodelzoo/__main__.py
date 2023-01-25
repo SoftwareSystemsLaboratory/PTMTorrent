@@ -1,3 +1,4 @@
+import ptm_torrent.onnxmodelzoo.createSchema as createSchema
 import ptm_torrent.onnxmodelzoo.downloadRepos as downloadRepos
 import ptm_torrent.onnxmodelzoo.mdToHTML as mdToHTML
 import ptm_torrent.onnxmodelzoo.parseHubHTML as parseHub
@@ -10,3 +11,4 @@ if __name__ == "__main__":
     mdToHTML.main()
     parseHub.main()
     parseModels.main()
+    createSchema.main()

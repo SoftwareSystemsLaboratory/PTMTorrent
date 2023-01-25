@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/PytorchHubModelMetadatum"
+    },
+    "definitions": {
+        "PytorchHubModelMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "ModelName": {
+                    "type": "string"
+                },
+                "ModelAuthor": {
+                    "type": "string"
+                },
+                "ModelDescription": {
+                    "type": "string"
+                },
+                "ModelURL": {
+                    "type": "string"
+                },
+                "GitHubURL": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "ColabURL": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "DemoURL": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "qt-uri-protocols": [
+                                "https"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "required": [],
+            "title": "PytorchHubModelMetadatum"
+        }
+    }
+}

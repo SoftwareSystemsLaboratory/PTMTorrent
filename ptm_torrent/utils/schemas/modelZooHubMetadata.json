@@ -1,0 +1,160 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/ModelZooHubMetadata",
+    "definitions": {
+        "ModelZooHubMetadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "models": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Model"
+                    }
+                }
+            },
+            "required": [],
+            "title": "ModelZooHubMetadata"
+        },
+        "Model": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "slug": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "qt-uri-protocols": [
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "stars": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "link": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "qt-uri-protocols": [
+                                "http",
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "framework": {
+                    "$ref": "#/definitions/Framework"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [],
+            "title": "Model"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "slug": {
+                    "$ref": "#/definitions/Slug"
+                },
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "short_title": {
+                    "$ref": "#/definitions/ShortTitle"
+                }
+            },
+            "required": [],
+            "title": "Category"
+        },
+        "ShortTitle": {
+            "type": "string",
+            "enum": [
+                "CV",
+                "RL",
+                "NLP",
+                "Generative",
+                "Unsupervised",
+                "Audio",
+                "Graph",
+                "Self-Supervised",
+                "Health"
+            ],
+            "title": "ShortTitle"
+        },
+        "Slug": {
+            "type": "string",
+            "enum": [
+                "computer-vision",
+                "reinforcement-learning",
+                "natural-language-processing",
+                "generative-models",
+                "unsupervised-learning",
+                "audio-speech",
+                "graph",
+                "self-supervised-learning",
+                "health-bioscience"
+            ],
+            "title": "Slug"
+        },
+        "Title": {
+            "type": "string",
+            "enum": [
+                "Computer Vision",
+                "Reinforcement Learning",
+                "Natural Language Processing",
+                "Generative Models",
+                "Unsupervised Learning",
+                "Audio and Speech",
+                "Graph",
+                "Self-Supervised Learning",
+                "Health and Bioscience"
+            ],
+            "title": "Title"
+        },
+        "Framework": {
+            "type": "string",
+            "enum": [
+                "caffe",
+                "keras",
+                "pytorch",
+                "tensorflow",
+                "jax",
+                "chainer",
+                "mxnet",
+                "caffe2"
+            ],
+            "title": "Framework"
+        }
+    }
+}

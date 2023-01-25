@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ONNXModelHublMetadatum"
+    },
+    "definitions": {
+        "ONNXModelHublMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "ModelClass": {
+                    "type": "string"
+                },
+                "ModelREADMEPath": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "RepoREADMEPath": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Paper": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "HFSpaceURL": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "qt-uri-protocols": [
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "Category": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ONNXModelHublMetadatum"
+        }
+    }
+}

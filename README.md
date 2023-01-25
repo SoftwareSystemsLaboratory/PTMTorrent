@@ -26,12 +26,9 @@
 This repository contains the scripts to generate the *PTMTorrent* dataset.
 
 *PTMTorrent* is a dataset created to be submitted to the
-[2023 Mining Software Repositories (MSR) Confrence Data and Tool Showcase Track](https://conf.researchr.org/track/msr-2023/msr-2023-data-showcase).
+[2023 Mining Software Repositories (MSR) Conference Data and Tool Showcase Track](https://conf.researchr.org/track/msr-2023/msr-2023-data-showcase).
 The dataset contains either the partial or entire set of pre-trained machine
 learning models (PTM) repositories hosted on popular model hubs.
-
-> Model hubs are, "collections of PTMs and datasets organized by problem domain"
-> (from ICSE paper).
 
 The list of currently supported model hubs can be found
 [here](#supported-model-hubs).
@@ -43,7 +40,7 @@ The following model hubs are supported by our software:
 - [Hugging Face](https://huggingface.co/)
 - [Modelhub](https://modelhub.ai/)
 - [ModelZoo](https://modelzoo.co/)
-- [Pytorch Hub](https://pytorch.org/hub/)
+- [PyTorch Hub](https://pytorch.org/hub/)
 - [ONNX Model Zoo](https://github.com/onnx/models/)
 
 ## Dependencies
@@ -75,11 +72,11 @@ The package can either be installed from our
 
 ### From Source
 
-> Instructions were written with respect to Linux operating systems
+> Instructions were written for Linux operating systems
 
 1. Clone the project locally:
    `git clone https://github.com/SoftwareSystemsLaboratory/PTM-Torrent`
-1. `cd` into project: `cd PTM-Torrent`
+1. `cd` into the project: `cd PTM-Torrent`
 1. Create a `Python 3.10` virtual environment: `python3.10 -m venv env`
 1. Activate virtual environment: `source env/bin/activate`
 1. Upgrade `pip`: `python -m pip install --upgrade pip`
@@ -91,11 +88,11 @@ The package can either be installed from our
 ## How to Run
 
 After [installing the package](#how-to-install), this project can be ran as
-indvidual scripts per model hub.
+individual scripts per model hub.
 
 ### As Individual Scripts
 
-Each model hub's scripts are seperated by folder in the
+Each model hub's scripts are separated by folder in the
 [`ptm_torrent`](ptm_torrent/) folder. The folder for each specific model hub, as
 well as the main runner script, is listed in the table below:
 
@@ -115,7 +112,7 @@ which to run these scripts (should the `__main__.py` file be insufficient) is
 described in each model hub's `README.md` file within the scripts folder.
 
 > NOTE: Hugging Face's `__main__.py` can be parameritized to allow for a
-> specific percentage of the model hub to be downloaded. By default it is 0.1
+> specific percentage of the model hub to be downloaded. By default, it is 0.1
 > (10%).
 
 To run any of the scripts, execute the following command pattern:
@@ -132,7 +129,7 @@ Each model hub script generates the following directory structure **per model
 hub**:
 
 ```shell
-📂data
+📦data
  ┗ 📂MODELHUB
  ┃ ┣ 📂html
  ┃ ┃ ┗ 📂metadata
@@ -158,9 +155,49 @@ Where:
 - data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
   cloned.
 
-Specifics about the types of metadata files and content that is produced by the
+Model hub scripts do not overwrite the folder. In other words, it is a safe
+operation to run multiple model hub scripts from the same directory sequentially
+or concurrently.
+
+Specifics about the types of metadata files and content that are produced by the
 scripts can be found in each model hub's script folder's `README.md` file.
 
 ## How to Cite
 
 ## References
+
+> References are sorted by alphabetical order and not how they appear in this
+> document.
+
+\[1\] “Git.” <https://git-scm.com/> (accessed Jan. 25, 2023).
+
+\[2\] “Git Large File Storage,” Git Large File Storage. <https://git-lfs.com/>
+(accessed Jan. 25, 2023).
+
+\[3\] “Hugging Face – The AI community building the future.,” Jan. 03, 2023.
+<https://huggingface.co/> (accessed Jan. 25, 2023).
+
+\[4\] “Model Zoo - Deep learning code and pretrained models for transfer
+learning, educational purposes, and more.” <https://modelzoo.co/> (accessed Jan.
+25, 2023).
+
+\[5\] “Modelhub.” <https://modelhub.ai/> (accessed Jan. 25, 2023).
+
+\[6\] “MSR 2023 - Data and Tool Showcase Track - MSR 2023.”
+<https://conf.researchr.org/track/msr-2023/msr-2023-data-showcase> (accessed
+Jan. 25, 2023).
+
+\[7\] “ONNX Model Zoo.” Open Neural Network Exchange, Jan. 25, 2023. Accessed:
+Jan. 25, 2023. \[Online\]. Available: <https://github.com/onnx/models>
+
+\[8\] “pip documentation v22.3.1.” <https://pip.pypa.io/en/stable/> (accessed
+Jan. 25, 2023).
+
+\[9\] “Poetry - Python dependency management and packaging made easy.”
+<https://python-poetry.org/> (accessed Jan. 25, 2023).
+
+\[10\] “Python Release Python 3.10.9,” Python.org.
+<https://www.python.org/downloads/release/python-3109/> (accessed Jan. 25,
+2023).
+
+\[11\] “PyTorch Hub.” <https://www.pytorch.org/hub> (accessed Jan. 25, 2023).

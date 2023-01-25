@@ -1,0 +1,2978 @@
+[
+    {
+        "id": 0,
+        "LatestGitCommitSHA": "131c99da401c757207a40189385410e238ed0934",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "0",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MobileNet v2-7",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mobilenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 1,
+        "LatestGitCommitSHA": "131c99da401c757207a40189385410e238ed0934",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "1",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MobileNet v2-1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mobilenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 2,
+        "LatestGitCommitSHA": "673d0d48a4fdf76c7d9db4724db52af8a0c7fedc",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "2",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MobileNet v2-1.0-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mobilenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 3,
+        "LatestGitCommitSHA": "673d0d48a4fdf76c7d9db4724db52af8a0c7fedc",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "3",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MobileNet v2-1.0-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mobilenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 4,
+        "LatestGitCommitSHA": "c435efb642e4ad47d98f53503d45b05f9c609bf4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "4",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MobileNet v2-1.0-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mobilenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 5,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "5",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet18",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 6,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "6",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet34",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 7,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "7",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 8,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "8",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet101",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 9,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "9",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet152",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 10,
+        "LatestGitCommitSHA": "ce55fe194ce4a142f4708cc4f5bc5d5c781c1fee",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "10",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 11,
+        "LatestGitCommitSHA": "ce55fe194ce4a142f4708cc4f5bc5d5c781c1fee",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "11",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 12,
+        "LatestGitCommitSHA": "c435efb642e4ad47d98f53503d45b05f9c609bf4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "12",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 13,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "13",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 14,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "14",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 15,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "15",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 16,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "16",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 17,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "17",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 18,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "18",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet18-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 19,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "19",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet34-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 20,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "20",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet50-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 21,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "21",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet101-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 22,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "22",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet152-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/resnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 23,
+        "LatestGitCommitSHA": "1008b6e9450ab632538390e38e0ab28b3f207fbc",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "23",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 24,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "24",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 25,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "25",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 26,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "26",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 27,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "27",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 28,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "28",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 29,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "29",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 30,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "30",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 31,
+        "LatestGitCommitSHA": "8e893eb39b131f6d3970be6ebd525327d3df34ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "31",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SqueezeNet 1.0-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/squeezenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 32,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "32",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 16",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 33,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "33",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 16-bn",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 34,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "34",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 35,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "35",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-bn",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 36,
+        "LatestGitCommitSHA": "c09d2a0070d52cdb58eeddcae8c37da9effda8b8",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "36",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 16-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 37,
+        "LatestGitCommitSHA": "c09d2a0070d52cdb58eeddcae8c37da9effda8b8",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "37",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 16-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 38,
+        "LatestGitCommitSHA": "b9a54e89508f101a1611cd64f4ef56b9cb62c7cf",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "38",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 39,
+        "LatestGitCommitSHA": "b9a54e89508f101a1611cd64f4ef56b9cb62c7cf",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "39",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 40,
+        "LatestGitCommitSHA": "b9a54e89508f101a1611cd64f4ef56b9cb62c7cf",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "40",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 41,
+        "LatestGitCommitSHA": "b9a54e89508f101a1611cd64f4ef56b9cb62c7cf",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "41",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 42,
+        "LatestGitCommitSHA": "b9a54e89508f101a1611cd64f4ef56b9cb62c7cf",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "42",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "VGG 19-caffe2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/vgg",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 43,
+        "LatestGitCommitSHA": "f093308751c85330c41759f89e2cb0068f79e4c1",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "43",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 44,
+        "LatestGitCommitSHA": "f093308751c85330c41759f89e2cb0068f79e4c1",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "44",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 45,
+        "LatestGitCommitSHA": "f093308751c85330c41759f89e2cb0068f79e4c1",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "45",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 46,
+        "LatestGitCommitSHA": "f093308751c85330c41759f89e2cb0068f79e4c1",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "46",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 47,
+        "LatestGitCommitSHA": "f093308751c85330c41759f89e2cb0068f79e4c1",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "47",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 48,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "48",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 49,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "49",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 50,
+        "LatestGitCommitSHA": "8e893eb39b131f6d3970be6ebd525327d3df34ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "50",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "AlexNet-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/alexnet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 51,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "51",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 52,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "52",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 53,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "53",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 54,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "54",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 55,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "55",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 56,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "56",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 57,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "57",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 58,
+        "LatestGitCommitSHA": "376af18bd3d26e0f53696bcf34fdc4cc45454b86",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "58",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GoogleNet-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 59,
+        "LatestGitCommitSHA": "bb0d4cf3d4e2a5f7376c13a08d337e86296edbe8",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "59",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 60,
+        "LatestGitCommitSHA": "bb0d4cf3d4e2a5f7376c13a08d337e86296edbe8",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "60",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 61,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "61",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 62,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "62",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 63,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "63",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 64,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "64",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 65,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "65",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 66,
+        "LatestGitCommitSHA": "8e893eb39b131f6d3970be6ebd525327d3df34ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "66",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "CaffeNet-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/caffenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 67,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "67",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "R-CNN ILSVRC13",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/rcnn_ilsvrc13",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 68,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "68",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "R-CNN ILSVRC13",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/rcnn_ilsvrc13",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 69,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "69",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "R-CNN ILSVRC13",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/rcnn_ilsvrc13",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 70,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "70",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "R-CNN ILSVRC13",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/rcnn_ilsvrc13",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 71,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "71",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "R-CNN ILSVRC13",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/rcnn_ilsvrc13",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 72,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "72",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 73,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "73",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 74,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "74",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 75,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "75",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 76,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "76",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 77,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "77",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121-12",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 78,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "78",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "DenseNet-121-12-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/densenet-121",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 79,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "79",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 80,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "80",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 81,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "81",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 82,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "82",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 83,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "83",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 84,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "84",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 85,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "85",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 86,
+        "LatestGitCommitSHA": "376af18bd3d26e0f53696bcf34fdc4cc45454b86",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "86",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-1-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 87,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "87",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 88,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "88",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 89,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "89",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 90,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "90",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 91,
+        "LatestGitCommitSHA": "4eff8f9b9189672de28d087684e7085ad977747c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "91",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Inception-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/inception_v2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 92,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "92",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 93,
+        "LatestGitCommitSHA": "50577624853911a53ccb07c4563574ccb47ac39c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "93",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 94,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "94",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 95,
+        "LatestGitCommitSHA": "50577624853911a53ccb07c4563574ccb47ac39c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "95",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 96,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "96",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 97,
+        "LatestGitCommitSHA": "37bbd31e3c305254d02faeb005b7f277164403b4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "97",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 98,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "98",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 99,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "99",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 100,
+        "LatestGitCommitSHA": "376af18bd3d26e0f53696bcf34fdc4cc45454b86",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "100",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 101,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "101",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 102,
+        "LatestGitCommitSHA": "50577624853911a53ccb07c4563574ccb47ac39c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "102",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 103,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "103",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 104,
+        "LatestGitCommitSHA": "50577624853911a53ccb07c4563574ccb47ac39c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "104",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 105,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "105",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 106,
+        "LatestGitCommitSHA": "37bbd31e3c305254d02faeb005b7f277164403b4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "106",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 107,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "107",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 108,
+        "LatestGitCommitSHA": "652f4e4af7975c8e7a505c4b6e0f8ac72d8260ea",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "108",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 109,
+        "LatestGitCommitSHA": "376af18bd3d26e0f53696bcf34fdc4cc45454b86",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "109",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ShuffleNet-v2-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/shufflenet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 110,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "110",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 111,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "111",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 112,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "112",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 113,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "113",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 114,
+        "LatestGitCommitSHA": "f884b33c3e2371952aad7ea091898f418c830fe5",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "114",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 115,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "115",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 116,
+        "LatestGitCommitSHA": "6ab957a2fe61f34a76c670946f7cbd806d2cacca",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "116",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ZFNet-512-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/zfnet-512",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 117,
+        "LatestGitCommitSHA": "280606e8de3a8fed89a1ef3031d32032af17744b",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "117",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "EfficientNet-Lite4",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/efficientnet-lite4",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 118,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "118",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "EfficientNet-Lite4-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/efficientnet-lite4",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 119,
+        "LatestGitCommitSHA": "c435efb642e4ad47d98f53503d45b05f9c609bf4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "119",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "EfficientNet-Lite4-qdq",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/efficientnet-lite4",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_classification"
+    },
+    {
+        "id": 120,
+        "LatestGitCommitSHA": "7d9ae32726d872fe9143b7aede149508bdf0b30f",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "120",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MNIST",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mnist",
+        "ModelPaperDOIs": [],
+        "ModelTask": "domain_based_image"
+    },
+    {
+        "id": 121,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "121",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MNIST",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mnist",
+        "ModelPaperDOIs": [],
+        "ModelTask": "domain_based_image"
+    },
+    {
+        "id": 122,
+        "LatestGitCommitSHA": "cbda9ebd037241c6c6a0826971741d5532af8fa4",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "122",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MNIST",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mnist",
+        "ModelPaperDOIs": [],
+        "ModelTask": "domain_based_image"
+    },
+    {
+        "id": 123,
+        "LatestGitCommitSHA": "e17df0db1bfd7e60f43eccbdee1ae68b505177d9",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "123",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MNIST-12",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mnist",
+        "ModelPaperDOIs": [],
+        "ModelTask": "domain_based_image"
+    },
+    {
+        "id": 124,
+        "LatestGitCommitSHA": "e17df0db1bfd7e60f43eccbdee1ae68b505177d9",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "124",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "MNIST-12-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/classification/mnist",
+        "ModelPaperDOIs": [],
+        "ModelTask": "domain_based_image"
+    },
+    {
+        "id": 125,
+        "LatestGitCommitSHA": "3d4b2c28f951064ab35c89d5f5c3ffe74a149e4b",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "125",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Tiny YOLOv2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/tiny-yolov2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 126,
+        "LatestGitCommitSHA": "3d4b2c28f951064ab35c89d5f5c3ffe74a149e4b",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "126",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Tiny YOLOv2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/tiny-yolov2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 127,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "127",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 128,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "128",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 129,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "129",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 130,
+        "LatestGitCommitSHA": "2c4732abf3bb4890faed986b21853f7034f9979d",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "130",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD-MobilenetV1",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd-mobilenetv1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 131,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "131",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD-MobilenetV1-12",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd-mobilenetv1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 132,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "132",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "SSD-MobilenetV1-12-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/ssd-mobilenetv1",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 133,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "133",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Faster R-CNN R-50-FPN",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/faster-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 134,
+        "LatestGitCommitSHA": "673d0d48a4fdf76c7d9db4724db52af8a0c7fedc",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "134",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Faster R-CNN R-50-FPN-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/faster-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 135,
+        "LatestGitCommitSHA": "673d0d48a4fdf76c7d9db4724db52af8a0c7fedc",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "135",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Faster R-CNN R-50-FPN-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/faster-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 136,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "136",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Mask R-CNN R-50-FPN",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/mask-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 137,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "137",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Mask R-CNN R-50-FPN-fp32",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/mask-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 138,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "138",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Mask R-CNN R-50-FPN-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/mask-rcnn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 139,
+        "LatestGitCommitSHA": "6a4c83e540f742b7c7390ab27d793c6671615bb7",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "139",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "RetinaNet (ResNet101 backbone)",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/retinanet",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 140,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "140",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "YOLOv2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/yolov2-coco",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 141,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "141",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "YOLOv3",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/yolov3",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 142,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "142",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "YOLOv3-12",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/yolov3",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 143,
+        "LatestGitCommitSHA": "bfe9425be88f8cca4261faa396757b7ba4b71b6c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "143",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "YOLOv3-12-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/yolov3",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 144,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "144",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Tiny YOLOv3",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/tiny-yolov3",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 145,
+        "LatestGitCommitSHA": "fd818b3b17ae7affb7c4a4f136f69401e883e296",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "145",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "YOLOv4",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/yolov4",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 146,
+        "LatestGitCommitSHA": "8883e49e68de7b43e263d56b9ed156dfa1e03117",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "146",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet101_DUC_HDC",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/duc",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 147,
+        "LatestGitCommitSHA": "e17df0db1bfd7e60f43eccbdee1ae68b505177d9",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "147",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet101_DUC_HDC-12",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/duc",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 148,
+        "LatestGitCommitSHA": "e17df0db1bfd7e60f43eccbdee1ae68b505177d9",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "148",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "ResNet101_DUC_HDC-12-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/duc",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 149,
+        "LatestGitCommitSHA": "fb8271d5d5d9b90dbb1eb5e8e40f8f580fb248b3",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "149",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "FCN ResNet-50",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/fcn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 150,
+        "LatestGitCommitSHA": "fb8271d5d5d9b90dbb1eb5e8e40f8f580fb248b3",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "150",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "FCN ResNet-101",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/fcn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 151,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "151",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "FCN ResNet-50",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/fcn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 152,
+        "LatestGitCommitSHA": "91849267da7c576503f0f87a941b3139b64b7781",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "152",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "FCN ResNet-50-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/object_detection_segmentation/fcn",
+        "ModelPaperDOIs": [],
+        "ModelTask": "object_detection"
+    },
+    {
+        "id": 153,
+        "LatestGitCommitSHA": "bd206494e8b6a27b25e5cf7199dbcdbfe9d05d1c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "153",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "LResNet100E-IR",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/arcface",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 154,
+        "LatestGitCommitSHA": "935aa4a0b515372473e6aae239fc7f08aa843776",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "154",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "version-RFB-320",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/ultraface",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 155,
+        "LatestGitCommitSHA": "935aa4a0b515372473e6aae239fc7f08aa843776",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "155",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "version-RFB-640",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/ultraface",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 156,
+        "LatestGitCommitSHA": "7cee9777a86dd6e80040d6b786869a83d2ad1273",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "156",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Emotion FERPlus",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/emotion_ferplus",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 157,
+        "LatestGitCommitSHA": "7cee9777a86dd6e80040d6b786869a83d2ad1273",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "157",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Emotion FERPlus",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/emotion_ferplus",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 158,
+        "LatestGitCommitSHA": "7cee9777a86dd6e80040d6b786869a83d2ad1273",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "158",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Emotion FERPlus",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/emotion_ferplus",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 159,
+        "LatestGitCommitSHA": "953e2608b2a00b809cd2df86520aa9620c1b0463",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "159",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "googlenet_age_adience",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 160,
+        "LatestGitCommitSHA": "953e2608b2a00b809cd2df86520aa9620c1b0463",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "160",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "googlenet_gender_adience",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 161,
+        "LatestGitCommitSHA": "953e2608b2a00b809cd2df86520aa9620c1b0463",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "161",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "vgg_ilsvrc_16_age_chalearn_iccv2015",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 162,
+        "LatestGitCommitSHA": "953e2608b2a00b809cd2df86520aa9620c1b0463",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "162",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "vgg_ilsvrc_16_age_imdb_wiki",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 163,
+        "LatestGitCommitSHA": "953e2608b2a00b809cd2df86520aa9620c1b0463",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "163",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "vgg_ilsvrc_16_gender_imdb_wiki",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender",
+        "ModelPaperDOIs": [],
+        "ModelTask": "body_analysis"
+    },
+    {
+        "id": 164,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "164",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Super_Resolution",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/super_resolution/sub_pixel_cnn_2016",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 165,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "165",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Mosaic",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 166,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "166",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Candy",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 167,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "167",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Rain Princess",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 168,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "168",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Udnie",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 169,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "169",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Pointilism",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 170,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "170",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Mosaic",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 171,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "171",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Candy",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 172,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "172",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Rain Princess",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 173,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "173",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Udnie",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 174,
+        "LatestGitCommitSHA": "111fab38a5757c8fc8db0aa13e73fb330e516c42",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "174",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "Pointilism",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/vision/style_transfer/fast_neural_style",
+        "ModelPaperDOIs": [],
+        "ModelTask": "image_manipulation"
+    },
+    {
+        "id": 175,
+        "LatestGitCommitSHA": "c02f8c8699fc12273649e658b8d2a1a8e32a35d0",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "175",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "BiDAF",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/bidirectional_attention_flow",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 176,
+        "LatestGitCommitSHA": "c02f8c8699fc12273649e658b8d2a1a8e32a35d0",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "176",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "BERT-Squad",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/bert-squad",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 177,
+        "LatestGitCommitSHA": "c02f8c8699fc12273649e658b8d2a1a8e32a35d0",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "177",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "BERT-Squad",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/bert-squad",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 178,
+        "LatestGitCommitSHA": "2063d79467c0e731ddc34cf6936ae04f57ac7ade",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "178",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "BERT-Squad",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/bert-squad",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 179,
+        "LatestGitCommitSHA": "2063d79467c0e731ddc34cf6936ae04f57ac7ade",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "179",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "BERT-Squad-int8",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/bert-squad",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 180,
+        "LatestGitCommitSHA": "2c317e2e4d34d80adc89cdc958d55e5cdf6cb06c",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "180",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "RoBERTa-BASE",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/roberta",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 181,
+        "LatestGitCommitSHA": "bf6e73c4c68db02dc9cecd631a4a03a453932de0",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "181",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "RoBERTa-SequenceClassification",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/roberta",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 182,
+        "LatestGitCommitSHA": "c02f8c8699fc12273649e658b8d2a1a8e32a35d0",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "182",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GPT-2",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/gpt-2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 183,
+        "LatestGitCommitSHA": "94abdef22a77c05f0be955aab2856e9166f7750d",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "183",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "GPT-2-LM-HEAD",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/gpt-2",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 184,
+        "LatestGitCommitSHA": "c219c7db18c1ae3e255afb36058b6d0988f743ed",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "184",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "T5-encoder",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/t5",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    },
+    {
+        "id": 185,
+        "LatestGitCommitSHA": "c219c7db18c1ae3e255afb36058b6d0988f743ed",
+        "ModelHub": {
+            "MetadataFilePath": "data/onnxmodelzoo/json/metadata/omz_metadata.json",
+            "MetadataObjectID": "185",
+            "ModelHubName": "Onnx Model Zoo",
+            "ModelHubURL": "https://github.com/onnx/models"
+        },
+        "ModelName": "T5-decoder-with-lm-head",
+        "ModelOwner": "ONNX",
+        "ModelOwnerURL": "https://github.com/onnx",
+        "ModelURL": "https://github.com/onnx/models/tree/main/text/machine_comprehension/t5",
+        "ModelPaperDOIs": [],
+        "ModelTask": "machine_comprehension"
+    }
+]
