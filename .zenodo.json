@@ -43,7 +43,7 @@
         "orcid": "0000-0003-2495-686X"
         }
     ],
-    "description": "Complete installer for CLIME",
+    "description": "Code to generate the PTM Torrent dataset",
     "access_right": "open",
     "license": "BSD-3-Clause",
     "prereserve_doi": true,
