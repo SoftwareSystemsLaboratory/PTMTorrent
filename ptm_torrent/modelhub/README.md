@@ -57,7 +57,7 @@ dependencies must first be installed. See this project's root
 
 ```shell
 📦data
- ┗ 📂modelzoo
+ ┗ 📂modelhub
  ┃ ┣ 📂html
  ┃ ┃ ┗ 📂metadata
  ┃ ┃ ┃ ┗ 📂models
