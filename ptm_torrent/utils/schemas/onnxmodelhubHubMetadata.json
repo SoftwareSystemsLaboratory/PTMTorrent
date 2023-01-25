@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ONNXModelHublMetadatum"
+    },
+    "definitions": {
+        "ONNXModelHublMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "ModelClass": {
+                    "type": "string"
+                },
+                "ModelREADMEPath": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "RepoREADMEPath": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Paper": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".00567",
+                        ".01041",
+                        ".01057",
+                        ".01083",
+                        ".01497",
+                        ".01603",
+                        ".02002",
+                        ".02325",
+                        ".03385",
+                        ".03499",
+                        ".04381",
+                        ".0473",
+                        ".04861",
+                        ".05158",
+                        ".05396",
+                        ".06870",
+                        ".06993",
+                        ".07360",
+                        ".07698",
+                        ".07825",
+                        ".08144",
+                        ".08155",
+                        ".08242",
+                        ".08502",
+                        ".08669",
+                        ".10593",
+                        ".10683",
+                        ".10934",
+                        ".11164",
+                        ".11946",
+                        ".1556",
+                        ".2524",
+                        ".2901",
+                        ".4842",
+                        ".ipynb",
+                        ".pdf"
+                    ]
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "HFSpaceURL": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "qt-uri-protocols": [
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "Category": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ONNXModelHublMetadatum"
+        }
+    }
+}

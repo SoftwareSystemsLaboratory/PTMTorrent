@@ -1,0 +1,183 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ONNXModelHubModellMetadatum"
+    },
+    "definitions": {
+        "ONNXModelHubModellMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "ModelSize": {
+                    "type": "string"
+                },
+                "ModelPath": {
+                    "type": "string"
+                },
+                "ONNXVersion": {
+                    "type": "string"
+                },
+                "Top-1% Accuracy": {
+                    "type": "string"
+                },
+                "Top-5% Accuracy": {
+                    "type": "string"
+                },
+                "Accuracy": {
+                    "type": "string"
+                },
+                "mAP": {
+                    "$ref": "#/definitions/MAP"
+                },
+                "mIOU": {
+                    "$ref": "#/definitions/MIOU"
+                },
+                "Mean IoU": {
+                    "$ref": "#/definitions/MeanIoU"
+                },
+                "LFW * accuracy (%)": {
+                    "$ref": "#/definitions/LFWAccuracy"
+                },
+                "CFP-FF * accuracy (%)": {
+                    "$ref": "#/definitions/CFPFFAccuracy"
+                },
+                "CFP-FP * accuracy (%)": {
+                    "$ref": "#/definitions/CFPFPAccuracy"
+                },
+                "AgeDB-30 * accuracy (%)": {
+                    "$ref": "#/definitions/AgeDB30 * Accuracy"
+                },
+                "Dataset": {
+                    "$ref": "#/definitions/Dataset"
+                },
+                "OpsetVersion": {
+                    "type": "string"
+                },
+                "Top-1 Error (%)": {
+                    "$ref": "#/definitions/Top1 Error"
+                },
+                "Category": {
+                    "$ref": "#/definitions/Category"
+                },
+                "GitHub URL": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "ModelSampleSize": {
+                    "type": "string"
+                },
+                "ModelSamplePath": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ONNXModelHubModellMetadatum"
+        },
+        "AgeDB30 * Accuracy": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "97.87"
+            ],
+            "title": "AgeDB30 * Accuracy"
+        },
+        "CFPFFAccuracy": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "99.83"
+            ],
+            "title": "CFPFFAccuracy"
+        },
+        "CFPFPAccuracy": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "94.21"
+            ],
+            "title": "CFPFPAccuracy"
+        },
+        "Category": {
+            "type": "string",
+            "enum": [
+                "image_classification",
+                "domain_based_image",
+                "object_detection",
+                "body_analysis",
+                "image_manipulation",
+                "machine_comprehension"
+            ],
+            "title": "Category"
+        },
+        "Dataset": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "Adience",
+                "ChaLearn LAP 2015",
+                "IMDB-WIKI"
+            ],
+            "title": "Dataset"
+        },
+        "LFWAccuracy": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "99.77"
+            ],
+            "title": "LFWAccuracy"
+        },
+        "MeanIoU": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "60.5%",
+                "63.7%",
+                "65.0%",
+                "64.7%"
+            ],
+            "title": "MeanIoU"
+        },
+        "Top1 Error": {
+            "type": "string",
+            "enum": [
+                "",
+                "30.64",
+                "33.65",
+                "33.85",
+                "33.88",
+                "1.1%"
+            ],
+            "title": "Top1 Error"
+        },
+        "MAP": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "",
+                "0.2303",
+                "0.2285"
+            ],
+            "title": "MAP"
+        },
+        "MIOU": {
+            "type": "string",
+            "enum": [
+                "N/A",
+                "81.92",
+                "81.62"
+            ],
+            "title": "MIOU"
+        }
+    }
+}
