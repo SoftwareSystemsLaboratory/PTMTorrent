@@ -1,10 +1,10 @@
 # ONNX Model Zoo Torrent
 
-> Scripts to create the ONNX Model Zoo component of the greater PTM-Torrent
+> Scripts to create the ONNX Model Zoo component of the greater PTM-Torrent dataset
 
 ## Table of Contents
 
-- [ONNX Model Zoo Torrent](#onnx-model-zoo-torrent)
+- [Hugging Face Torrent](#hugging-face-torrent)
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [How to Run](#how-to-run)
@@ -17,16 +17,30 @@
 
 ## About
 
+This folder contains the scripts to download PTM repositories and extract metadata for the greater *PTMTorrent* dataset from [ONNX Model Zoo](https://github.com/onnx/models.co).
+
+To download the entirety of the [ONNX Model Zoo](https://github.com/onnx/models.co) model hub requires nGB of storage.
+
 ## How to Run
 
-### As a Python Package
+To run the scripts within this folder, the larger `ptm_torrent` project and its dependencies must first be installed.
+See this project's root [`README.md`](../../README.md) for more information.
 
-### As Individual Scripts
+### Through [`__main__.py`](__main__.py)
+
+- `python __main__.py`
+
+### As Individual Files
+
+> This method assumes that you accept all of the default values of the scripts.
+> Changes can be made manually within the scripts if the defualts are not acceptable for your use case.
+
+1. `python setupFileSystem.py`
+2. `python downloadRepos.py`
+3. `python mdToHTML.py`
+4. `python parseHubHTML.py`
+5. `python parseModelHTML.py`
 
 ## Data Storage
-
-### From Python Package
-
-### From Individual Scripts
 
 ## References
