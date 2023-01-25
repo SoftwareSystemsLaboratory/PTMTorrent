@@ -166,7 +166,7 @@ scripts can be found in each model hub's script folder's `README.md` file.
 
 ## References
 
-> References are sorted by alphabetical order and not in how they appear in this
+> References are sorted by alphabetical order and not how they appear in this
 > document.
 
 \[1\] “Git.” <https://git-scm.com/> (accessed Jan. 25, 2023).
