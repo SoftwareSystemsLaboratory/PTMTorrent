@@ -1,6 +1,6 @@
 # Hugging Face Torrent
 
-> Scripts to create the Hugging Face component of the greater PTM-Torrent
+> Scripts to create the Hugging Face component of the greater PTM-Torrent dataset
 
 ## Table of Contents
 
