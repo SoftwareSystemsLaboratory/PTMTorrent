@@ -38,13 +38,32 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
 
             # Check if owner info is populated
             if row["author"] == None:
-                model_owner = ""
-                model_owner_url = ""
+                model_owner = "http://huggingface.co/"
+                model_owner_url = "http://huggingface.co/"
             else:
                 model_owner = str(row["author"])
                 model_owner_url = f'https://huggingface.co/{model_owner}'
 
 
+            # Find architecture
+            model_architecture: str = None
+            # Check if config>model_type exists
+            config = row["config"]
+            if config != None:
+                if "model_type" in config:
+                    model_architecture = config["model_type"]
+
+            # Find task
+            model_task = row["pipeline_tag"]
+
+            # Get dois
+            model_paper_dois: List[str] = None               
+            tags: List[str] = row["tags"]
+            if tags != None:
+                temp = [x for x in tags if "doi:" in x]
+                if temp:
+                    model_paper_dois = temp
+            
 
             ptm: PTMTorrent = PTMTorrent(
                 id=idx,
@@ -55,9 +74,9 @@ def createPTMSchema(df: DataFrame) -> List[dict]:
                 model_owner_url=model_owner_url,
                 model_url=f'https://huggingface.co/{row["id"]}',
                 datasets= None,# TODO
-                model_architecture= None, # TODO
-                model_paper_dois= None,# TODO
-                model_task= None,# TODO
+                model_architecture= model_architecture,
+                model_paper_dois= model_paper_dois,# TODO
+                model_task= model_task,
             )
 
             data.append(ptm.to_dict())
