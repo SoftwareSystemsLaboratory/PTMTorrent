@@ -3,6 +3,7 @@
 > Code to generate the PTMTorrent dataset
 
 [![Python Version](https://img.shields.io/badge/Python-3.10.9-blue)](https://img.shields.io/badge/Python-3.10.9-blue)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7570357.svg)](https://doi.org/10.5281/zenodo.7570357)
 [![Release Project](https://github.com/SoftwareSystemsLaboratory/PTM-Torrent/actions/workflows/release.yml/badge.svg)](https://github.com/SoftwareSystemsLaboratory/PTM-Torrent/actions/workflows/release.yml)
 
 ## Table of Contents
@@ -164,6 +165,11 @@ scripts can be found in each model hub's script folder's `README.md` file.
 
 ## How to Cite
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7570357.svg)](https://doi.org/10.5281/zenodo.7570357)
+
+This project has a DOI on [Zenodo](https://doi.org/10.5281/zenodo.7570357).
+Please visit our Zenodo page for the latest citation information.
+
 ## References
 
 > References are sorted by alphabetical order and not how they appear in this
@@ -201,3 +207,6 @@ Jan. 25, 2023).
 2023).
 
 \[11\] “PyTorch Hub.” <https://www.pytorch.org/hub> (accessed Jan. 25, 2023).
+
+\[12\] W. Jiang et al., “SoftwareSystemsLaboratory/PTMTorrent.” Zenodo, Jan. 25,
+2023\. doi: 10.5281/zenodo.7570357.
