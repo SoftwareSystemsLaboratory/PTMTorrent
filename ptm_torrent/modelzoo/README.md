@@ -69,6 +69,8 @@ dependencies must first be installed. See this project's root
  ┃ ┃ ┃ ┗ 📜mz_models_metadata.json
  ┃ ┃ ┗ 📜modelzoo.json
  ┃ ┗ 📂repos
+ ┃ ┃ ┣ 📂AUTHOR
+ ┃ ┃ ┃ ┣ 📂MODEL
 ```
 
 > This folder structure is generated relative to where the script is ran from.
