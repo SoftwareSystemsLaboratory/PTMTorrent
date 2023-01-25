@@ -30,9 +30,6 @@ This repository contains the scripts to generate the *PTMTorrent* dataset.
 The dataset contains either the partial or entire set of pre-trained machine
 learning models (PTM) repositories hosted on popular model hubs.
 
-> Model hubs are, "collections of PTMs and datasets organized by problem domain"
-> (from ICSE paper).
-
 The list of currently supported model hubs can be found
 [here](#supported-model-hubs).
 
@@ -43,7 +40,7 @@ The following model hubs are supported by our software:
 - [Hugging Face](https://huggingface.co/)
 - [Modelhub](https://modelhub.ai/)
 - [ModelZoo](https://modelzoo.co/)
-- [Pytorch Hub](https://pytorch.org/hub/)
+- [PyTorch Hub](https://pytorch.org/hub/)
 - [ONNX Model Zoo](https://github.com/onnx/models/)
 
 ## Dependencies
@@ -168,3 +165,39 @@ scripts can be found in each model hub's script folder's `README.md` file.
 ## How to Cite
 
 ## References
+
+> References are sorted by alphabetical order and not in how they appear in this
+> document.
+
+\[1\] “Git.” <https://git-scm.com/> (accessed Jan. 25, 2023).
+
+\[2\] “Git Large File Storage,” Git Large File Storage. <https://git-lfs.com/>
+(accessed Jan. 25, 2023).
+
+\[3\] “Hugging Face – The AI community building the future.,” Jan. 03, 2023.
+<https://huggingface.co/> (accessed Jan. 25, 2023).
+
+\[4\] “Model Zoo - Deep learning code and pretrained models for transfer
+learning, educational purposes, and more.” <https://modelzoo.co/> (accessed Jan.
+25, 2023).
+
+\[5\] “Modelhub.” <https://modelhub.ai/> (accessed Jan. 25, 2023).
+
+\[6\] “MSR 2023 - Data and Tool Showcase Track - MSR 2023.”
+<https://conf.researchr.org/track/msr-2023/msr-2023-data-showcase> (accessed
+Jan. 25, 2023).
+
+\[7\] “ONNX Model Zoo.” Open Neural Network Exchange, Jan. 25, 2023. Accessed:
+Jan. 25, 2023. \[Online\]. Available: <https://github.com/onnx/models>
+
+\[8\] “pip documentation v22.3.1.” <https://pip.pypa.io/en/stable/> (accessed
+Jan. 25, 2023).
+
+\[9\] “Poetry - Python dependency management and packaging made easy.”
+<https://python-poetry.org/> (accessed Jan. 25, 2023).
+
+\[10\] “Python Release Python 3.10.9,” Python.org.
+<https://www.python.org/downloads/release/python-3109/> (accessed Jan. 25,
+2023).
+
+\[11\] “PyTorch Hub.” <https://www.pytorch.org/hub> (accessed Jan. 25, 2023).
