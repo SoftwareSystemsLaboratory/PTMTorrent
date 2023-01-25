@@ -50,3 +50,7 @@ dependencies must first be installed. See this project's root
 
 > References are sorted by alphabetical order and not how they appear in this
 > document.
+
+\[1\] “Model Zoo - Deep learning code and pretrained models for transfer
+learning, educational purposes, and more.” <https://modelzoo.co/> (accessed Jan.
+25, 2023).
