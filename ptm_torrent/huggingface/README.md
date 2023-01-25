@@ -44,8 +44,8 @@ See this project's root [`README.md`](../../README.md) for more information.
 
 ### As Individual Files
 
-This method assumes that you accept all of the default values of the scripts.
-Changes can be made manually within the scripts if the defualts are not acceptable for your use case.
+> This method assumes that you accept all of the default values of the scripts.
+> Changes can be made manually within the scripts if the defualts are not acceptable for your use case.
 
 1. `python setupFileSystem.py`
 2. `python downloadJSON.py`
