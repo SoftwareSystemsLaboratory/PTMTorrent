@@ -168,3 +168,4 @@ ptm_torrent/huggingface/v1.5/data
 ptm_torrent/huggingface/v2/data
 ptm_torrent/huggingface/v3/data
 ptm_torrent/pytorchhub/data
+example/onnx

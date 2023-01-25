@@ -1,0 +1,170 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ModelZooModelMetadatum"
+    },
+    "definitions": {
+        "ModelZooModelMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "qt-uri-protocols": [
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "stars": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "long_desc": {
+                    "type": "string"
+                },
+                "link": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "qt-uri-protocols": [
+                                "http",
+                                "https"
+                            ]
+                        }
+                    ]
+                },
+                "papers": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string",
+                                "format": "uri",
+                                "qt-uri-protocols": [
+                                    "http",
+                                    "https"
+                                ]
+                            }
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "framework": {
+                    "$ref": "#/definitions/Framework"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [],
+            "title": "ModelZooModelMetadatum"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "slug": {
+                    "$ref": "#/definitions/Slug"
+                },
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "short_title": {
+                    "$ref": "#/definitions/ShortTitle"
+                }
+            },
+            "required": [],
+            "title": "Category"
+        },
+        "ShortTitle": {
+            "type": "string",
+            "enum": [
+                "RL",
+                "CV",
+                "NLP",
+                "Generative",
+                "Graph",
+                "Audio",
+                "Unsupervised",
+                "Self-Supervised",
+                "Health"
+            ],
+            "title": "ShortTitle"
+        },
+        "Slug": {
+            "type": "string",
+            "enum": [
+                "reinforcement-learning",
+                "computer-vision",
+                "natural-language-processing",
+                "generative-models",
+                "graph",
+                "audio-speech",
+                "unsupervised-learning",
+                "self-supervised-learning",
+                "health-bioscience"
+            ],
+            "title": "Slug"
+        },
+        "Title": {
+            "type": "string",
+            "enum": [
+                "Reinforcement Learning",
+                "Computer Vision",
+                "Natural Language Processing",
+                "Generative Models",
+                "Graph",
+                "Audio and Speech",
+                "Unsupervised Learning",
+                "Self-Supervised Learning",
+                "Health and Bioscience"
+            ],
+            "title": "Title"
+        },
+        "Framework": {
+            "type": "string",
+            "enum": [
+                "pytorch",
+                "caffe",
+                "keras",
+                "tensorflow",
+                "jax",
+                "chainer",
+                "mxnet",
+                "caffe2"
+            ],
+            "title": "Framework"
+        }
+    }
+}

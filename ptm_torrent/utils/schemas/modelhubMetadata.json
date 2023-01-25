@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ModelhubMetadatum"
+    },
+    "definitions": {
+        "ModelhubMetadatum": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "task_extended": {
+                    "type": "string"
+                },
+                "github": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "github_branch": {
+                    "$ref": "#/definitions/GithubBranch"
+                },
+                "backend": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "gpu": {
+                    "type": "boolean"
+                }
+            },
+            "required": [],
+            "title": "ModelhubMetadatum"
+        },
+        "GithubBranch": {
+            "type": "string",
+            "enum": [
+                "master"
+            ],
+            "title": "GithubBranch"
+        }
+    }
+}
