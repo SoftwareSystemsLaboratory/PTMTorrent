@@ -18,21 +18,17 @@
     - [From Source](#from-source)
   - [How to Run](#how-to-run)
     - [As Individual Scripts](#as-individual-scripts)
-  - [Data Storage](#data-storage)
+  - [Data Representation](#data-representation)
+  - [Pre-Packaged Dataset](#pre-packaged-dataset)
   - [How to Cite](#how-to-cite)
   - [References](#references)
 
 ## About
 
 This repository contains the scripts to generate the *PTMTorrent* dataset.
-
-*PTMTorrent* is a dataset created to be submitted to the
-[2023 Mining Software Repositories (MSR) Conference Data and Tool Showcase Track](https://conf.researchr.org/track/msr-2023/msr-2023-data-showcase).
-The dataset contains either the partial or entire set of pre-trained machine
-learning models (PTM) repositories hosted on popular model hubs.
-
-The list of currently supported model hubs can be found
-[here](#supported-model-hubs).
+The dataset contains sets of pre-trained machine
+learning models (PTM) [`git`](https://git-scm.com) repositories hosted on popular model hubs.
+Supporting metadata from each model hub as well as standardized metadata specified by [this JSON Schema](ptm_torrent/utils/schemas/ptmtorrent.json) is also included in.
 
 ### Supported Model Hubs
 
@@ -50,9 +46,7 @@ This project is dependent upon the following software:
 
 - [`Python 3.10.9`](https://www.python.org/downloads/release/python-3109/)
 
-> Python dependencies and packaging are handled by
-> [`pip`](https://pip.pypa.io/en/stable/) and
-> [`poetry`](https://python-poetry.org/)
+> Package dependencies are given in [`pypoetry.toml`](pyproject.toml) and handled by [`poetry`](https://python-poetry.org/)
 
 - [`Git`](https://git-scm.com)
 - [`Git LFS`](https://git-lfs.com/)
@@ -81,7 +75,7 @@ The package can either be installed from our
 1. Create a `Python 3.10` virtual environment: `python3.10 -m venv env`
 1. Activate virtual environment: `source env/bin/activate`
 1. Upgrade `pip`: `python -m pip install --upgrade pip`
-1. Install `poetry`: `python -m pip install -r requirements.txt`
+1. Install `poetry`: `python -m pip install poetry`
 1. Install `Python` dependencies through `poetry`: `python -m poetry install`
 1. Build with `poetry`: `python -m poetry build`
 1. Install with `pip`: `python -m pip install dist/ptm_torrent*.tar.gz`
@@ -113,8 +107,7 @@ which to run these scripts (should the `__main__.py` file be insufficient) is
 described in each model hub's `README.md` file within the scripts folder.
 
 > NOTE: Hugging Face's `__main__.py` can be parameritized to allow for a
-> specific percentage of the model hub to be downloaded. By default, it is 0.1
-> (10%).
+> specific percentage of the model hub to be downloaded. By default, it is the first 0.1 (10%) of models sorted by downloads in descending order.
 
 To run any of the scripts, execute the following command pattern:
 
@@ -124,7 +117,7 @@ For example, to run Hugging Face's scripts:
 
 - `python ptm_torrent/huggingface/__main__.py`
 
-## Data Storage
+## Data Representation
 
 Each model hub script generates the following directory structure **per model
 hub**:
@@ -162,6 +155,11 @@ or concurrently.
 
 Specifics about the types of metadata files and content that are produced by the
 scripts can be found in each model hub's script folder's `README.md` file.
+
+## Pre-Packaged Dataset
+
+An existing dataset is availible on [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=d1db77ac-9b53-11ed-a84b-256017f36728&origin_path=%2F%7E%2F).
+It currently is 99.79 GB as compressed `tar.gz` archives.
 
 ## How to Cite
 

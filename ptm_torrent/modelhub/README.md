@@ -10,7 +10,7 @@
   - [How to Run](#how-to-run)
     - [Through `__main__.py`](#through-__main__py)
     - [As Individual Files](#as-individual-files)
-  - [Data Storage](#data-storage)
+  - [Data Representation](#data-representation)
     - [Data Directory Specifics](#data-directory-specifics)
       - [`data/modelhub/html`](#datamodelhubhtml)
       - [`data/modelhub/json`](#datamodelhubjson)
@@ -49,7 +49,7 @@ dependencies must first be installed. See this project's root
 1. `python downloadRepos.py`
 1. `python createSchema.py`
 
-## Data Storage
+## Data Representation
 
 > The following directory structure was taken on 1/25/2023. Files within the
 > `data/modelhub/json/metadata/models` directory have been removed from the
