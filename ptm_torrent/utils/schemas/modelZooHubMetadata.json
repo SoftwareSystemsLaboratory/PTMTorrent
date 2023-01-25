@@ -60,31 +60,6 @@
                             "qt-uri-protocols": [
                                 "http",
                                 "https"
-                            ],
-                            "qt-uri-extensions": [
-                                ".-tensorflow",
-                                ".0",
-                                ".0_ssd",
-                                ".2",
-                                ".2_multigpu",
-                                ".ai-pytorch",
-                                ".cpp",
-                                ".gans-comparison",
-                                ".html",
-                                ".ipynb",
-                                ".jax",
-                                ".keras",
-                                ".mx",
-                                ".mxnet",
-                                ".org",
-                                ".pth",
-                                ".py",
-                                ".pytorch",
-                                ".tensorflow",
-                                ".tf",
-                                ".vertx",
-                                ".x",
-                                ".x-jersey"
                             ]
                         }
                     ]

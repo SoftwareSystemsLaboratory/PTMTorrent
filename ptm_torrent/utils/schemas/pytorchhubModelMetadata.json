@@ -29,11 +29,6 @@
                     "format": "uri",
                     "qt-uri-protocols": [
                         "https"
-                    ],
-                    "qt-uri-extensions": [
-                        ".5",
-                        ".git",
-                        ".py"
                     ]
                 },
                 "ColabURL": {
@@ -41,9 +36,6 @@
                     "format": "uri",
                     "qt-uri-protocols": [
                         "https"
-                    ],
-                    "qt-uri-extensions": [
-                        ".ipynb"
                     ]
                 },
                 "DemoURL": {
