@@ -129,7 +129,7 @@ Each model hub script generates the following directory structure **per model
 hub**:
 
 ```shell
-📂data
+📦data
  ┗ 📂MODELHUB
  ┃ ┣ 📂html
  ┃ ┃ ┗ 📂metadata

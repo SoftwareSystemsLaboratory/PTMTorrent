@@ -68,6 +68,36 @@ dependencies must first be installed. See this project's root
 
 ## Data Storage
 
+```shell
+📦data
+ ┗ 📂huggingface
+ ┃ ┣ 📂html
+ ┃ ┃ ┗ 📂metadata
+ ┃ ┃ ┃ ┗ 📂models
+ ┃ ┣ 📂json
+ ┃ ┃ ┗ 📂metadata
+ ┃ ┃ ┃ ┣ 📂models
+ ┃ ┃ ┃ ┗ 📜hf_metadata.json
+ ┃ ┃ ┗ 📂repos
+ ┃ ┃ ┃ ┗ 📂AUTHOR
+ ┃ ┃ ┃ ┃ ┗ 📂MODEL
+```
+
+> This folder structure is generated relative to where the script is ran from.
+> Example: if the script was ran from the home directory (`~`), then the `data`
+> folder would be stored at `~/data`.
+
+Where:
+
+- data/MODELHUB/repos/`AUTHOR` is the author name of the repository that was
+  cloned.
+- data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
+  cloned.
+
+Model hub scripts do not overwrite the folder. In other words, it is a safe
+operation to run multiple model hub scripts from the same directory sequentially
+or concurrently.
+
 ## References
 
 > References are sorted by alphabetical order and not how they appear in this
