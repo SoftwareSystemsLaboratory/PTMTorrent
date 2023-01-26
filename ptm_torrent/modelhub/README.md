@@ -25,9 +25,6 @@ This directory contains the scripts to download PTM repositories and extract
 metadata for the greater *PTMTorrent* dataset from
 [Modelhub](https://modelhub.ai).
 
-To download the entirety of the [Modelhub](https://modelhub.ai) model hub
-requires nGB of storage.
-
 ## How to Run
 
 To run the scripts within this directory, the larger `ptm_torrent` project and
