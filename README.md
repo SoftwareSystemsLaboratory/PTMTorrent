@@ -166,7 +166,9 @@ scripts can be found in each model hub's script directory's `README.md` file.
 
 An existing dataset is availible on
 [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=55e17a6e-9d8f-11ed-a2a2-8383522b48d9&origin_path=%2F%7E%2F).
-It currently is 99.79 GB as compressed `tar.gz` archives.
+
+> NOTE: The [Hugging Face](https://huggingface.co) dataset is partially complete
+> as of 1/26/2023.
 
 ## Example Usage of Dataset
 
