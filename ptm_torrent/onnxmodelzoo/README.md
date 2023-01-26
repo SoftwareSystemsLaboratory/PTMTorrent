@@ -25,10 +25,6 @@ This directory contains the scripts to download PTM repositories and extract
 metadata for the greater *PTMTorrent* dataset from
 [ONNX Model Zoo](https://github.com/onnx/models.co).
 
-To download the entirety of the
-[ONNX Model Zoo](https://github.com/onnx/models.co) model hub requires 441 MB of
-storage.
-
 ## How to Run
 
 To run the scripts within this directory, the larger `ptm_torrent` project and
