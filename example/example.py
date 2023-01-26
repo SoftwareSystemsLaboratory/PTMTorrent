@@ -28,7 +28,7 @@ def extractAuthorRepo(url: str) -> PurePath:
         author = parsedURL.netloc
         repo = splitPath[0]
 
-    return PurePath(f"{author}/{repo}")
+    return PurePath(f"repos/{author}/{repo}")
 
 
 def main():

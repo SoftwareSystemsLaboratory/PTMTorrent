@@ -20,6 +20,7 @@
     - [As Individual Scripts](#as-individual-scripts)
   - [Data Representation](#data-representation)
   - [Pre-Packaged Dataset](#pre-packaged-dataset)
+  - [Example Usage of Dataset](#example-usage-of-dataset)
   - [How to Cite](#how-to-cite)
   - [References](#references)
 
@@ -166,6 +167,11 @@ scripts can be found in each model hub's script directory's `README.md` file.
 An existing dataset is availible on
 [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=55e17a6e-9d8f-11ed-a2a2-8383522b48d9&origin_path=%2F%7E%2F).
 It currently is 99.79 GB as compressed `tar.gz` archives.
+
+## Example Usage of Dataset
+
+An example usage of the dataset is described within the
+[`example`](example/README.md) directory.
 
 ## How to Cite
 
