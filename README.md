@@ -25,10 +25,12 @@
 
 ## About
 
-This repository contains the scripts to generate the *PTMTorrent* dataset.
-The dataset contains sets of pre-trained machine
-learning models (PTM) [`git`](https://git-scm.com) repositories hosted on popular model hubs.
-Supporting metadata from each model hub as well as standardized metadata specified by [this JSON Schema](ptm_torrent/utils/schemas/ptmtorrent.json) is also included in.
+This repository contains the scripts to generate the *PTMTorrent* dataset. The
+dataset contains sets of pre-trained machine learning models (PTM)
+[`git`](https://git-scm.com) repositories hosted on popular model hubs.
+Supporting metadata from each model hub as well as standardized metadata
+specified by [this JSON Schema](ptm_torrent/utils/schemas/ptmtorrent.json) is
+also included in.
 
 ### Supported Model Hubs
 
@@ -46,7 +48,8 @@ This project is dependent upon the following software:
 
 - [`Python 3.10.9`](https://www.python.org/downloads/release/python-3109/)
 
-> Package dependencies are given in [`pypoetry.toml`](pyproject.toml) and handled by [`poetry`](https://python-poetry.org/)
+> Package dependencies are given in [`pypoetry.toml`](pyproject.toml) and
+> handled by [`poetry`](https://python-poetry.org/)
 
 - [`Git`](https://git-scm.com)
 - [`Git LFS`](https://git-lfs.com/)
@@ -87,11 +90,11 @@ individual scripts per model hub.
 
 ### As Individual Scripts
 
-Each model hub's scripts are separated by folder in the
-[`ptm_torrent`](ptm_torrent/) folder. The folder for each specific model hub, as
-well as the main runner script, is listed in the table below:
+Each model hub's scripts are separated by directory in the
+[`ptm_torrent`](ptm_torrent/) directory. The directory for each specific model
+hub, as well as the main runner script, is listed in the table below:
 
-| Model Hub      | Scripts Folder             | Script Name   |
+| Model Hub      | Scripts Directory          | Script Name   |
 | -------------- | -------------------------- | ------------- |
 | Hugging Face   | `ptm_torrent/huggingface`  | `__main__.py` |
 | Modelhub       | `ptm_torrent/modelhub`     | `__main__.py` |
@@ -101,17 +104,18 @@ well as the main runner script, is listed in the table below:
 
 <!-- Table created with https://www.tablesgenerator.com/markdown_tables -->
 
-There are other supporting scripts within each model hub's scripts folder. These
-scripts are ran in order by the model hub's `__main__.py` file. The order in
-which to run these scripts (should the `__main__.py` file be insufficient) is
-described in each model hub's `README.md` file within the scripts folder.
+There are other supporting scripts within each model hub's scripts directory.
+These scripts are ran in order by the model hub's `__main__.py` file. The order
+in which to run these scripts (should the `__main__.py` file be insufficient) is
+described in each model hub's `README.md` file within the scripts directory.
 
 > NOTE: Hugging Face's `__main__.py` can be parameritized to allow for a
-> specific percentage of the model hub to be downloaded. By default, it is the first 0.1 (10%) of models sorted by downloads in descending order.
+> specific percentage of the model hub to be downloaded. By default, it is the
+> first 0.1 (10%) of models sorted by downloads in descending order.
 
 To run any of the scripts, execute the following command pattern:
 
-- `python 'Scripts Folder'/'Script Name'`
+- `python 'Scripts Directory'/'Script Name'`
 
 For example, to run Hugging Face's scripts:
 
@@ -136,29 +140,30 @@ hub**:
  ┃ ┃ ┃ ┃ ┗ 📂MODEL
 ```
 
-> This folder structure is generated relative to where the script is ran from.
-> Example: if the script was ran from the home directory (`~`), then the `data`
-> folder would be stored at `~/data`.
+> This directory structure is generated relative to where the script is ran
+> from. Example: if the script was ran from the home directory (`~`), then the
+> `data` directory would be stored at `~/data`.
 
 Where:
 
-- data/`MODELHUB` is the same name as the `Python` module folder that contained
-  the script.
+- data/`MODELHUB` is the same name as the `Python` module directory that
+  contained the script.
 - data/MODELHUB/repos/`AUTHOR` is the author name of the repository that was
   cloned.
 - data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
   cloned.
 
-Model hub scripts do not overwrite the folder. In other words, it is a safe
+Model hub scripts do not overwrite the directory. In other words, it is a safe
 operation to run multiple model hub scripts from the same directory sequentially
 or concurrently.
 
 Specifics about the types of metadata files and content that are produced by the
-scripts can be found in each model hub's script folder's `README.md` file.
+scripts can be found in each model hub's script directory's `README.md` file.
 
 ## Pre-Packaged Dataset
 
-An existing dataset is availible on [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=d1db77ac-9b53-11ed-a84b-256017f36728&origin_path=%2F%7E%2F).
+An existing dataset is availible on
+[this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=d1db77ac-9b53-11ed-a84b-256017f36728&origin_path=%2F%7E%2F).
 It currently is 99.79 GB as compressed `tar.gz` archives.
 
 ## How to Cite

@@ -1,6 +1,6 @@
 # Example Usage of Output Data from PTMTorrent
 
-> This folder contains a script to collect data from a repository from the
+> This directory contains a script to collect data from a repository from the
 > *PTMTorrent* dataset.
 
 ## Table of Contents
@@ -17,8 +17,8 @@
 This is an example program that extracts and graphs commit information from
 repositories.
 
-This folder contains a `Python 3.10` script that reads and extracts model paths
-from an example JSON file (from the
+This directory contains a `Python 3.10` script that reads and extracts model
+paths from an example JSON file (from the
 [ONNX Model Zoo component](../ptm_torrent/onnxmodelzoo/README.md)).
 
 This is then passed into

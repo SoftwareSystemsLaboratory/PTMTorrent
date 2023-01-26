@@ -21,7 +21,7 @@
 
 ## About
 
-This folder contains the scripts to download PTM repositories and extract
+This directory contains the scripts to download PTM repositories and extract
 metadata for the greater *PTMTorrent* dataset from
 [Modelhub](https://modelhub.ai).
 
@@ -30,8 +30,8 @@ requires nGB of storage.
 
 ## How to Run
 
-To run the scripts within this folder, the larger `ptm_torrent` project and its
-dependencies must first be installed. See this project's root
+To run the scripts within this directory, the larger `ptm_torrent` project and
+its dependencies must first be installed. See this project's root
 [`README.md`](../../README.md) for more information.
 
 ### Through [`__main__.py`](__main__.py)
@@ -73,9 +73,9 @@ dependencies must first be installed. See this project's root
  ┃ ┃ ┃ ┣ 📂MODEL
 ```
 
-> This folder structure is generated relative to where the script is ran from.
-> Example: if the script was ran from the home directory (`~`), then the `data`
-> folder would be stored at `~/data`.
+> This directory structure is generated relative to where the script is ran
+> from. Example: if the script was ran from the home directory (`~`), then the
+> `data` directory would be stored at `~/data`.
 
 Where:
 
@@ -84,7 +84,7 @@ Where:
 - data/modelhub/repos/AUTHOR/`MODEL` is the name of the repository that was
   cloned.
 
-Model hub scripts do not overwrite the folder. In other words, it is a safe
+Model hub scripts do not overwrite the directory. In other words, it is a safe
 operation to run multiple model hub scripts from the same directory sequentially
 or concurrently.
 
