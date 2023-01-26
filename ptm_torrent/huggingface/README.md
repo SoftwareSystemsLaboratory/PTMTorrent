@@ -56,10 +56,15 @@ its dependencies must first be installed. See this project's root
 ### Through [`__main__.py`](__main__.py)
 
 > If you want to download more or less of a percentage of models from
-> [Hugging Face](https://huggingface.co), adjust the *shrinkage* parameter in
-> [`__main__.py`](__main__.py) prior to executing the command.
+> [Hugging Face](https://huggingface.co), create an environment variable called
+> `HF_TORRENT_SHRINKAGE` and set it to a `float` between 0 and 1 inclusive. By
+> default it uses a value of `0.1`.
 
 - `python __main__.py`
+
+Or by setting the `HF_TORRENT_SHRINKAGE` value:
+
+- `HF_TORRENT_SHRINKAGE=0.2 python __main__.py`
 
 ### As Individual Files
 
@@ -70,6 +75,7 @@ its dependencies must first be installed. See this project's root
 1. `python setupFileSystem.py`
 1. `python downloadJSON.py`
 1. `python downloadRepos.py`
+1. `python createSchema.py`
 
 ## Data Representation
 
