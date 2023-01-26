@@ -1,5 +1,8 @@
 # PTMTorrent Python Module
 
+> This directory is the `Python` module for the *PTMTorrent* dataset generation
+> code.
+
 ## Table of Content
 
 - [PTMTorrent Python Module](#ptmtorrent-python-module)
