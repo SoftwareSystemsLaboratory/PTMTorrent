@@ -60,11 +60,17 @@ its dependencies must first be installed. See this project's root
 > `HF_TORRENT_SHRINKAGE` and set it to a `float` between 0 and 1 inclusive. By
 > default it uses a value of `0.1`.
 
+**You must create a directory called** `split_urls` **in this directory.**
+
 - `python __main__.py`
+- `python downloadRepos.py ./split_urls/split_url_<FILE_NUMBER>.txt` (Repeat this for all files in `./split_urls`.)
+
 
 Or by setting the `HF_TORRENT_SHRINKAGE` value:
 
 - `HF_TORRENT_SHRINKAGE=0.2 python __main__.py`
+- `python downloadRepos.py ./split_urls/split_url_<FILE_NUMBER>.txt` (Repeat this for all files in `./split_urls`.)
+
 
 ### As Individual Files
 
@@ -74,7 +80,8 @@ Or by setting the `HF_TORRENT_SHRINKAGE` value:
 
 1. `python setupFileSystem.py`
 1. `python downloadJSON.py`
-1. `python downloadRepos.py`
+1. `python splitRepos.py`
+1. `python downloadRepos.py ./split_urls/split_url_<FILE_NUMBER>.txt` (Repeat this for all files in `./split_urls`.)
 1. `python createSchema.py`
 
 ## Data Representation
