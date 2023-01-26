@@ -27,3 +27,5 @@ listed in the table below:
 | ModelZoo       | `modelzoo`        | `__main__.py` |
 | Pytorch Hub    | `pytorchhub`      | `__main__.py` |
 | ONNX Model Zoo | `onnxmodelzoo`    | `__main__.py` |
+
+<!-- Table created with https://www.tablesgenerator.com/markdown_tables -->
