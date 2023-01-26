@@ -25,7 +25,7 @@ metadata for the greater *PTMTorrent* dataset from
 [Model Zoo](https://modelzoo.co).
 
 To download the entirety of the [Model Zoo](https://modelzoo.co) model hub
-requires nGB of storage.
+requires 721 MB of storage.
 
 ## How to Run
 

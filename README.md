@@ -94,13 +94,16 @@ Each model hub's scripts are separated by directory in the
 [`ptm_torrent`](ptm_torrent/) directory. The directory for each specific model
 hub, as well as the main runner script, is listed in the table below:
 
-| Model Hub      | Scripts Directory          | Script Name   |
-| -------------- | -------------------------- | ------------- |
-| Hugging Face   | `ptm_torrent/huggingface`  | `__main__.py` |
-| Modelhub       | `ptm_torrent/modelhub`     | `__main__.py` |
-| ModelZoo       | `ptm_torrent/modelzoo`     | `__main__.py` |
-| Pytorch Hub    | `ptm_torrent/pytorchhub`   | `__main__.py` |
-| ONNX Model Zoo | `pmt_torrent/onnxmodelzoo` | `__main__.py` |
+| Model Hub      | Scripts Directory          | Script Name   | Download Size | Estimated Download Time |
+|----------------|----------------------------|---------------|---------------|-------------------------|
+| Hugging Face   | `ptm_torrent/huggingface`  | `__main__.py` | 61 TB         | ~24 hours               |
+| Modelhub       | `ptm_torrent/modelhub`     | `__main__.py` | 721 MB        | ~1 minute               |
+| ModelZoo       | `ptm_torrent/modelzoo`     | `__main__.py` | 151 GB        | ~4 hours                |
+| ONNX Model Zoo | `pmt_torrent/onnxmodelzoo` | `__main__.py` | 441 MB        | ~1 minute               |
+| Pytorch Hub    | `ptm_torrent/pytorchhub`   | `__main__.py` | 1.5 GB        | ~2 minutes              |
+> Download time may vary depending on internet speed. These are estimated 
+> download times with a strong internet connection.
+
 
 <!-- Table created with https://www.tablesgenerator.com/markdown_tables -->
 

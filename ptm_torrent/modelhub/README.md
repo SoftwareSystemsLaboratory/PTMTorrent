@@ -26,7 +26,7 @@ metadata for the greater *PTMTorrent* dataset from
 [Modelhub](https://modelhub.ai).
 
 To download the entirety of the [Modelhub](https://modelhub.ai) model hub
-requires nGB of storage.
+requires 151 GB of storage.
 
 ## How to Run
 

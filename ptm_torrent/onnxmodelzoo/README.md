@@ -26,7 +26,7 @@ metadata for the greater *PTMTorrent* dataset from
 [ONNX Model Zoo](https://github.com/onnx/models.co).
 
 To download the entirety of the
-[ONNX Model Zoo](https://github.com/onnx/models.co) model hub requires nGB of
+[ONNX Model Zoo](https://github.com/onnx/models.co) model hub requires 441 MB of
 storage.
 
 ## How to Run

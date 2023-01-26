@@ -25,7 +25,7 @@ metadata for the greater *PTMTorrent* dataset from
 [Pytorch Hub](https://pytorch.org/hub/).
 
 To download the entirety of the [Pytorch Hub](https://pytorch.org/hub/) model
-hub requires nGB of storage.
+hub requires 1.5 GB of storage.
 
 ## How to Run
 
