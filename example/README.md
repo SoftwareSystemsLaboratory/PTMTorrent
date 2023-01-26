@@ -31,10 +31,15 @@ This program is dependent upon
 [*PTMTorrent* being installed](../README.md#how-to-install), as well
 [`PRIME`'s dependencies](https://github.com/SoftwareSystemsLaboratory/PRIME).
 
+Python dependencies are managed with `pip` and
+[`requirements.txt`](requirements.txt):
+
 ## How to Run
 
 > Instructions were written for Linux operating systems
 
+1. Change directories into the ONNX Model Zoo PTMTorrent directory:
+   `cd data/onnxmodelzoo`
 1. Create a `Python 3.10` virtual environment: `python3.10 -m venv env`
 1. Activate virtual environment: `source env/bin/activate`
 1. Upgrade `pip`: `python -m pip install --upgrade pip`
