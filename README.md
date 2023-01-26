@@ -163,7 +163,7 @@ scripts can be found in each model hub's script directory's `README.md` file.
 ## Pre-Packaged Dataset
 
 An existing dataset is availible on
-[this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=d1db77ac-9b53-11ed-a84b-256017f36728&origin_path=%2F%7E%2F).
+[this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=55e17a6e-9d8f-11ed-a2a2-8383522b48d9&origin_path=%2F%7E%2F).
 It currently is 99.79 GB as compressed `tar.gz` archives.
 
 ## How to Cite
