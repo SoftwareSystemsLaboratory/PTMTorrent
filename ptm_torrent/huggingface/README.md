@@ -21,7 +21,7 @@
 
 ## About
 
-This folder contains the scripts to download PTM repositories and extract
+This directory contains the scripts to download PTM repositories and extract
 metadata for the greater *PTMTorrent* dataset from
 [Hugging Face](https://huggingface.co).
 
@@ -31,7 +31,7 @@ data storage required to download such a large model hub is non-trivial. Using
 the [HFTorrent v1](https://zenodo.org/record/7556031), it took 51TB to download
 all roughly 55,000 complete repositories within that dataset.
 
-To accomodate this, we utilize a *shrinkage* parameter within this folder
+To accomodate this, we utilize a *shrinkage* parameter within this directory
 [`__main__.py`](__main__.py) to only download a subset of the data. This
 parameter sets the percentage of models to download from
 [Hugging Face](https://huggingface.co) sorted by download in descending order.
@@ -49,8 +49,8 @@ downloads ~12,000 repositories from [Hugging Face](https://huggingface.co).
 
 ## How to Run
 
-To run the scripts within this folder, the larger `ptm_torrent` project and its
-dependencies must first be installed. See this project's root
+To run the scripts within this directory, the larger `ptm_torrent` project and
+its dependencies must first be installed. See this project's root
 [`README.md`](../../README.md) for more information.
 
 ### Through [`__main__.py`](__main__.py)
@@ -91,9 +91,9 @@ dependencies must first be installed. See this project's root
  ┃ ┃ ┃ ┃ ┗ 📂MODEL
 ```
 
-> This folder structure is generated relative to where the script is ran from.
-> Example: if the script was ran from the home directory (`~`), then the `data`
-> folder would be stored at `~/data`.
+> This directory structure is generated relative to where the script is ran
+> from. Example: if the script was ran from the home directory (`~`), then the
+> `data` directory would be stored at `~/data`.
 
 Where:
 
@@ -102,7 +102,7 @@ Where:
 - data/MODELHUB/repos/AUTHOR/`MODEL` is the name of the repository that was
   cloned.
 
-Model hub scripts do not overwrite the folder. In other words, it is a safe
+Model hub scripts do not overwrite the directory. In other words, it is a safe
 operation to run multiple model hub scripts from the same directory sequentially
 or concurrently.
 
