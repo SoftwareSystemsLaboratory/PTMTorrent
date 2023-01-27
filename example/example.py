@@ -34,7 +34,7 @@ def extractAuthorRepo(url: str) -> PurePath:
 def main():
     paths: List[PurePath] = []
 
-    jsonFile: PurePath = PurePath("onnxmodelzoo.json")
+    jsonFile: PurePath = PurePath("json/onnxmodelzoo.json")
     json: List[dict] = readJSON(filepath=jsonFile)
 
     data: dict

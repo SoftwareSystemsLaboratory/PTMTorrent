@@ -39,7 +39,7 @@ Python dependencies are managed with `pip` and
 > Instructions were written for Linux operating systems
 
 1. Change directories into the ONNX Model Zoo PTMTorrent directory:
-   `cd data/onnxmodelzoo`
+   `cd ptm_torrent/onnxmodelzoo`
 1. Create a `Python 3.10` virtual environment: `python3.10 -m venv env`
 1. Activate virtual environment: `source env/bin/activate`
 1. Upgrade `pip`: `python -m pip install --upgrade pip`

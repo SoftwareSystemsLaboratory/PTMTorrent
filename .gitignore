@@ -169,3 +169,5 @@ ptm_torrent/huggingface/v2/data
 ptm_torrent/huggingface/v3/data
 ptm_torrent/pytorchhub/data
 example/onnx
+example/PTMTorrent
+example/onnxmodelzoo.tar.gz
