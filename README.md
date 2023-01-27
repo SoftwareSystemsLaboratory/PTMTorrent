@@ -168,7 +168,7 @@ An existing dataset is availible on
 [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=55e17a6e-9d8f-11ed-a2a2-8383522b48d9&origin_path=%2F%7E%2F).
 
 > NOTE: The [Hugging Face](https://huggingface.co) dataset is partially complete
-> as of 1/26/2023.
+> as of 1/26/2023. The full dataset is estimated to be availible by 1/31/2023.
 
 ## Example Usage of Dataset
 
