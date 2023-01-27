@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ptm-torrent"
-version = "0.1.6"
+version = "0.1.5"
 description = ""
 authors = ["Nicholas M. Synovic <nicholas.synovic@gmail.com>"]
 readme = "README.md"
