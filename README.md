@@ -166,6 +166,9 @@ scripts can be found in each model hub's script directory's `README.md` file.
 
 An existing dataset is available on
 [this Purdue University Globus share](https://app.globus.org/file-manager?origin_id=55e17a6e-9d8f-11ed-a2a2-8383522b48d9&origin_path=%2F%7E%2F).
+In this share, each model hub (except for Hugging Face) is its own tarball file. Packaging Hugging Face into a single tarball file was not practical due to its size, so we split the data into several smaller tarballs. In the root globus share folder, a `huggingface_metadata.tar.gz` file contains the generated metadata. All Hugging Face repository data is split among several tarball files in the huggingface directory. Each of these tarballs packages a seperate set of authors.
+
+All tarballs in the Globus share extract using the same path structure. For example, the command `tar -xzvf /onnxmodelzoo.tar.gz' will extract Onnx Model Zoo files into `/PTMTorrent/ptm_torrent/onnxmodelzoo/data/onnxmodelzoo/`. We reccomend using a multithreaded extraction program, such as pigz, for extracting larger files.
 
 If you are unfamiliar with Globus, we prepared a guide in the [globus-docs/](globus-docs/) directory.
 
